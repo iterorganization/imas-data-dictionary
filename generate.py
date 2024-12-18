@@ -183,13 +183,8 @@ def generate_dd_data_dictionary_validation(extra_opts=""):
 
 if __name__ == "__main__":
 
-    # Can we use threads in this version of Saxon?
-    threads = ""
-    if saxon_version() >= 904:
-        threads = " -threads:4"
-
-    generate_dd_data_dictionary(extra_opts=threads)
-    generate_html_documentation(extra_opts=threads)
-    generate_ids_cocos_transformations_symbolic_table(extra_opts=threads)
+    generate_dd_data_dictionary()
+    generate_html_documentation()
+    generate_ids_cocos_transformations_symbolic_table()
     generate_idsnames()
-    generate_dd_data_dictionary_validation(extra_opts=threads)
+    generate_dd_data_dictionary_validation()

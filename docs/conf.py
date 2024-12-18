@@ -23,16 +23,17 @@ import sphinx_dd_extension.autodoc
 project = "IMAS Data Dictionary"
 copyright = f"{datetime.datetime.now().year}, ITER Organization"
 author = "ITER Organization"
-if is_gitrepo:
+try:
     version = subprocess.check_output(["git", "describe"]).decode().strip()
     last_tag = subprocess.check_output(["git", "describe", "--abbrev=0"]).decode().strip()
     is_develop = version != last_tag
-else:
-	os.chdir("..")
-	from setuptools_scm import get_version
-	version=get_version()
-	is_develop="dev" in version
-	os.chdir("docs")
+except Exception as _:
+    os.chdir("..")
+    from setuptools_scm import get_version
+    version=get_version()
+    is_develop="dev" in version
+    os.chdir("docs")
+
 html_context = {
     "is_develop": is_develop
 }
@@ -41,10 +42,10 @@ language = "en"
 
 # Options for generating documentation.
 #
-# Note: these should be enabled to generate the IDS reference and changelog!
+# Note: these can be enabled/disabled to generate the IDS reference and changelog!
 #   For example: SPHINXOPTS="-D dd_changelog_generate=1 -D dd_autodoc_generate=1"
 dd_changelog_generate = False
-dd_autodoc_generate = False
+dd_autodoc_generate = True
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
