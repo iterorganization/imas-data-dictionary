@@ -8,11 +8,6 @@ import os
 import subprocess
 import sys
 from git import Repo
-try:
-    is_gitrepo = True
-    try_repo=Repo("..")
-except Exception as _:
-    is_gitrepo = False
 # Ensure that our extension module can be imported:
 sys.path.append(os.path.curdir)
 import sphinx_dd_extension.autodoc
