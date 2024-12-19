@@ -557,7 +557,7 @@ holds :math:`{n}` values which correspond to
 ``...grid_ggd(grid index).grid_subset(grid_subset_index).element(1...n)``
 elements.
 
-.. [DD_git] Data Dictionary on ITER GIT: https://git.iter.org/projects/IMAS/repos/data-dictionary/browse
+.. [DD_git] Data Dictionary repository: https://git.iter.org/projects/IMAS/repos/data-dictionary
 .. [IMAS_releases] IMAS releases: https://jira.iter.org/projects/IMAS?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released
 .. [Thesis] M. Sc. Thesis: Visualisation of Fusion Data-Structures for Scrape-Off Layer Plasma Simulations: https://user.iter.org/?uid=VL75XE
 .. [JOREK] The JOREK non-linear MHD Code website: http://jorek.eu/

@@ -1099,7 +1099,7 @@ used by the IMAS is forbidden as a node name.
       -  Clarity of the naming
 
 A more exhaustive list of forbidden names can be found in `reserved_names.txt
-<https://git.iter.org/projects/IMAS/repos/data-dictionary/browse/reserved_names.txt>`__.
+<https://github.com/iterorganization/imas-data-dictionary/blob/develop/reserved_names.txt>`__.
 
 
 .. _`List of the existing data types`:

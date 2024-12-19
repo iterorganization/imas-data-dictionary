@@ -76,10 +76,10 @@ intersphinx_mapping = {}
 
 html_theme = "sphinx_immaterial"
 html_theme_options = {
-    "repo_url": "https://git.iter.org/projects/IMAS/repos/data-dictionary",
+    "repo_url": "https://github.com/iterorganization/imas-data-dictionary",
     "repo_name": "Data Dictionary",
     "icon": {
-        "repo": "fontawesome/brands/bitbucket",
+        "repo": "fontawesome/brands/github",
     },
     "features": [
         # "navigation.expand",
