@@ -21,6 +21,7 @@ class CustomInstallCommand(install):
             generate_html_documentation,
             generate_ids_cocos_transformations_symbolic_table,
             generate_idsnames,
+            generate_idsdef_js,
         )
         from install import (
             copy_utilities,
@@ -37,6 +38,7 @@ class CustomInstallCommand(install):
         generate_ids_cocos_transformations_symbolic_table()
         generate_idsnames()
         generate_dd_data_dictionary_validation()
+        generate_idsdef_js()
 
         # install
         install_html_docs()

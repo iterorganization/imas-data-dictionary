@@ -26,6 +26,8 @@ names_xsl = "IDSNames.txt.xsl"
 names_txt = "IDSNames.txt"
 valid_xsl = "dd_data_dictionary_validation.txt.xsl"
 valid_txt = "dd_data_dictionary_validation.txt"
+js_xsl = "docs/generate_js_IDSDef.xsl"
+js_def = "docs/_static/IDSDefxml.js"
 
 
 def generate_dd_data_dictionary(extra_opts=""):
@@ -83,6 +85,13 @@ def generate_dd_data_dictionary_validation(extra_opts=""):
         xsltproc.transform_to_file(source_file=dd_xml, stylesheet_file=valid_xsl, output_file=valid_txt)
 
 
+def generate_idsdef_js():
+    print("Generating docs/_static/IDSDefxml.js")
+    with saxonche.PySaxonProcessor(license=False) as proc:
+        xsltproc = proc.new_xslt30_processor()
+        xsltproc.transform_to_file(source_file=dd_xml, stylesheet_file=js_xsl, output_file=js_def)
+
+
 if __name__ == "__main__":
 
     generate_dd_data_dictionary()
@@ -90,3 +99,4 @@ if __name__ == "__main__":
     generate_ids_cocos_transformations_symbolic_table()
     generate_idsnames()
     generate_dd_data_dictionary_validation()
+    generate_idsdef_js()

@@ -12,6 +12,7 @@ from git import Repo
 sys.path.append(os.path.curdir)
 import sphinx_dd_extension.autodoc
 
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -41,6 +42,7 @@ language = "en"
 #   For example: SPHINXOPTS="-D dd_changelog_generate=1 -D dd_autodoc_generate=1"
 dd_changelog_generate = False
 dd_autodoc_generate = True
+
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
