@@ -7,20 +7,9 @@ import subprocess
 def generate_sphinx_documentation():
     from sphinx.cmd.build import main as sphinx_main
     from setuptools_scm import get_version
-
+    
     git_describe_output = get_version()
     os.chdir("docs")
-
-    idsdef_path = os.path.join(".", "_static/IDSDefxml.js")
-    with open(idsdef_path, "w") as file:
-        file.write("const xmlString=`\n")
-
-    idsdef_command = ["java", "net.sf.saxon.Transform", "-t", "-s:../IDSDef.xml", "-xsl:generate_js_IDSDef.xsl"]
-    with open(idsdef_path, "a") as file:
-        subprocess.run(idsdef_command, stdout=file, check=True)
-
-    with open(idsdef_path, "a") as file:
-        file.write("`;")
 
     source_dir = os.path.join(".")
     build_dir = os.path.join(".", "_build/html")
@@ -42,8 +31,6 @@ def generate_sphinx_documentation():
     ]
 
     sphinx_main(sphinx_args)
-    # if ret != 0:
-    #     raise RuntimeError(f"Sphinx build failed with return code {ret}")
     try:
         from git import Repo
 
@@ -68,17 +55,13 @@ if __name__ == "__main__":
         generate_html_documentation,
         generate_ids_cocos_transformations_symbolic_table,
         generate_idsnames,
-        saxon_version,
+        generate_idsdef_js,
     )
 
-    # Can we use threads in this version of Saxon?
-    threads = ""
-    if saxon_version() >= 904:
-        threads = " -threads:4"
-
-    generate_dd_data_dictionary(extra_opts=threads)
-    generate_html_documentation(extra_opts=threads)
-    generate_ids_cocos_transformations_symbolic_table(extra_opts=threads)
+    generate_dd_data_dictionary()
+    generate_html_documentation()
+    generate_ids_cocos_transformations_symbolic_table()
     generate_idsnames()
-    generate_dd_data_dictionary_validation(extra_opts=threads)
+    generate_dd_data_dictionary_validation()
+    generate_idsdef_js()
     generate_sphinx_documentation()
