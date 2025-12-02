@@ -343,8 +343,12 @@ The utilities section has errors:<xsl:apply-templates select="./utilities//field
                 </xsl:when>
                 <!-- No validation for (itime), see IMAS-4675 -->
                 <xsl:when test="matches($index_with_parentheses, '^\(itime\)$')"/>
-                <!-- Explicit index >= 1 is also fine, e.g. in coordinate_system(process(i1)/coordinate_index)/coordinate(1) -->
-                <xsl:when test="matches($index_with_parentheses, '^\([1-9][0-9]*\)$')"/>
+                <!-- GH#157, don't allow explicit index -->
+                <xsl:when test="matches($index_with_parentheses, '^\([1-9][0-9]*\)$')">
+                    <xsl:apply-templates select=".">
+                        <xsl:with-param name="error_description" select="concat('Invalid ', $attr, ': `', $fullpath, '`. Explicit indices are not allowed in coordinates.')"/>
+                    </xsl:apply-templates>
+                </xsl:when>
                 <!-- The index refers to another node, e.g. coordinate_system(process(i1)/coordinate_index). Validate that path: -->
                 <xsl:when test="$index_with_parentheses">
                     <xsl:apply-templates select="." mode="validate_path">
