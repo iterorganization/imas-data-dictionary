@@ -116,13 +116,38 @@ class XMLDiffer:
         map1 = {self._get_identifier(c): c for c in e1}
         map2 = {self._get_identifier(c): c for c in e2}
 
-        # Preserve order: process keys as they appear in map1, then new ones from map2
-        all_child_keys = list(map1.keys())
-        seen_keys = set(all_child_keys)
+        # Preserve order from both XMLs:
+        # - Use e1's order as the base structure (preserves removed items in their original position)
+        # - Insert new items from e2 at their appropriate positions
 
-        for k in map2.keys():
+        keys1 = [self._get_identifier(c) for c in e1]
+        keys2 = [self._get_identifier(c) for c in e2]
+
+        # Build the merged order
+        all_child_keys = []
+        seen_keys = set()
+
+        # Start with e1's order
+        for k in keys1:
             if k not in seen_keys:
                 all_child_keys.append(k)
+                seen_keys.add(k)
+
+        for i, k in enumerate(keys2):
+            if k not in seen_keys:
+                insert_pos = len(all_child_keys)
+
+                for j in range(i - 1, -1, -1):
+                    prev_key = keys2[j]
+                    if prev_key in seen_keys:
+                        try:
+                            insert_pos = all_child_keys.index(prev_key) + 1
+                            break
+                        except ValueError:
+                            pass
+
+                all_child_keys.insert(insert_pos, k)
+                seen_keys.add(k)
 
         for k in all_child_keys:
             new_path = f"{path}/{k}"
