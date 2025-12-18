@@ -61,6 +61,31 @@
             margin-left: 15px;
             color: #586069;
         }
+        .controls-buttons {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+        .collapse-btn {
+            padding: 6px 12px;
+            background-color: #fff;
+            border: 1px solid #d1d5da;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #24292e;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .collapse-btn:hover {
+            background-color: #f6f8fa;
+            border-color: #1b1f23;
+        }
+        .collapse-btn:active {
+            background-color: #edeff2;
+            transform: scale(0.98);
+        }
         .diff-container {
             display: flex;
             gap: 20px;
@@ -168,7 +193,7 @@
             {% set _ = classes.append("error-node") %}
         {% endif %}
 
-        <details data-id="{{ node.path }}" {% if classes %}class="{{ classes|join(' ') }}"{% endif %} open>
+        <details data-id="{{ node.path }}" {% if classes %}class="{{ classes|join(' ') }}"{% endif %}{% if status_class != 'node-removed' %} open{% endif %}>
             <summary>
                 <span class="tag-name">{{ node.tag }}</span>
                 {% for name, value in node.attributes|dictsort %}
@@ -312,6 +337,10 @@
     <div class="controls-header">
         <label class="checkbox-label" for="error-node-toggle">Show error fields</label>
         <span class="controls-info">Displays error fields (_error_upper or _error_lower suffixes) which are hidden by default.</span>
+        <div class="controls-buttons">
+            <button class="collapse-btn" id="collapse-all">Collapse All</button>
+            <button class="collapse-btn" id="expand-all">Expand All</button>
+        </div>
     </div>
     <div class="diff-container">
         <div class="tree-wrapper">
@@ -354,6 +383,24 @@
                     counterpart.open = isOpen;
                 }
             }, true);
+
+            document.getElementById('collapse-all').addEventListener('click', function() {
+                const allDetails = document.querySelectorAll('details');
+                allDetails.forEach(detail => {
+                    detail.open = false;
+                });
+                const firstLevelDetails = document.querySelectorAll('.tree-container > details');
+                firstLevelDetails.forEach(detail => {
+                    detail.open = true;
+                });
+            });
+
+            document.getElementById('expand-all').addEventListener('click', function() {
+                const allDetails = document.querySelectorAll('details');
+                allDetails.forEach(detail => {
+                    detail.open = true;
+                });
+            });
         });
     </script>
 </body>
