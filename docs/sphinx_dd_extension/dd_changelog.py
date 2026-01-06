@@ -1,6 +1,4 @@
 """Sphinx plugin to generate a changelog of the DD and add it to sphinx.
-Requires a json file containing all pull requests, which can be generated using
-dd_changelog_helper.py
 Logic is partly based on code in the :external:py:mod:`sphinx.domains` module.
 """
 
@@ -9,8 +7,6 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Dict, List
 from git import Repo, Tag
-import json
-import re
 from packaging.version import Version
 
 import os
@@ -18,16 +14,16 @@ import os
 from sphinx.application import Sphinx
 from sphinx.util import logging
 
-from xml.etree import ElementTree
-
 logger = logging.getLogger(__name__)
 try:
     is_gitrepo = True
-    try_repo=Repo("..")
+    repo = Repo("..")
 except Exception as _:
-    logger.error("git repo is not present, Data Dictionary changelog will not be generated")
+    logger.error(
+        "git repo is not present, Data Dictionary changelog will not be generated"
+    )
     is_gitrepo = False
-    
+
 try:
     from imas import IDSFactory
     from imas.dd_zip import dd_xml_versions
@@ -39,13 +35,8 @@ except ImportError:
     has_imaspy = False
 
 
-def get_current_ids_names():
-    etree = ElementTree.parse("../IDSDef.xml")
-    return [x.get("name") for x in etree.iterfind("IDS")]
-
-
 def heading(s: str, style="-"):
-    return f"{s}\n{style*len(s)}\n\n"
+    return f"{s}\n{style * len(s)}\n\n"
 
 
 def tag_sort_helper(tag: Tag):
@@ -55,201 +46,6 @@ def tag_sort_helper(tag: Tag):
 
 def sort_tags(list_of_tags: List[Tag]):
     return sorted(list_of_tags, key=tag_sort_helper)
-
-
-def generate_list(list_text: str, indentation=0) -> str:
-    try:
-        list_text = list_text[list_text.index("* ") :]
-    except ValueError:
-        pass
-    list_list = list_text.split("\n")
-    generated_list = ("\n" * (indentation // 2 + 1)).join(
-        [f"{' '*indentation}{a}" for a in list_list]
-    )
-    return generated_list
-
-
-def is_list(text: str) -> bool:
-    return text.startswith("* ")
-
-
-def replace_note(text: str):
-    return re.sub(
-        r"^( *)> Note: (.*)$", r"\g<1>.. note::\n  \g<1>\g<2>", text, flags=re.M
-    )
-
-
-def replace_imas_jira(text: str):
-    return re.sub(
-        r"(IMAS-\d+)",
-        r"`\g<1> <https://jira.iter.org/browse/\g<1>>`__",
-        text,
-        flags=re.M,
-    )
-
-
-def get_tags():
-    repo = Repo("..")
-
-    tags = sort_tags(repo.tags)
-
-    return tags
-
-
-def get_pull_requests_from_commits(commits, pull_requests):
-    commit_shas = [x.hexsha for x in commits]
-    prs = [x for x in pull_requests if x["fromRef"]["latestCommit"] in commit_shas]
-    return prs
-
-
-def generate_release_text(titles_descriptions_uris: tuple[str, str, str], ids_list):
-    release_titles = [
-        x
-        for x in titles_descriptions_uris
-        if x[0].lower().startswith("release/") or x[0].lower().startswith("hotfix/")
-    ]
-
-    if len(release_titles) == 1:
-        description = replace_ids_names_with_links(ids_list, release_titles[0][1])
-        return replace_imas_jira(generate_list(description))
-    return None
-
-
-def link_to_ids(ids_name):
-    return f":dd:ids:`{ids_name.lower()}`"
-
-
-def replace_ids_names_with_links(ids_list, text):
-    return "\n".join(
-        [
-            " ".join(
-                [
-                    ",".join(
-                        [
-                            link_to_ids(x) if x.lower() in ids_list else x
-                            for x in j.split(",")
-                        ]
-                    )
-                    for j in k.split(" ")
-                ]
-            )
-            for k in text.split("\n")
-        ]
-    )
-
-
-def get_pr_link(pr_json) -> str:
-    """Extract the link to the Pull Request from its JSON representation"""
-    try:
-        return pr_json["links"]["self"][0]["href"]
-    except LookupError:
-        # This shouldn't happen, but for fail-safe:
-        return ""
-
-
-def generate_git_changelog(app: Sphinx):
-    """Generate a changelog using git pull requests"""
-    if not app.config.dd_changelog_generate:
-        logger.warning(
-            "Not generating DD changelog sources (dd_changelog_generate=False)"
-        )
-        return
-
-    logger.info("Generating DD git changelog sources.")
-
-    # Ensure output folders exist
-    (Path("generated/changelog")).mkdir(parents=True, exist_ok=True)
-
-    # Remove any previous generated files
-    docfile = Path("generated/changelog/git.rst")
-    docfile.unlink(True)
-
-    # Find DD versions using git tags
-    repo = Repo("..")
-    tags = list(sort_tags(repo.tags))
-
-    # Find all commits between two releases
-    commits_between_tags = [
-        repo.iter_commits(rev=f"{t[0]}..{t[1]}") for t in zip(tags, tags[1:])
-    ]
-
-    # Open the pull requests file (generated using dd_changelog_helper.py)
-    if not Path("pull_requests.json").exists():
-        dd_changelog_helper = Path(__file__).parent / "dd_changelog_helper.py"
-        print(
-            "Missing file 'pull_requests.json': you can generate with "
-            f"`python {dd_changelog_helper}` Continuing document generation without it.."
-        )
-    else:
-        with open("pull_requests.json", "r") as f:
-            pull_requests = json.load(f)
-
-        # Create the changelog text
-        changelog_text = heading("Changelog", "=")
-
-        previous_version_idx = 1
-
-        current_ids_names = get_current_ids_names()
-        print(current_ids_names)
-
-        last_major_version = -1
-
-        for version, commits in zip(reversed(tags), reversed(commits_between_tags)):
-            # Generate headings when switching between major versions
-            major_version = int(version.name.split(".")[0])
-            if major_version != last_major_version:
-                last_major_version = major_version
-                changelog_text += heading(f"Major version {major_version}", "#")
-            # For each release generate a changelog
-            release = heading(f"Release {version.name}", "-")
-
-            release_notes_text = ""
-
-            # Check which pull-requests were merged for this release
-            prs = get_pull_requests_from_commits(commits, pull_requests)
-            titles_descriptions_uris = [
-                (
-                    x.get("title", ""),
-                    x.get("description", "no description"),
-                    get_pr_link(x),
-                )
-                for x in prs
-            ]
-            release_notes_text = generate_release_text(
-                titles_descriptions_uris, current_ids_names
-            )
-            changelog_pr_text = "\n".join(
-                [f"* `{x[0]} <{x[2]}>`__" for x in titles_descriptions_uris]
-            )
-
-            # if release_notes_text != "" or pull_requests_text != "":
-            changelog_text += release
-
-            if release_notes_text is not None:
-                changelog_text += heading("Release notes", "*")
-                changelog_text += replace_note(release_notes_text)
-                changelog_text += "\n\n"
-
-            diff_url = None
-
-            if len(tags) > previous_version_idx:
-                previous_version = tags[previous_version_idx]
-
-                diff_url = f"https://git.iter.org/projects/IMAS/repos/data-dictionary/compare/diff?targetBranch={previous_version.tag.tag}&sourceBranch={version.tag.tag}&targetRepoId=114"
-                previous_version_idx += 1
-
-            if changelog_pr_text != "":
-                changelog_text += heading("Included pull requests", "*")
-                changelog_text += f"`diff <{diff_url}>`__\n\n"
-                changelog_text += changelog_pr_text
-                changelog_text += "\n\n"
-            elif diff_url:
-                changelog_text += f"`diff <{diff_url}>`__\n\n"
-
-        with open(docfile, "w") as f:
-            f.write(changelog_text)
-
-        logger.info("Finished generating DD changelog sources.")
 
 
 def ids_changes(ids_name: str, from_factory, to_factory):
@@ -267,8 +63,8 @@ def ids_changes(ids_name: str, from_factory, to_factory):
             removed.append(f)
         elif f in version_map.old_to_new.type_change:
             # DD3 -> DD4 specific conversion
-            if f=="ids_properties/source" and t=="ids_properties/provenance":
-                renamed.append((f,t))
+            if f == "ids_properties/source" and t == "ids_properties/provenance":
+                renamed.append((f, t))
                 continue
             from_data_type = from_factory._etree.find(f".//field[@path='{f}']").get(
                 "data_type"
@@ -292,7 +88,7 @@ def indent(s, i):
     output = ""
     for line in s.split("\n"):
         if len(line) > 0:
-            output += f"{' '*i}{line}\n"
+            output += f"{' ' * i}{line}\n"
         else:
             output += "\n"
     return output
@@ -400,7 +196,7 @@ def generate_dd_changelog(app: Sphinx):
 
     versions = [
         x.name
-        for x in reversed(get_tags())
+        for x in reversed(sort_tags(repo.tags))
         if x.name != factory.version and x.name in dd_xml_versions()
     ]
 
@@ -470,8 +266,6 @@ def generate_dd_changelog(app: Sphinx):
 
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("dd_changelog_generate", True, "env", [bool])
-    if is_gitrepo:
-        app.connect("builder-inited", generate_git_changelog)
     if has_imaspy:
         app.connect("builder-inited", generate_dd_changelog)
     return {
