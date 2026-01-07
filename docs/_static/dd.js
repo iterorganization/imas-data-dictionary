@@ -1,10 +1,10 @@
 // Open all details elements to show the anchor
 function dd_open_details(event) {
-    var url = new URL(window.location);
+    const url = new URL(window.location);
     if (url.hash && url.hash != "#") {
-        var anchor_element = document.querySelector(url.hash);
+        const anchor_element = document.querySelector(url.hash);
         if (anchor_element) {
-            var element = anchor_element;
+            let element = anchor_element;
             while (element.parentNode) {
                 element = element.parentNode;
                 if (element.tagName == "DETAILS") {
@@ -24,8 +24,4 @@ window.addEventListener("load", (event)=>{
             "a.dd-dynamic, a.dd-static, a.dd-constant, a.dd_data_type, a.errorbar")) {
         element.target = "_blank";
     }
-    // Open leaf nodes by default
-    // for (var element of document.querySelectorAll("details:not(.dd-struct)")) {
-    //     element.open = true;
-    // }
 })

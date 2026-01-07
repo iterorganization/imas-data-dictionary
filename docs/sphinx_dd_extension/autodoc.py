@@ -1,5 +1,4 @@
-"""An autodoc-like plugin for documenting the Data Dictionary
-"""
+"""An autodoc-like plugin for documenting the Data Dictionary"""
 
 from pathlib import Path
 import re
@@ -14,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 # Utilities that are documented separately to reduce the size of the reference pages
-DOCUMENTED_UTILITIES = ["ids_properties","code"]
+DOCUMENTED_UTILITIES = ["ids_properties", "code"]
 # Indentation character
 INDENT = " "
 # Cached DD XML element tree
@@ -22,9 +21,8 @@ _etree = None
 
 
 def update_file(path: Path, text: str):
-    if path.exists():
-        if path.read_text() == text:
-            return  # Nothing to be done!
+    if path.exists() and path.read_text() == text:
+        return  # Nothing to be done!
     path.write_text(text)
 
 
@@ -301,15 +299,15 @@ def field2rst(
     # Coordinates
     coordinates_csv = []
     for i in range(6):
-        coordinate = field.get(f"coordinate{i+1}")
+        coordinate = field.get(f"coordinate{i + 1}")
         if not coordinate:
             break
-        coordinate_same_as = field.get(f"coordinate{i+1}_same_as")
+        coordinate_same_as = field.get(f"coordinate{i + 1}_same_as")
         coor_link = link_to_coordinate(coordinate, coordinates_with_alternatives)
         same_as = ""
         if coordinate_same_as:
             same_as += f" (same as {link_to_coordinate(coordinate_same_as, set())})"
-        coordinates_csv.append(f' {i+1},"{coor_link}{same_as}"')
+        coordinates_csv.append(f' {i + 1},"{coor_link}{same_as}"')
 
     if coordinates_csv:
         result.append(".. csv-table::")
@@ -333,19 +331,43 @@ def field2rst(
             result.append(f"  Type changed from ``{previous_type}``")
         elif change_nbc_description == "repeat_children_first_point":
             result.append(f".. versionchanged:: {change_nbc_version}")
-            result.append(f"  Since this describes a closed countour first point must now be repeated at the end of the coordinate arrays of the children")
+            result.append(
+                "  Since this describes a closed countour first point must now be "
+                "repeated at the end of the coordinate arrays of the children"
+            )
         elif change_nbc_description == "repeat_children_first_point_conditional":
             result.append(f".. versionchanged:: {change_nbc_version}")
-            result.append(f"  When describing a closed countour (closed child flag = 1 in DDv3), the first point must now be repeated at the end of the coordinate arrays of the children")
-        elif change_nbc_description == "repeat_children_first_point_conditional_sibling":
+            result.append(
+                "  When describing a closed countour (closed child flag = 1 in DDv3), "
+                "the first point must now be repeated at the end of the coordinate "
+                "arrays of the children"
+            )
+        elif (
+            change_nbc_description == "repeat_children_first_point_conditional_sibling"
+        ):
             result.append(f".. versionchanged:: {change_nbc_version}")
-            result.append(f"  When describing a closed countour (closed sibling flag = 1 in DDv3), the first point must now be repeated at the end of the coordinate arrays of the children")
-        elif change_nbc_description == "repeat_children_first_point_conditional_sibling_dynamic":
+            result.append(
+                "  When describing a closed countour (closed sibling flag = 1 in DDv3),"
+                " the first point must now be repeated at the end of the coordinate "
+                "arrays of the children"
+            )
+        elif (
+            change_nbc_description
+            == "repeat_children_first_point_conditional_sibling_dynamic"
+        ):
             result.append(f".. versionchanged:: {change_nbc_version}")
-            result.append(f"  When describing a closed dynamic countour (closed sibling flag = 1 in DDv3), the first point must now be repeated at the end of the coordinate arrays of the children")
+            result.append(
+                "  When describing a closed dynamic countour (closed sibling flag = 1 "
+                "in DDv3), the first point must now be repeated at the end of the "
+                "coordinate arrays of the children"
+            )
         elif change_nbc_description == "remove_last_point_if_open_annular_centreline":
             result.append(f".. versionchanged:: {change_nbc_version}")
-            result.append(f"  Specific case for wall annular thickness (which has a size equals to the contour size-1): remove the last point of a vector in case the ../centreline/closed flag is False in DDv3")
+            result.append(
+                "  Specific case for wall annular thickness (which has a size equals "
+                "to the contour size-1): remove the last point of a vector in case the "
+                "../centreline/closed flag is False in DDv3"
+            )
         else:
             logger.warning(
                 "Unknown nbc change %r, not documenting NBC change.",
