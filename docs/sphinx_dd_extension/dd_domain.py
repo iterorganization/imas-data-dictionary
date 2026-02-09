@@ -76,7 +76,7 @@ def get_summary(content: StringList, n_char=60) -> str:
             text = text[:break_at_space]
             needs_ellipsis = True
     if needs_ellipsis:
-        text = text + " [...]"
+        text = text + " [...] (click to expand)"
     return text
 
 
