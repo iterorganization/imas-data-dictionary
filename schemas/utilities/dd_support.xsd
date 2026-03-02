@@ -1478,7 +1478,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -2148,7 +2148,7 @@
 		<xs:sequence>
 			<xs:element name="psi_magnetic_axis">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -2164,7 +2164,7 @@
 			</xs:element>
 			<xs:element name="psi_boundary">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -2857,7 +2857,7 @@
 			</xs:element>
 			<xs:element name="psi_magnetic_axis">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -2872,7 +2872,7 @@
 			</xs:element>
 			<xs:element name="psi_boundary">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -2992,7 +2992,7 @@
 			</xs:element>
 			<xs:element name="psi_magnetic_axis">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -3007,7 +3007,7 @@
 			</xs:element>
 			<xs:element name="psi_boundary">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -9348,7 +9348,7 @@
 			</xs:element>
 			<xs:element name="resistive_psi_losses">
 				<xs:annotation>
-					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_phi.j_ohm_phi) dV) / Ip ) dt)</xs:documentation>
+					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_phi.j_ohm_phi) dV) / Ip ) dt). Sign follows the poloidal flux convention</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<type>dynamic</type>
@@ -10936,7 +10936,7 @@
 			</xs:element>
 			<xs:element name="q">
 				<xs:annotation>
-					<xs:documentation>Safety factor</xs:documentation>
+					<xs:documentation>Safety factor. Positive when toroidal current and toroidal magnetic field are in the same direction</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_pol_norm</coordinate1>
 						<type>dynamic</type>
@@ -13016,7 +13016,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal magnetic flux</xs:documentation>
+					<xs:documentation>Poloidal magnetic flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>Wb</units>
 						<type>dynamic</type>
@@ -13343,7 +13343,7 @@
 			</xs:element>
 			<xs:element name="psi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
 						<cocos_label_transformation>psi_like</cocos_label_transformation>
@@ -13428,7 +13428,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>
@@ -13622,7 +13622,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -16413,7 +16413,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>

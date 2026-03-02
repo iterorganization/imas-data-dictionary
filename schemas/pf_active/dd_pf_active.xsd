@@ -257,7 +257,7 @@
 			</xs:element>
 			<xs:element name="current" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Current in the circuit between the sides of the group of supplies (only for circuits with a single supply or in which supplies are grouped)</xs:documentation>
+					<xs:documentation>Current in the circuit between the sides of the group of supplies (only for circuits with a single supply or in which supplies are grouped). Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>

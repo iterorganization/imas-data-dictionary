@@ -2836,7 +2836,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal magnetic flux</xs:documentation>
+					<xs:documentation>Poloidal magnetic flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../rho_tor_norm</coordinate1>
 						<units>Wb</units>

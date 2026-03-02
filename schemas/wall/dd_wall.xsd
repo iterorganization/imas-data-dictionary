@@ -2077,7 +2077,7 @@
 			</xs:element>
 			<xs:element name="psi" type="generic_grid_scalar" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux, given on various grid subsets</xs:documentation>
+					<xs:documentation>Poloidal flux, given on various grid subsets. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>

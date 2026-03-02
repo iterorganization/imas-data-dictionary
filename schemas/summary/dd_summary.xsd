@@ -1294,7 +1294,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal magnetic flux</xs:documentation>
+					<xs:documentation>Poloidal magnetic flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../../../time</coordinate1>
 						<units>Wb</units>
@@ -1369,7 +1369,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal magnetic flux</xs:documentation>
+					<xs:documentation>Poloidal magnetic flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../../../time</coordinate1>
 						<units>Wb</units>
@@ -1445,7 +1445,7 @@
 			</xs:element>
 			<xs:element name="momentum_phi" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Total plasma toroidal momentum, summed over ion species and electrons</xs:documentation>
+					<xs:documentation>Total plasma toroidal momentum, summed over ion species and electrons. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>kg.m.s^-1</units>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
@@ -1489,7 +1489,7 @@
 			</xs:element>
 			<xs:element name="b_field_tor" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal magnetic field</xs:documentation>
+					<xs:documentation>Toroidal magnetic field. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -1505,7 +1505,7 @@
 			</xs:element>
 			<xs:element name="b_field_phi" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal magnetic field</xs:documentation>
+					<xs:documentation>Toroidal magnetic field. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -1520,7 +1520,7 @@
 			</xs:element>
 			<xs:element name="e_field_parallel" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Average on the magnetic surface of (e_field.b_field) / B0, where B0 is global_quantities/b0/value</xs:documentation>
+					<xs:documentation>Average on the magnetic surface of (e_field.b_field) / B0, where B0 is global_quantities/b0/value. Sign is positive when the scalar product E.B is in the same direction as B0</xs:documentation>
 					<xs:appinfo>
 						<units>V.m^-1</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -1699,7 +1699,7 @@
 			</xs:element>
 			<xs:element name="momentum_phi" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Total plasma toroidal momentum, summed over ion species and electrons</xs:documentation>
+					<xs:documentation>Total plasma toroidal momentum, summed over ion species and electrons. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>kg.m.s^-1</units>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
@@ -1724,7 +1724,7 @@
 			</xs:element>
 			<xs:element name="q" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Safety factor</xs:documentation>
+					<xs:documentation>Safety factor. Positive when toroidal current and toroidal magnetic field are in the same direction</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
 						<cocos_label_transformation>q_like</cocos_label_transformation>
@@ -1743,7 +1743,7 @@
 			</xs:element>
 			<xs:element name="e_field_parallel" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Average on the magnetic surface of (e_field.b_field) / B0, where B0 is global_quantities/b0/value</xs:documentation>
+					<xs:documentation>Average on the magnetic surface of (e_field.b_field) / B0, where B0 is global_quantities/b0/value. Sign is positive when the scalar product E.B is in the same direction as B0</xs:documentation>
 					<xs:appinfo>
 						<units>V.m^-1</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -2159,7 +2159,7 @@
 			</xs:element>
 			<xs:element name="b_field_tor_pedestal_top_hfs" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the high field side</xs:documentation>
+					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the high field side. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -2170,7 +2170,7 @@
 			</xs:element>
 			<xs:element name="b_field_tor_pedestal_top_lfs" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the low field side</xs:documentation>
+					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the low field side. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -2369,7 +2369,7 @@
 			</xs:element>
 			<xs:element name="b_field_tor_pedestal_top_hfs" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the high field side</xs:documentation>
+					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the high field side. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -2380,7 +2380,7 @@
 			</xs:element>
 			<xs:element name="b_field_tor_pedestal_top_lfs" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the low field side</xs:documentation>
+					<xs:documentation>Toroidal field calculated at the position of the pressure pedestal top (as determined by the fit) on the low field side. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -3301,7 +3301,7 @@
 			</xs:element>
 			<xs:element name="psi_external_average" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Average (over the plasma poloidal cross section) plasma poloidal magnetic flux produced by all toroidal loops (active coils and passive loops) but the plasma, given by the following formula : int(psi_loops.j_tor.dS) / Ip</xs:documentation>
+					<xs:documentation>Average (over the plasma poloidal cross section) plasma poloidal magnetic flux produced by all toroidal loops (active coils and passive loops) but the plasma, given by the following formula : int(psi_loops.j_tor.dS) / Ip. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>Wb</units>
 						<introduced_after_version>3.36.0</introduced_after_version>
@@ -3423,7 +3423,7 @@
 			</xs:element>
 			<xs:element name="current" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Parallel current driven by this fusion reactions</xs:documentation>
+					<xs:documentation>Parallel current driven by this fusion reactions. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -3528,7 +3528,7 @@
 			</xs:element>
 			<xs:element name="current" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Parallel current driven by this NBI unit</xs:documentation>
+					<xs:documentation>Parallel current driven by this NBI unit. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -3627,7 +3627,7 @@
 			</xs:element>
 			<xs:element name="phi" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle of ECRH at resonance</xs:documentation>
+					<xs:documentation>Toroidal angle of ECRH at resonance. Increases counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
@@ -3665,7 +3665,7 @@
 			</xs:element>
 			<xs:element name="current" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Parallel current driven by EC waves</xs:documentation>
+					<xs:documentation>Parallel current driven by EC waves. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -3731,7 +3731,7 @@
 			</xs:element>
 			<xs:element name="current" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Parallel current driven by LH waves</xs:documentation>
+					<xs:documentation>Parallel current driven by LH waves. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -3828,7 +3828,7 @@
 			</xs:element>
 			<xs:element name="current" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Parallel current driven by IC waves</xs:documentation>
+					<xs:documentation>Parallel current driven by IC waves. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>

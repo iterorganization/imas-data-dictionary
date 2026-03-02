@@ -86,7 +86,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>
@@ -193,7 +193,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>

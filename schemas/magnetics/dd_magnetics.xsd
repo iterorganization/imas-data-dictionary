@@ -633,7 +633,7 @@
 				</xs:element>
 				<xs:element name="diamagnetic_flux" type="magnetics_method_distinct" maxOccurs="5">
 					<xs:annotation>
-						<xs:documentation>Diamagnetic flux. The array of structure corresponds to a set of calculation methods (starting with the generally recommended method).</xs:documentation>
+						<xs:documentation>Diamagnetic flux. The array of structure corresponds to a set of calculation methods (starting with the generally recommended method). Positive sign means counter-clockwise when viewed from above</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
 							<units>Wb</units>

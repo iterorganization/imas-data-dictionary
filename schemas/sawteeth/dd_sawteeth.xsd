@@ -347,7 +347,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal flux</xs:documentation>
+					<xs:documentation>Toroidal flux. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
@@ -363,7 +363,7 @@
 			</xs:element>
 			<xs:element name="psi_star_pre_crash">
 				<xs:annotation>
-					<xs:documentation>Psi* = psi - phi, just before the sawtooth crash</xs:documentation>
+					<xs:documentation>Psi* = psi - phi, just before the sawtooth crash. Sign follows the poloidal flux convention</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
@@ -379,7 +379,7 @@
 			</xs:element>
 			<xs:element name="psi_star_post_crash">
 				<xs:annotation>
-					<xs:documentation>Psi* = psi - phi, after the sawtooth crash</xs:documentation>
+					<xs:documentation>Psi* = psi - phi, after the sawtooth crash. Sign follows the poloidal flux convention</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
