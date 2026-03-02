@@ -1486,6 +1486,9 @@
 						<coordinate1_same_as>../../n_e/data</coordinate1_same_as>
 						<coordinate2>../../n_e/time</coordinate2>
 						<utilities_aoscontext>yes</utilities_aoscontext>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2150,6 +2153,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../time</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi_normalization.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2163,6 +2169,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../time</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi_normalization.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2772,6 +2781,9 @@
 						<coordinate1>../rho_pol_norm</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2849,6 +2861,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2861,6 +2876,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2924,6 +2942,9 @@
 						<coordinate1>../rho_tor_norm</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2975,6 +2996,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2987,6 +3011,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9326,6 +9353,9 @@
 						<coordinate1>/time</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.resistive_psi_losses</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -12734,6 +12764,9 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12987,6 +13020,9 @@
 					<xs:appinfo>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -13310,6 +13346,9 @@
 					<xs:documentation>Poloidal flux</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -13398,6 +13437,9 @@
 						<change_nbc_version>3.26.0</change_nbc_version>
 						<change_nbc_description>leaf_renamed</change_nbc_description>
 						<change_nbc_previous_name>psi/data</change_nbc_previous_name>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -13585,6 +13627,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../r</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16373,6 +16418,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../../length</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

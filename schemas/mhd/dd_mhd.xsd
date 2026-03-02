@@ -123,6 +123,9 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>mhd.ggd{i}.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

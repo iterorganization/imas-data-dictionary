@@ -196,6 +196,9 @@
 						<units>Wb</units>
 						<type>dynamic</type>
 						<coordinate1>../distance</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>pellets.time_slice{i}.pellet{j}.path_profiles.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

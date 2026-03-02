@@ -53,6 +53,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.contour_tree.node{j}.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -343,6 +346,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.boundary.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -531,6 +537,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<introduced_after_version>4.0.0</introduced_after_version>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.boundary.phi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -544,6 +553,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<introduced_after_version>4.0.0</introduced_after_version>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.boundary.phi_poloidal_current</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -696,6 +708,9 @@
 						<type>dynamic</type>
 						<units>Wb</units>
 						<introduced_after_version>3.39.0</introduced_after_version>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.q_min.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -831,6 +846,9 @@
 						<units>Wb</units>
 						<lifecycle_status>obsolescent</lifecycle_status>
 						<lifecycle_version>4.1.0</lifecycle_version>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.psi_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -846,6 +864,9 @@
 						<change_nbc_version>4.1.0</change_nbc_version>
 						<change_nbc_description>leaf_renamed</change_nbc_description>
 						<change_nbc_previous_name>psi_axis</change_nbc_previous_name>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -860,6 +881,9 @@
 						<units>Wb</units>
 						<lifecycle_status>obsolescent</lifecycle_status>
 						<lifecycle_version>4.1.0</lifecycle_version>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -944,6 +968,9 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.psi_external_average</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1901,6 +1928,9 @@
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_1d.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1973,6 +2003,9 @@
 						<type>dynamic</type>
 						<coordinate1>../psi</coordinate1>
 						<units>Pa.Wb^-1</units>
+						<cocos_label_transformation>dodpsi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_dodpsi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_1d.dpressure_dpsi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1986,6 +2019,9 @@
 						<type>dynamic</type>
 						<coordinate1>../psi</coordinate1>
 						<units>T^2.m^2.Wb^-1</units>
+						<cocos_label_transformation>dodpsi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_dodpsi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_1d.f_df_dpsi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2115,6 +2151,9 @@
 						<type>dynamic</type>
 						<coordinate1>../psi</coordinate1>
 						<units>Wb.m^-1</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_1d.dpsi_drho_tor</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2276,6 +2315,9 @@
 						<type>dynamic</type>
 						<coordinate1>../psi</coordinate1>
 						<units>m^3.Wb^-1</units>
+						<cocos_label_transformation>dodpsi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_dodpsi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_1d.dvolume_dpsi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2315,6 +2357,9 @@
 						<type>dynamic</type>
 						<coordinate1>../psi</coordinate1>
 						<units>m^2.Wb^-1</units>
+						<cocos_label_transformation>dodpsi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_dodpsi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_1d.darea_dpsi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2611,6 +2656,9 @@
 						<coordinate1>../grid/dim1</coordinate1>
 						<coordinate2>../grid/dim2</coordinate2>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.profiles_2d{j}.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2767,6 +2815,9 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.ggd{j}.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2776,6 +2827,9 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.ggd{j}.phi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

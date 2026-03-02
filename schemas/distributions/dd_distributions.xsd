@@ -2841,6 +2841,9 @@
 						<coordinate1>../rho_tor_norm</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>distributions.distribution{i}.profiles_2d{j}.grid.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

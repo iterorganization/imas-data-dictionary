@@ -91,6 +91,9 @@
 						<type>dynamic</type>
 						<units>W</units>
 						<coordinate1>../../time</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>reflectometer_fluctuation.channel{i}.doppler.position.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -197,6 +200,9 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate1_same_as>../../dn_e_over_n_e</coordinate1_same_as>
 						<coordinate2>../../time</coordinate2>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>reflectometer_fluctuation.channel{i}.fluctuations_level.position.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

@@ -233,6 +233,9 @@
 						<coordinate1>../../time</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>disruption.global_quantities.psi_halo_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -247,6 +250,9 @@
 						<units>Wb</units>
 						<type>dynamic</type>
 						<introduced_after_version>4.0.0</introduced_after_version>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>disruption.global_quantities.phi_halo_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -261,6 +267,9 @@
 						<units>Wb</units>
 						<type>dynamic</type>
 						<introduced_after_version>4.0.0</introduced_after_version>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>disruption.global_quantities.phi_halo_boundary_poloidal_current</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

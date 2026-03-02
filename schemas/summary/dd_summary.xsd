@@ -1299,6 +1299,9 @@
 						<coordinate1>../../../../time</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.position.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1371,6 +1374,9 @@
 						<coordinate1>../../../../time</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.position.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3299,6 +3305,9 @@
 					<xs:appinfo>
 						<units>Wb</units>
 						<introduced_after_version>3.36.0</introduced_after_version>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>summary.global_quantities.psi_external_average</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

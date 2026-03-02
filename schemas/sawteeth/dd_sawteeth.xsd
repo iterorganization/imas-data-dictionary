@@ -352,6 +352,9 @@
 						<type>dynamic</type>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>sawteeth.profiles_1d{i}.phi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -365,6 +368,9 @@
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>sawteeth.profiles_1d{i}.psi_star_pre_crash</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -378,6 +384,9 @@
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>sawteeth.profiles_1d{i}.psi_star_post_crash</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
