@@ -765,7 +765,7 @@
 			</xs:element>
 			<xs:element name="ip">
 				<xs:annotation>
-					<xs:documentation>Plasma current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Plasma current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>A</units>
@@ -1230,7 +1230,7 @@
 	</xs:complexType>
 	<xs:complexType name="equilibrium_constraints_0D_b0_like">
 		<xs:annotation>
-			<xs:documentation>Scalar constraint, b0_like cocos transform</xs:documentation>
+			<xs:documentation>Scalar constraint with toroidal-field-like sign convention</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="measured">
@@ -1338,7 +1338,7 @@
 	</xs:complexType>
 	<xs:complexType name="equilibrium_constraints_0D_ip_like">
 		<xs:annotation>
-			<xs:documentation>Scalar constraint, ip_like cocos transform</xs:documentation>
+			<xs:documentation>Scalar constraint with plasma-current-like sign convention</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="measured">
@@ -1446,7 +1446,7 @@
 	</xs:complexType>
 	<xs:complexType name="equilibrium_constraints_0D_one_like">
 		<xs:annotation>
-			<xs:documentation>Scalar constraint, one_like cocos transform</xs:documentation>
+			<xs:documentation>Scalar constraint with geometry-dependent sign convention</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="measured">
@@ -1554,7 +1554,7 @@
 	</xs:complexType>
 	<xs:complexType name="equilibrium_constraints_0D">
 		<xs:annotation>
-			<xs:documentation>Scalar constraint, no cocos transform</xs:documentation>
+			<xs:documentation>Scalar constraint with no sign convention transformation</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="measured">
@@ -1690,7 +1690,7 @@
 		<xs:sequence>
 			<xs:element name="b_field_tor_vacuum_r" type="equilibrium_constraints_0D">
 				<xs:annotation>
-					<xs:documentation>Vacuum field times major radius in the toroidal field magnet. Positive sign means anti-clockwise when viewed from above</xs:documentation>
+					<xs:documentation>Vacuum field times major radius in the toroidal field magnet. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>T.m</units>
 					</xs:appinfo>
@@ -1754,7 +1754,7 @@
 			</xs:element>
 			<xs:element name="ip" type="equilibrium_constraints_0D_ip_like">
 				<xs:annotation>
-					<xs:documentation>Plasma current. Positive sign means anti-clockwise when viewed from above</xs:documentation>
+					<xs:documentation>Plasma current. Positive sign means counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_alias>IDSPATH</cocos_alias>

@@ -508,7 +508,7 @@
 	</xs:complexType>
 	<xs:complexType name="summary_species_tor_angle">
 		<xs:annotation>
-			<xs:documentation>List of ion species used in summary with tor_angle cocos transform</xs:documentation>
+			<xs:documentation>List of ion species used in summary with toroidal-angle-like sign convention</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="hydrogen" type="summary_dynamic_flt_1d_root_parent_2">
@@ -2877,7 +2877,7 @@
 		<xs:sequence>
 			<xs:element name="ip" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Total plasma current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total plasma current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -2888,7 +2888,7 @@
 			</xs:element>
 			<xs:element name="current_non_inductive" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -2899,7 +2899,7 @@
 			</xs:element>
 			<xs:element name="current_bootstrap" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Bootstrap current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Bootstrap current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -2910,7 +2910,7 @@
 			</xs:element>
 			<xs:element name="current_ohm" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Ohmic current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Ohmic current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -2929,7 +2929,7 @@
 			</xs:element>
 			<xs:element name="v_loop" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows anti-clockwise when viewed from above)</xs:documentation>
+					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>V</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -3127,7 +3127,7 @@
 			</xs:element>
 			<xs:element name="b0" type="summary_dynamic_flt_1d_root">
 				<xs:annotation>
-					<xs:documentation>Vacuum toroidal field at R0. Positive sign means anti-clockwise when viewed from above. The product R0B0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
+					<xs:documentation>Vacuum toroidal field at R0. Positive sign means counter-clockwise when viewed from above. The product R0B0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
 					<xs:appinfo>
 						<units>T</units>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
@@ -3560,7 +3560,7 @@
 			</xs:element>
 			<xs:element name="direction" type="summary_static_int_0d">
 				<xs:annotation>
-					<xs:documentation>Direction of the beam seen from above the torus: -1 = clockwise; 1 = counter clockwise</xs:documentation>
+					<xs:documentation>Direction of the beam seen from above the torus: -1 = clockwise; 1 = counter-clockwise</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="energy" type="summary_dynamic_flt_1d_root">

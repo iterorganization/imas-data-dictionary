@@ -405,7 +405,7 @@
 			</xs:element>
 			<xs:element name="ip" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Plasma current. Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Plasma current. Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -621,7 +621,7 @@
 				</xs:element>
 				<xs:element name="ip" type="magnetics_method_distinct" maxOccurs="5">
 					<xs:annotation>
-						<xs:documentation>Plasma current. Positive sign means anti-clockwise when viewed from above. The array of structure corresponds to a set of calculation methods (starting with the generally recommended method).</xs:documentation>
+						<xs:documentation>Plasma current. Positive sign means counter-clockwise when viewed from above. The array of structure corresponds to a set of calculation methods (starting with the generally recommended method).</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
 							<units>A</units>

@@ -1440,7 +1440,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -2091,7 +2091,7 @@
 			</xs:element>
 			<xs:element name="b0">
 				<xs:annotation>
-					<xs:documentation>Vacuum toroidal field at R0 [T]; Positive sign means anti-clockwise when viewing from above. The product R0B0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
+					<xs:documentation>Vacuum toroidal field at R0 [T]; Positive sign means counter-clockwise when viewed from above. The product R0B0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>T</units>
@@ -2129,7 +2129,7 @@
 			</xs:element>
 			<xs:element name="b0">
 				<xs:annotation>
-					<xs:documentation>Vacuum toroidal field at b0. Positive sign means anti-clockwise when viewing from above. The product r0*b0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
+					<xs:documentation>Vacuum toroidal field at b0. Positive sign means counter-clockwise when viewed from above. The product r0*b0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>T</units>
@@ -2311,7 +2311,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -4925,7 +4925,7 @@
 			</xs:element>
 			<xs:element name="n_phi">
 				<xs:annotation>
-					<xs:documentation>Array of toroidal mode numbers, where quantities vary as exp(i.n_phi.phi) and phi runs anticlockwise when viewed from above</xs:documentation>
+					<xs:documentation>Array of toroidal mode numbers, where quantities vary as exp(i.n_phi.phi) and phi runs counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<type>dynamic</type>
@@ -9180,7 +9180,7 @@
 		<xs:sequence>
 			<xs:element name="ip">
 				<xs:annotation>
-					<xs:documentation>Total plasma current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total plasma current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>A</units>
@@ -9196,7 +9196,7 @@
 			</xs:element>
 			<xs:element name="current_non_inductive">
 				<xs:annotation>
-					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>A</units>
@@ -9212,7 +9212,7 @@
 			</xs:element>
 			<xs:element name="current_bootstrap">
 				<xs:annotation>
-					<xs:documentation>Bootstrap current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Bootstrap current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>A</units>
@@ -9228,7 +9228,7 @@
 			</xs:element>
 			<xs:element name="v_loop">
 				<xs:annotation>
-					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows anti-clockwise when viewed from above)</xs:documentation>
+					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>V</units>
@@ -12888,7 +12888,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -12934,7 +12934,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -12980,7 +12980,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -13051,7 +13051,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 						<units>rad</units>
@@ -13097,7 +13097,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -13144,7 +13144,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -13191,7 +13191,7 @@
 			</xs:element>
 			<xs:element name="phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 					</xs:appinfo>
@@ -13327,7 +13327,7 @@
 			</xs:element>
 			<xs:element name="phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 					</xs:appinfo>
@@ -13394,7 +13394,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle  (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle  (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -13508,7 +13508,7 @@
 			</xs:element>
 			<xs:element name="phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 					</xs:appinfo>
@@ -13547,7 +13547,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -13596,7 +13596,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -14254,7 +14254,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14424,7 +14424,7 @@
 		<xs:sequence>
 			<xs:element name="x1_unit_vector" type="xyz0d_dynamic_aos3">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14563,7 +14563,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14703,7 +14703,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14896,7 +14896,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="x2_unit_vector" type="xyz0d_static">
@@ -15125,7 +15125,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>

@@ -371,7 +371,7 @@
 			</xs:element>
 			<xs:element name="velocity_phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal velocity of the ion (oriented counter-clockwise when seen from above) at the channel measurement point</xs:documentation>
+					<xs:documentation>Toroidal velocity of the ion (oriented counter-clockwise when viewed from above) at the channel measurement point</xs:documentation>
 					<xs:appinfo>
 						<units>m.s^-1</units>
 						<change_nbc_version>3.42.0</change_nbc_version>

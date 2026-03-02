@@ -82,7 +82,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above) of interpolation knots</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above) of interpolation knots</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 						<units>rad</units>

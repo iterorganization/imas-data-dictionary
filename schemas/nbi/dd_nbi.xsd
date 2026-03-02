@@ -253,7 +253,7 @@
 			</xs:element>
 			<xs:element name="direction">
 				<xs:annotation>
-					<xs:documentation>Direction of the beam seen from above the torus: -1 = clockwise; 1 = counter clockwise</xs:documentation>
+					<xs:documentation>Direction of the beam seen from above the torus: -1 = clockwise; 1 = counter-clockwise</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
