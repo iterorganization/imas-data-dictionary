@@ -347,7 +347,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal flux. Positive sign means counter-clockwise when viewed from above</xs:documentation>
+						<xs:documentation>Toroidal flux. Positive when the toroidal magnetic field is counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
