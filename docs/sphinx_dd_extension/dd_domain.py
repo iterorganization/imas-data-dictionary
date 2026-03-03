@@ -76,7 +76,7 @@ def get_summary(content: StringList, n_char=60) -> str:
             text = text[:break_at_space]
             needs_ellipsis = True
     if needs_ellipsis:
-        text = text + " [...] (click to expand)"
+        text = text + " [...]"
     return text
 
 
@@ -445,7 +445,7 @@ class DDNode(nodes.Element):
 
 # Visitors of DDNode for HTML documentation:
 def visit_ddnode(self, node: Element) -> None:
-    self.body.append(self.starttag(node, "details"))
+    self.body.append(self.starttag(node, "details", title="Click to expand"))
 
 
 def depart_ddnode(self, node: Element) -> None:
