@@ -212,7 +212,7 @@
 			</xs:element>
 			<xs:element name="resistive_psi_losses">
 				<xs:annotation>
-					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_tor.j_ohm_tor) dV) / Ip ) dt). Sign convention: the toroidal electric field and ohmic current density are both ip_like, so their product is COCOS-invariant; dividing by Ip (ip_like) gives an overall ip_like transformation</xs:documentation>
+					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_tor.j_ohm_tor) dV) / Ip ) dt). Positive when the plasma current flows counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../time</coordinate1>
 						<type>dynamic</type>
