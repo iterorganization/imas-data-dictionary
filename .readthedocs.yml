@@ -1,0 +1,32 @@
+# ReadTheDocs configuration file
+version: 2
+
+# Build documentation in the requested languages
+language: en
+
+# Python version and build environment
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+  jobs:
+    post_checkout:
+      - git fetch --unshallow || true
+
+# Install dependencies and build the project
+python:
+  install:
+    - requirements: docs/requirements.txt
+    - method: pip
+      path: .
+
+# Sphinx configuration
+sphinx:
+  builder: html
+  configuration: docs/conf.py
+  fail_on_warning: false
+
+jobs:
+  pre_build:
+    - cd docs && python sphinx_dd_extension/dd_changelog_helper.py
+    - python generate_docs.py

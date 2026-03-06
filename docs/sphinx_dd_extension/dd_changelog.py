@@ -29,14 +29,14 @@ except Exception as _:
     is_gitrepo = False
     
 try:
-    from imaspy import IDSFactory
-    from imaspy.dd_zip import dd_xml_versions
-    from imaspy.ids_convert import DDVersionMap
+    from imas import IDSFactory
+    from imas.dd_zip import dd_xml_versions
+    from imas.ids_convert import DDVersionMap
 
-    has_imaspy = True
+    has_imas = True
 except ImportError:
     logger.error("IMASPy is not available, IDS migration guide will not be generated")
-    has_imaspy = False
+    has_imas = False
 
 
 def get_current_ids_names():
@@ -98,7 +98,8 @@ def get_tags():
 
 def get_pull_requests_from_commits(commits, pull_requests):
     commit_shas = [x.hexsha for x in commits]
-    prs = [x for x in pull_requests if x["fromRef"]["latestCommit"] in commit_shas]
+    # GitHub PR format: head.sha contains the commit SHA
+    prs = [x for x in pull_requests if x["head"]["sha"] in commit_shas]
     return prs
 
 
@@ -141,7 +142,8 @@ def replace_ids_names_with_links(ids_list, text):
 def get_pr_link(pr_json) -> str:
     """Extract the link to the Pull Request from its JSON representation"""
     try:
-        return pr_json["links"]["self"][0]["href"]
+        # GitHub PR format: html_url contains the PR URL
+        return pr_json["html_url"]
     except LookupError:
         # This shouldn't happen, but for fail-safe:
         return ""
@@ -174,27 +176,30 @@ def generate_git_changelog(app: Sphinx):
     ]
 
     # Open the pull requests file (generated using dd_changelog_helper.py)
-    if not Path("pull_requests.json").exists():
+    pull_requests_path = Path("..") / "pull_requests.json"
+    if not pull_requests_path.exists():
         dd_changelog_helper = Path(__file__).parent / "dd_changelog_helper.py"
         print(
             "Missing file 'pull_requests.json': you can generate with "
             f"`python {dd_changelog_helper}` Continuing document generation without it.."
         )
     else:
-        with open("pull_requests.json", "r") as f:
+        with open(pull_requests_path, "r") as f:
             pull_requests = json.load(f)
 
         # Create the changelog text
         changelog_text = heading("Changelog", "=")
-
-        previous_version_idx = 1
 
         current_ids_names = get_current_ids_names()
         print(current_ids_names)
 
         last_major_version = -1
 
-        for version, commits in zip(reversed(tags), reversed(commits_between_tags)):
+        # Iterate through versions from newest to oldest
+        # For each version, track the previous (older) version for diff links
+        for version, previous_version, commits in zip(
+            reversed(tags[1:]), reversed(tags[:-1]), reversed(commits_between_tags)
+        ):
             # Generate headings when switching between major versions
             major_version = int(version.name.split(".")[0])
             if major_version != last_major_version:
@@ -210,7 +215,7 @@ def generate_git_changelog(app: Sphinx):
             titles_descriptions_uris = [
                 (
                     x.get("title", ""),
-                    x.get("description", "no description"),
+                    x.get("body", "no description"),
                     get_pr_link(x),
                 )
                 for x in prs
@@ -230,20 +235,15 @@ def generate_git_changelog(app: Sphinx):
                 changelog_text += replace_note(release_notes_text)
                 changelog_text += "\n\n"
 
-            diff_url = None
-
-            if len(tags) > previous_version_idx:
-                previous_version = tags[previous_version_idx]
-
-                diff_url = f"https://git.iter.org/projects/IMAS/repos/data-dictionary/compare/diff?targetBranch={previous_version.tag.tag}&sourceBranch={version.tag.tag}&targetRepoId=114"
-                previous_version_idx += 1
+            # Generate diff URL comparing previous version to current version
+            diff_url = f"https://github.com/iterorganization/IMAS-Data-Dictionary/compare/{previous_version.name}...{version.name}"
 
             if changelog_pr_text != "":
                 changelog_text += heading("Included pull requests", "*")
                 changelog_text += f"`diff <{diff_url}>`__\n\n"
                 changelog_text += changelog_pr_text
                 changelog_text += "\n\n"
-            elif diff_url:
+            else:
                 changelog_text += f"`diff <{diff_url}>`__\n\n"
 
         with open(docfile, "w") as f:
@@ -383,7 +383,7 @@ def generate_dd_changelog(app: Sphinx):
     docfile = Path("generated/changelog/ids.rst")
     docfile.unlink(True)
 
-    if not has_imaspy:
+    if not has_imas:
         docfile.write_text(
             heading("IDS migration guide <MISSING>", "=")
             + "ImportError: Could not import ``imaspy``."
@@ -472,7 +472,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("dd_changelog_generate", True, "env", [bool])
     if is_gitrepo:
         app.connect("builder-inited", generate_git_changelog)
-    if has_imaspy:
+    if has_imas:
         app.connect("builder-inited", generate_dd_changelog)
     return {
         "version": "0.1",

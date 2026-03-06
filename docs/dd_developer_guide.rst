@@ -41,7 +41,7 @@ containing all information about the DD. They are organized in a modular
 way, with one file per IDS.
 
 The repository for the data dictionary is located at
-`<https://git.iter.org/projects/IMAS/repos/data-dictionary/browse>`_
+`<https://github.com/iterorganization/IMAS-Data-Dictionary>`_
 
 The repository contains:
 

@@ -6,3 +6,4 @@ setuptools_scm > 8
 gitpython
 # To generate js query tool
 saxonche
+imas-python
