@@ -1,2 +1,4 @@
-data_dictionary/_version.py export-subst
-* text=auto
+.git_archival.txt export-subst
+*       text=auto
+*.bat   text eol=crlf
+*.jpg   -text

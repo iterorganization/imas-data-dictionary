@@ -1,5 +1,0 @@
-include README.md
-include LICENSE.md
-recursive-exclude * *.py[co]
-include versioneer.py
-include data_dictionary/_version.py

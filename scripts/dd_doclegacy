@@ -1,0 +1,3 @@
+#!/bin/bash
+# Open dd documentation
+idsinfo doc -l

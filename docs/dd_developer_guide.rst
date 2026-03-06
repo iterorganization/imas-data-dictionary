@@ -41,7 +41,7 @@ containing all information about the DD. They are organized in a modular
 way, with one file per IDS.
 
 The repository for the data dictionary is located at
-`<https://git.iter.org/projects/IMAS/repos/data-dictionary/browse>`_
+`<https://github.com/iterorganization/IMAS-Data-Dictionary>`_
 
 The repository contains:
 
@@ -980,7 +980,7 @@ applying the same conversion on the errorbar nodes as on the main node.
 Adding node creation tag in the DD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Following the feature request `<https://jira.iter.org/browse/IMAS-3696>`_, it is
+Following the feature request. it is
 decided to start introducing metadata indicating after which tag a node has been
 created/introduced in the DD. In case of a structure node, this information
 applies by default to all its descendants.

@@ -1,3 +1,2 @@
-
-from . import _version
-__version__ = _version.get_versions()['version']
+from ._version import version as __version__  # noqa: F401
+from ._version import version_tuple  # noqa: F401
