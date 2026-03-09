@@ -73,7 +73,7 @@ def generate_dd_docs(app: Sphinx):
         update_file(docfile, util2rst(node))
 
     # Find all ../*/*_identifier.xml files
-    for identifier in Path.cwd().parent.glob("schemas/*/*_identifier.xml"):
+    for identifier in Path.cwd().parent.glob("*/*_identifier.xml"):
         iden_tree = ElementTree.parse(identifier)
         element = iden_tree.getroot()
         docfile = Path(f"generated/identifier/{identifier.stem}.rst")
