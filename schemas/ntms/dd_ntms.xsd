@@ -578,6 +578,19 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="power_saturation">
+				<xs:annotation>
+					<xs:documentation>Estimation of the EC power needed to stabilize this mode</xs:documentation>
+					<xs:appinfo>
+						<units>W</units>
+						<type>dynamic</type>
+						<introduced_with_version>4.2.0</introduced_with_version>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="detailed_evolution" type="ntm_time_slice_mode_detailed_evolution">
 				<xs:annotation>
 					<xs:documentation>Detailed NTM evolution on a finer timebase than the time_slice array of structure</xs:documentation>
@@ -615,7 +628,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.0.4</lifecycle_version>
-				<lifecycle_last_change>3.0.4</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexType>
