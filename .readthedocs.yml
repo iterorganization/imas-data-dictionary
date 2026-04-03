@@ -1,9 +1,6 @@
 # ReadTheDocs configuration file
 version: 2
 
-# Build documentation in the requested languages
-language: en
-
 # Python version and build environment
 build:
   os: ubuntu-22.04
