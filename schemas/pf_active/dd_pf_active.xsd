@@ -257,7 +257,7 @@
 			</xs:element>
 			<xs:element name="current" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Current in the circuit between the sides of the group of supplies (only for circuits with a single supply or in which supplies are grouped). Positive sign means counter-clockwise when viewed from above</xs:documentation>
+					<xs:documentation>Current in the circuit between the sides of the group of supplies (only for circuits with a single supply or in which supplies are grouped). Positive sign means current flows from first connection to second connection.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -405,7 +405,7 @@
 			</xs:element>
 			<xs:element name="current" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Current fed in the coil (for 1 turn, to be multiplied by the number of turns to obtain the generated magnetic field), positive when the current is counter-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Current fed into the coil (for 1 turn, to be multiplied by the number of turns to obtain the generated magnetic field).  Positive when the current flows counter-clockwise in the coil when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
