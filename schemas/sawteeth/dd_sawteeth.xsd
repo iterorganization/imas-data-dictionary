@@ -363,7 +363,7 @@
 			</xs:element>
 			<xs:element name="psi_star_pre_crash">
 				<xs:annotation>
-						<xs:documentation>Helical magnetic flux for the m=1, n=1 mode (psi* = psi - phi), just before the sawtooth crash. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
+						<xs:documentation>Helical magnetic flux for the m=1, n=1 mode (psi* = psi - phi), just before the sawtooth crash. For a positive helicity (safety factor profile) it decreases from the magnetic axis to the boundary.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
