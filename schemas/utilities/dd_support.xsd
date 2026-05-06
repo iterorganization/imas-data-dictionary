@@ -14118,14 +14118,17 @@
 
 	<xs:complexType name="xyz0d_dynamic_aos3_dimensionless">
 		<xs:annotation>
-			<xs:documentation>Structure for list of X, Y, Z components (0D, dynamic, within array of structures level 3, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, dynamic within an AoS3, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+			<xs:appinfo>
+				<aos3Parent>yes</aos3Parent>
+			</xs:appinfo>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="x">
 				<xs:annotation>
 					<xs:documentation>Component along X axis</xs:documentation>
 					<xs:appinfo>
-						<type>dynamic_aos3</type>
+						<type>dynamic</type>
 						<units>1</units>
 					</xs:appinfo>
 				</xs:annotation>
@@ -14137,7 +14140,7 @@
 				<xs:annotation>
 					<xs:documentation>Component along Y axis</xs:documentation>
 					<xs:appinfo>
-						<type>dynamic_aos3</type>
+						<type>dynamic</type>
 						<units>1</units>
 					</xs:appinfo>
 				</xs:annotation>
@@ -14149,7 +14152,7 @@
 				<xs:annotation>
 					<xs:documentation>Component along Z axis</xs:documentation>
 					<xs:appinfo>
-						<type>dynamic_aos3</type>
+						<type>dynamic</type>
 						<units>1</units>
 					</xs:appinfo>
 				</xs:annotation>
