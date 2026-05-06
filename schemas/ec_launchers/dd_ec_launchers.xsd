@@ -273,7 +273,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="direction" type="xyz0d_static">
+			<xs:element name="direction" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Unit vector indicating the direction of the translation or the rotation axis at "home" position (i.e. ../../geometry/centre)</xs:documentation>
 					<xs:appinfo>

@@ -348,7 +348,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="direction" type="xyz0d_static">
+			<xs:element name="direction" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Line of sight direction unit vector</xs:documentation>
 					<xs:appinfo>
@@ -356,7 +356,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="up" type="xyz0d_static">
+			<xs:element name="up" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Detector orientation unit vector</xs:documentation>
 					<xs:appinfo>

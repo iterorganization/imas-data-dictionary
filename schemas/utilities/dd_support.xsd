@@ -14072,6 +14072,137 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="xyz0d_static_dimensionless">
+		<xs:annotation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, static, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="x">
+				<xs:annotation>
+					<xs:documentation>Component along X axis</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="y">
+				<xs:annotation>
+					<xs:documentation>Component along Y axis</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="z">
+				<xs:annotation>
+					<xs:documentation>Component along Z axis</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="xyz0d_dynamic_aos3_dimensionless">
+		<xs:annotation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, dynamic, within array of structures level 3, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="x">
+				<xs:annotation>
+					<xs:documentation>Component along X axis</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic_aos3</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="y">
+				<xs:annotation>
+					<xs:documentation>Component along Y axis</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic_aos3</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="z">
+				<xs:annotation>
+					<xs:documentation>Component along Z axis</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic_aos3</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="xyz0d_constant_dimensionless">
+		<xs:annotation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, constant, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="x">
+				<xs:annotation>
+					<xs:documentation>Component along X axis</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="y">
+				<xs:annotation>
+					<xs:documentation>Component along Y axis</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="z">
+				<xs:annotation>
+					<xs:documentation>Component along Z axis</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="xyz1d_positions_static">
 		<xs:annotation>
 			<xs:documentation>Structure for list of X, Y, Z positions (1D, static)</xs:documentation>
@@ -14294,7 +14425,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14302,7 +14433,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14310,7 +14441,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the filter surface and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14464,7 +14595,7 @@
 			<xs:documentation>Dynamic description of X1, X2, X3 vectors for a planar object within an AoS type 3</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="x1_unit_vector" type="xyz0d_dynamic_aos3">
+			<xs:element name="x1_unit_vector" type="xyz0d_dynamic_aos3_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14472,7 +14603,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_dynamic_aos3">
+			<xs:element name="x2_unit_vector" type="xyz0d_dynamic_aos3_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14480,7 +14611,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_dynamic_aos3">
+			<xs:element name="x3_unit_vector" type="xyz0d_dynamic_aos3_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the detector/aperture plane and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14603,7 +14734,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14611,7 +14742,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14619,7 +14750,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the detector/aperture plane and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14743,7 +14874,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14751,7 +14882,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14759,7 +14890,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the object surface and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14936,17 +15067,17 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the polarizer plane and oriented towards the plasma.</xs:documentation>
 				</xs:annotation>
@@ -15165,7 +15296,7 @@
 					<xs:documentation>Position of the camera centre</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -15173,7 +15304,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -15181,7 +15312,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the camera plane and oriented towards the plasma.</xs:documentation>
 				</xs:annotation>
