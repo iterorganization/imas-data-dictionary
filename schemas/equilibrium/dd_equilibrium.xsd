@@ -62,9 +62,21 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="region" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Region indices this critical point belongs to or borders. For O-points, this is a single-element array containing the region index. For X-points separating two regions (e.g., the shared X-point in a connected doublet), this contains both adjacent region indices, ordered ascending. For single-region plasmas, all nodes have region=[0]. Critical points outside all confined plasma regions (vacuum field nulls) should have region set to [-1]. The primary plasma region has index 0. When an X-point separates two regions, the smaller index should be that of the O-point with the smaller node array index among the two adjacent regions. In practical cases this array has length at most 2.</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<coordinate1>1...N</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="INT_1D"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="levelset" type="rz1d_dynamic_aos">
 				<xs:annotation>
-					<xs:documentation>Single poloidal flux contour including critical point (x-point only)</xs:documentation>
+					<xs:documentation>Poloidal flux contour segments at the critical point's psi value that are topologically connected to the critical point. Each element of the array of structures stores one distinct contour segment. Only segments whose contour passes through or originates at the critical point are included; disconnected contours that happen to share the same psi value but are spatially remote from the critical point must be excluded. For O-points (flux extrema), no contour passes through the extremum and this field must be empty. For X-points, the segments are ordered as follows: segment 0 is the last closed flux surface (LCFS), the closed contour bounding the confined plasma that passes through the X-point; segments 1..N are divertor or scrape-off layer leg contours, ordered counterclockwise by their departure angle from the X-point measured from theta=0 at the outboard midplane (R_max at the X-point's Z), increasing counterclockwise when viewed in the standard (R,Z) poloidal plane orientation. A standard single-null divertor (SND) X-point has 2 segments: the LCFS and the divertor legs. A double-null divertor (DND) has 2 segments per X-point; the primary X-point (lower psi, closer to the magnetic axis) is always stored at a lower node index than the secondary X-point, so their levelsets are unambiguously associated. An exact double-null with identical psi at both X-points is a measure-zero configuration; in practice the two psi values are always distinct. An exact snowflake configuration, where two X-points merge into a single higher-order null with 6 separatrix branches, produces 3 segments: the LCFS and 2 distinct divertor channel contours.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -77,9 +89,20 @@
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="n_plasma_regions" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Number of distinct confined plasma regions in the equilibrium. For standard single-region tokamak configurations (limiter, SND, DND), n_plasma_regions=1. For doublet configurations (e.g. TCV doublet), n_plasma_regions equals the number of separate confined plasma domains, each containing at least one O-point. This value is consistent with the region indices assigned to the contour tree nodes.</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="INT_0D"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="node" type="equilibrium_contour_tree_node" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Set of nodes. A contour tree node is defined by its critical type and position within the poloidal plane. A critical type of 1 references an x-point whilst a critical type of 0 or 2 references an o-point. Both X-points and O-points are rarely coincident with nodes defining the poloidal upon which the poloidal flux map is defined. The order in which the critical points are stored in the nodes array of structure is only important for the primary plasma O-point and X-points. If present, the primary plasma O-point should be placed as the first element of the nodes array of structure. If present, the primary plasma X-point should be the second element in the nodes structure</xs:documentation>
+					<xs:documentation>Set of nodes. A contour tree node is defined by its critical type and position within the poloidal plane. A critical type of 1 references an x-point whilst a critical type of 0 or 2 references an o-point. Both X-points and O-points are rarely coincident with nodes defining the poloidal plane upon which the poloidal flux map is defined. Node 0 must contain the primary O-point (magnetic axis), which has the minimum psi value. Node 1 must contain the primary X-point, defined as the X-point with the lowest psi value (closest to the magnetic axis in psi). For double-null divertor (DND) configurations, the secondary X-point has a higher psi value and must be stored at a higher node index than the primary; the two psi values are always distinct in practice. For limiter-bounded plasmas where no X-point defines the LCFS, node 1 should contain the X-point nearest to the plasma boundary in psi, if any X-point exists. If no X-points exist, nodes are ordered by ascending absolute psi distance from the primary O-point starting from node 1. Nodes 2 and above must contain additional critical points ordered by ascending psi value, i.e. from core outward. For doublet or multi-region plasmas, each distinct confined plasma region has its own O-point; the O-point with the lowest psi value is primary.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
@@ -87,7 +110,7 @@
 			</xs:element>
 			<xs:element name="edges">
 				<xs:annotation>
-					<xs:documentation>Edges connect nodes to one another. A single node may connect to multiple edges such as the case where a single maximum (a hill) may topologically link to multiple minima (the floors of different valleys). For each edge (1st dimension), the index of the two connected nodes are listed (index referring to the ../node array)</xs:documentation>
+					<xs:documentation>Edges encode the Reeb graph / contour tree of the poloidal flux function by connecting topologically adjacent critical points. For each edge (1st dimension), the indices of the two connected nodes are listed (indices referring to the ../node array). An edge (i,j) indicates that sweeping psi continuously from node i to node j encounters no other critical point. For simply-connected 2D domains the graph is a tree with n_edges = n_nodes - 1. For doublet or multi-island configurations, the graph may be a forest with disconnected tree components. By convention, each edge pair should be stored with the lower node index first (edges[i,0] &lt; edges[i,1]).</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
