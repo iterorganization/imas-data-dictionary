@@ -12,7 +12,9 @@ jobs:
   build:
     name: Generate diff
     runs-on: ubuntu-24.04
-    environment: azure
+    environment:
+      name: azure
+      deployment: false
     steps:
     - uses: actions/checkout@v4
       with:
