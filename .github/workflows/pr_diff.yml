@@ -12,9 +12,6 @@ jobs:
   build:
     name: Generate diff
     runs-on: ubuntu-24.04
-    environment:
-      name: azure
-      deployment: false
     steps:
     - uses: actions/checkout@v4
       with:
@@ -73,19 +70,3 @@ jobs:
         name: html-diff
         path: build/index.html
         retention-days: 5
-    # Only run on the main repository where the azure environment secrets are available
-    - name: Upload to Azure
-      if: github.repository == 'iterorganization/IMAS-Data-Dictionary'
-      uses: azure/cli@v2
-      env:
-        AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
-        AZURE_STORAGE_KEY: ${{ secrets.ACCOUNT_KEY }}
-      with:
-        inlineScript: |
-          az storage blob upload \
-            --file "build/index.html" \
-            --container-name '$web' \
-            --name "pr-${{ github.event.pull_request.number }}/index.html" \
-            --content-type "text/html" \
-            --auth-mode key
-

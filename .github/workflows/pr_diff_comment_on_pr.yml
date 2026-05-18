@@ -8,12 +8,23 @@ on:
 permissions:
   pull-requests: write  # Required to comment on PRs
   issues: write         # Required for PR comments via issues API
+  actions: read
 
 jobs:
   comment:
+    environment:
+      name: azure
+      deployment: false
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: html-diff
+        path: html-diff
+        run_id: ${{ github.event.workflow_run.id }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
     - name: 'Get PR number'
       id: pr-context
       env:
@@ -28,6 +39,19 @@ jobs:
           }}
       # Query the PR number by repo + branch, then assign to step output:
       run: gh pr view --repo "${PR_TARGET_REPO}" "${PR_BRANCH}" --json 'number' --jq '"number=\(.number)"' >> "${GITHUB_OUTPUT}"
+    - name: Upload to Azure
+      uses: azure/cli@v2
+      env:
+        AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
+        AZURE_STORAGE_KEY: ${{ secrets.ACCOUNT_KEY }}
+      with:
+        inlineScript: |
+          az storage blob upload \
+            --file "html-diff/index.html" \
+            --container-name '$web' \
+            --name "pr-${{ steps.pr-context.outputs.number }}/index.html" \
+            --content-type "text/html" \
+            --auth-mode key
     - name: Comment on PR
       uses: actions/github-script@v7
       with:
