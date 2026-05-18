@@ -32,7 +32,7 @@ jobs:
         mv dd_data_dictionary.xml build/base.xml
     - name: Make (merged branch)
       run: |
-        git checkout ${{ github.head_ref }}
+        git checkout refs/remotes/pull/${{ github.event.pull_request.number }}/merge
         export CLASSPATH=/usr/share/java/Saxon-HE.jar
         make dd_data_dictionary.xml
         mv dd_data_dictionary.xml build/merged.xml
