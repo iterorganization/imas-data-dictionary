@@ -376,9 +376,17 @@
         window.addEventListener('load', function () {
             document.addEventListener('toggle', (event) => {
                 if (event.target.tagName !== 'DETAILS') return;
+
+                // Skip events if triggered by collapse/expand all
+                if (event.target._isBulkChange) {
+                    event.target._isBulkChange = false; 
+                    return;
+                }
+
                 const targetId = event.target.getAttribute('data-id');
                 const isOpen = event.target.open;
                 const counterpart = findCounterpart(event.target, targetId);
+
                 if (counterpart && counterpart.open !== isOpen) {
                     counterpart.open = isOpen;
                 }
@@ -387,18 +395,23 @@
             document.getElementById('collapse-all').addEventListener('click', function() {
                 const allDetails = document.querySelectorAll('details');
                 allDetails.forEach(detail => {
-                    detail.open = false;
-                });
-                const firstLevelDetails = document.querySelectorAll('.tree-container > details');
-                firstLevelDetails.forEach(detail => {
-                    detail.open = true;
+                    const isFirstLevel = detail.parentElement.classList.contains('tree-container');
+                    const shouldBeOpen = isFirstLevel;
+
+                    if (detail.open !== shouldBeOpen) {
+                        detail._isBulkChange = true;
+                        detail.open = shouldBeOpen;
+                    }
                 });
             });
 
             document.getElementById('expand-all').addEventListener('click', function() {
                 const allDetails = document.querySelectorAll('details');
                 allDetails.forEach(detail => {
-                    detail.open = true;
+                    if (detail.open !== true) {
+                        detail._isBulkChange = true;
+                        detail.open = true;
+                    }
                 });
             });
         });
