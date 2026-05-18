@@ -77,6 +77,9 @@ jobs:
     - name: Upload to Azure
       if: github.repository == 'iterorganization/IMAS-Data-Dictionary'
       uses: azure/cli@v2
+      env:
+        AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
+        AZURE_STORAGE_KEY: ${{ secrets.ACCOUNT_KEY }}
       with:
         inlineScript: |
           az storage blob upload \
@@ -84,6 +87,5 @@ jobs:
             --container-name '$web' \
             --name "pr-${{ github.event.pull_request.number }}/index.html" \
             --content-type "text/html" \
-            --account-name "${{ secrets.ACCOUNT_NAME }}" \
-            --account-key "${{ secrets.ACCOUNT_KEY }}" \
             --auth-mode key
+
