@@ -18,28 +18,65 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v4
+    - name: 'Download html-diff and Fetch PR Number'
+      id: pr_info
+      uses: actions/github-script@v8
       with:
-        name: html-diff
-        path: html-diff
-        run_id: ${{ github.event.workflow_run.id }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: 'Get PR number'
-      id: pr-context
-      env:
-        # The GH CLI uses this ENV for providing an auth token:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PR_TARGET_REPO: ${{ github.repository }}
-        PR_BRANCH: |-
-          ${{
-            (github.event.workflow_run.head_repository.owner.login != github.event.workflow_run.repository.owner.login)
-              && format('{0}:{1}', github.event.workflow_run.head_repository.owner.login, github.event.workflow_run.head_branch)
-              || github.event.workflow_run.head_branch
-          }}
-      # Query the PR number by repo + branch, then assign to step output:
-      run: gh pr view --repo "${PR_TARGET_REPO}" "${PR_BRANCH}" --json 'number' --jq '"number=\(.number)"' >> "${GITHUB_OUTPUT}"
+        script: |
+          const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            commit_sha: context.payload.workflow_run.head_sha,
+          });
+          
+          if (!prs.data || prs.data.length === 0) {
+            throw new Error("No open or closed pull request found associated with this commit SHA.");
+          }
+          
+          const issue_number = prs.data[0].number;
+          console.log(`Successfully resolved PR number: ${issue_number}`);
+          
+          core.setOutput('pr_number', issue_number);
+
+          let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.payload.workflow_run.id,
+          });
+          
+          let matchArtifact = allArtifacts.data.artifacts.find(
+            (artifact) => artifact.name === "html-diff"
+          );
+          
+          if (!matchArtifact) {
+            core.setOutput('artifact_found', 'false');
+            console.log("Artifact 'html-diff' could not be found. Exiting.");
+            return;
+          }
+          
+          core.setOutput('artifact_found', 'true');
+          
+          let download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: matchArtifact.id,
+              archive_format: 'zip',
+          });
+          
+          const fs = require('fs');
+          const path = require('path');
+          const temp = '${{ runner.temp }}/artifacts';
+          if (!fs.existsSync(temp)){
+            fs.mkdirSync(temp);
+          }
+          fs.writeFileSync(path.join(temp, 'html-diff.zip'), Buffer.from(download.data));
+
+    - name: 'Unzip artifact'
+      if: ${{ steps.pr_info.outputs.artifact_found == 'true' }}
+      run: unzip "${{ runner.temp }}/artifacts/html-diff.zip" -d "html-diff"
     - name: Upload to Azure
+      if: ${{ steps.pr_info.outputs.artifact_found == 'true' }}
       uses: azure/cli@v2
       env:
         AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
@@ -49,24 +86,47 @@ jobs:
           az storage blob upload \
             --file "html-diff/index.html" \
             --container-name '$web' \
-            --name "pr-${{ steps.pr-context.outputs.number }}/index.html" \
+            --name "pr-${{ steps.pr_info.outputs.pr_number }}/index.html" \
             --content-type "text/html" \
             --auth-mode key
-    - name: Comment on PR
-      uses: actions/github-script@v7
+    - name: 'Update PR Description with Diff Link'
+      if: ${{ steps.pr_info.outputs.artifact_found == 'true' }}
+      uses: actions/github-script@v8
+      env:
+        PR_NUMBER: ${{ steps.pr_info.outputs.pr_number }}
+        ACCOUNT_NAME: ${{ secrets.ACCOUNT_NAME }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const jobs = await github.rest.actions.listJobsForWorkflowRunAttempt({
+          const pull_number = Number(process.env.PR_NUMBER);
+          const accountName = process.env.ACCOUNT_NAME;
+          const previewUrl = `https://scdimasdictionnarysa.z6.web.core.windows.net/pr-${pull_number}/index.html`;
+
+          const pr = await github.rest.pulls.get({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            run_id: context.payload.workflow_run.id,
-            attempt_number: context.payload.workflow_run.run_attempt
-          })
-          let job = jobs.data.jobs[jobs.data.jobs.length - 1]
-          github.rest.issues.createComment({
-            issue_number: ${{ steps.pr-context.outputs.number }},
+            pull_number: pull_number,
+          });
+
+          let body = pr.data.body || '';
+
+          const startMarker = '<!-- xml-diff imas-data-dictionary start -->';
+          const endMarker = '<!-- xml-diff imas-data-dictionary end -->';
+          const contentBlock = `${startMarker}\n----\n📚 XML Diff 📚: ${previewUrl}\n\n${endMarker}`;
+
+          const regex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`);
+          
+          if (regex.test(body)) {
+            body = body.replace(regex, contentBlock);
+            console.log("Existing XML Diff block found and updated.");
+          } else {
+            body = body ? `${body}\n\n${contentBlock}` : contentBlock;
+            console.log("XML Diff block added to the end of the PR description.");
+          }
+
+          await github.rest.pulls.update({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `[Diff of generated Data Dictionary XML file](${{ github.server_url }}/${{ github.repository }}/actions/runs/${context.payload.workflow_run.id}/attempts/${context.payload.workflow_run.run_attempt}#summary-${job.id})`
-          })
+            pull_number: pull_number,
+            body: body,
+          });
