@@ -84,6 +84,50 @@ jobs:
             --name "pr-${{ steps.pr_info.outputs.pr_number }}/index.html" \
             --content-type "text/html" \
             --auth-mode key
+    - name: Check and wait for readthedocs (Max 10s)
+        id: check-workflows
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const sha = context.payload.workflow_run.head_sha;
+            console.log(`Checking workflow runs for SHA: ${sha}`);
+            
+            const maxWaitMs = 10000; // 10 seconds
+            const intervalMs = 2000; // 2 seconds between checks
+            let elapsedMs = 0;
+            
+            // Helper function to pause execution
+            const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+            
+            while (elapsedMs <= maxWaitMs) {
+              console.log(`\nFetching API... (Elapsed: ${elapsedMs/1000}s)`);
+              
+              const { data } = await github.rest.actions.listWorkflowRunsForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                head_sha: sha,
+              });
+              
+              const runs = data.workflow_runs;
+              const wf = runs.find(r => r.name === 'readthedocs/actions');
+              
+              if (wf) {
+                if (wf.status === 'completed') {
+                  break;
+                }
+              }
+              
+              // If we haven't reached the max wait time, sleep and try again
+              if (elapsedMs < maxWaitMs) {
+                console.log(`Waiting ${intervalMs/1000} seconds...`);
+                await sleep(intervalMs);
+              }
+              
+              elapsedMs += intervalMs;
+            }
+            
+            throw new Error("Timed out waiting for readthedocs/actions to complete.");
     - name: 'Update PR Description with Diff Link'
       uses: actions/github-script@v8
       env:
