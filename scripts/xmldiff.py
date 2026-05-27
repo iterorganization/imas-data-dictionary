@@ -221,9 +221,14 @@ class XMLDiffer:
                 print(f"Root tag mismatch: {root1.tag} vs {root2.tag}")
                 return None
 
-            return self._compare_elements(
+            diff = self._compare_elements(
                 root1, root2, path=root1.tag, identifier=root1.tag
             )
+            if diff is None:
+                # Return an empty diff
+                return ElementDiff(path = root1.tag, tag = root1.tag, identifier=root1.tag, state="none")
+            else:
+                return diff
 
         except Exception as e:
             print(f"Error diffing files: {e}")

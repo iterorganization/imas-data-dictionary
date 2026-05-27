@@ -50,12 +50,9 @@ jobs:
           );
           
           if (!matchArtifact) {
-            core.setOutput('artifact_found', 'false');
-            console.log("Artifact 'html-diff' could not be found. Exiting.");
-            return;
+            throw new Error("No artifact found.");
           }
           
-          core.setOutput('artifact_found', 'true');
           
           let download = await github.rest.actions.downloadArtifact({
               owner: context.repo.owner,
@@ -73,10 +70,8 @@ jobs:
           fs.writeFileSync(path.join(temp, 'html-diff.zip'), Buffer.from(download.data));
 
     - name: 'Unzip artifact'
-      if: ${{ steps.pr_info.outputs.artifact_found == 'true' }}
       run: unzip "${{ runner.temp }}/artifacts/html-diff.zip" -d "html-diff"
     - name: Upload to Azure
-      if: ${{ steps.pr_info.outputs.artifact_found == 'true' }}
       uses: azure/cli@v2
       env:
         AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
@@ -90,17 +85,15 @@ jobs:
             --content-type "text/html" \
             --auth-mode key
     - name: 'Update PR Description with Diff Link'
-      if: ${{ steps.pr_info.outputs.artifact_found == 'true' }}
       uses: actions/github-script@v8
       env:
         PR_NUMBER: ${{ steps.pr_info.outputs.pr_number }}
-        ACCOUNT_NAME: ${{ secrets.ACCOUNT_NAME }}
+        PREVIEW_URL: ${{secrets.PREVIEW_URL}}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const pull_number = Number(process.env.PR_NUMBER);
-          const accountName = process.env.ACCOUNT_NAME;
-          const previewUrl = `https://scdimasdictionnarysa.z6.web.core.windows.net/pr-${pull_number}/index.html`;
+          const previewUrl = process.env.PREVIEW_URL
 
           const pr = await github.rest.pulls.get({
             owner: context.repo.owner,

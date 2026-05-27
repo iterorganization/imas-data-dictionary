@@ -12,8 +12,8 @@ class HTMLDiffGenerator:
         root_diff = differ.diff_files(base_file, current_file)
 
         if not root_diff:
-            print("No differences found or error occurred.")
-            return
+            print("Error generating diff.")
+            sys.exit(1)
 
         # Setup Jinja2 environment
         # We assume the template is in the same directory as this script or the current working directory
@@ -26,9 +26,9 @@ class HTMLDiffGenerator:
         )
 
         try:
-            template = env.get_template("diff_template.html")
+            template = env.get_template("diff_template.html.jinja")
         except Exception as e:
-            print(f"Error loading template 'diff_template.html': {e}")
+            print(f"Error loading template 'diff_template.html.jinja': {e}")
             sys.exit(1)
 
         print("Rendering HTML...")
