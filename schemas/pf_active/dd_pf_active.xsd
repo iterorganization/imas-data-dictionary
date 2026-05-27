@@ -257,7 +257,7 @@
 			</xs:element>
 			<xs:element name="current" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Current in the circuit between the sides of the group of supplies (only for circuits with a single supply or in which supplies are grouped)</xs:documentation>
+					<xs:documentation>Current in the circuit between the sides of the group of supplies (only for circuits with a single supply or in which supplies are grouped). Positive sign means current flows from first connection to second connection.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -308,7 +308,7 @@
 			</xs:element>
 			<xs:element name="resistance">
 				<xs:annotation>
-					<xs:documentation>Coil resistance</xs:documentation>
+					<xs:documentation>Coil resistance at the temperature_reference indicated at the top of the IDS</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>ohm</units>
@@ -320,12 +320,34 @@
 			</xs:element>
 			<xs:element name="resistance_additional" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Additional resistance due to e.g. dynamically switchable resistors. The coil effective resistance is obtained by adding this dynamic quantity to the static resistance of the coil. </xs:documentation>
+					<xs:documentation>Additional resistance due to e.g. dynamically switchable resistors or variations of coil temperature. The coil effective resistance is obtained by adding this dynamic quantity to the static resistance of the coil. </xs:documentation>
 					<xs:appinfo>
 						<units>ohm</units>
 						<introduced_after_version>3.36.0</introduced_after_version>
 					</xs:appinfo>
 				</xs:annotation>
+			</xs:element>
+			<xs:element name="temperature_timed" type="signal_flt_1d">
+				<xs:annotation>
+					<xs:documentation>Dynamic temperature of the coil</xs:documentation>
+					<xs:appinfo>
+						<units>K</units>
+						<introduced_with_version>4.2.0</introduced_with_version>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="inductance">
+				<xs:annotation>
+					<xs:documentation>Coil self-inductance</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>H</units>
+						<introduced_after_version>4.1.1</introduced_after_version>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
 			</xs:element>
 			<xs:element name="energy_limit_max">
 				<xs:annotation>
@@ -353,6 +375,20 @@
 					<xs:group ref="FLT_2D"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="resistance_tabulated">
+				<xs:annotation>
+					<xs:documentation>Tabulated coil resistance as a function of the coil temperature</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>ohm</units>
+						<introduced_with_version>4.2.0</introduced_with_version>
+						<coordinate1>../temperature</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_1D"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="b_field_max">
 				<xs:annotation>
 					<xs:documentation>List of values of the maximum magnetic field on the conductor surface (coordinate for current_limit_max)</xs:documentation>
@@ -368,7 +404,7 @@
 			</xs:element>
 			<xs:element name="temperature">
 				<xs:annotation>
-					<xs:documentation>List of values of the conductor temperature (coordinate for current_limit_max)</xs:documentation>
+					<xs:documentation>List of values of the conductor temperature (coordinate for current_limit_max and resistance_tabulated)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>K</units>
@@ -405,7 +441,7 @@
 			</xs:element>
 			<xs:element name="current" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Current fed in the coil (for 1 turn, to be multiplied by the number of turns to obtain the generated magnetic field), positive when the current is counter-clockwise when seen from above.</xs:documentation>
+					<xs:documentation>Current fed into the coil (for 1 turn, to be multiplied by the number of turns to obtain the generated magnetic field).  Positive when the current flows counter-clockwise in the coil when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
@@ -521,13 +557,21 @@
 			<xs:appinfo>
 				<lifecycle_status>active</lifecycle_status>
 				<lifecycle_version>4.0.0</lifecycle_version>
-				<lifecycle_last_change>4.1.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 			<xs:appinfo/>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ids_properties"/>
+				<xs:element name="temperature_reference" type="temperature_reference">
+					<xs:annotation>
+						<xs:documentation>Reference temperature for which the machine description data is given in this IDS</xs:documentation>
+						<xs:appinfo>
+							<introduced_with_version>4.2.0</introduced_with_version>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="coil" type="pf_coils" maxOccurs="32">
 					<xs:annotation>
 						<xs:documentation>Active PF coils</xs:documentation>

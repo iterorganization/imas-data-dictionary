@@ -769,6 +769,9 @@ It must have the following structure:
 The "name" and "description" attributes correspond to the "name" and "description" nodes in the DD identifier structure.
 The "index" is given by the int value.
 
+The "name" must use lower case, except for chemical elements which start with upper case (e.g. "3He" for the Helium 3 isotope) 
+and acronyms which must use upper case (e.g. "EC", "IC", "NBI" for the most common heating schemes).
+
 If the value of the identifier determines the units of other nodes in the IDS, this is documented by adding a <units_paths> tag below the <ddInstance> tag. The path of the related node is indicated relatively to the identifier node. If more than one node has its units determined by the value of the identifier, paths are separated by a comma. Example : <units_paths>../grid/dim1,../grid/dim2</units_paths>. Then, a "units" attribute is added for each possible identifier value, containing the actual units for this identifier value (separated by a comma in case of multiple nodes) e.g. : 
 
 .. code-block:: xml

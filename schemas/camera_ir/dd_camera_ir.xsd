@@ -142,9 +142,9 @@
 					<xs:appinfo>
 						<type>static</type>
 						<coordinate1>1...N</coordinate1>
-						<coordinate1_same_as>../../frame(1)/apparent_temperature</coordinate1_same_as>
+						<coordinate1_same_as>../../frame(:)/apparent_temperature</coordinate1_same_as>
 						<coordinate2>1...N</coordinate2>
-						<coordinate2_same_as>../../frame(1)/apparent_temperature</coordinate2_same_as>
+						<coordinate2_same_as>../../frame(:)/apparent_temperature</coordinate2_same_as>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -157,9 +157,9 @@
 					<xs:appinfo>
 						<type>static</type>
 						<coordinate1>1...N</coordinate1>
-						<coordinate1_same_as>../../frame(1)/apparent_temperature</coordinate1_same_as>
+						<coordinate1_same_as>../../frame(:)/apparent_temperature</coordinate1_same_as>
 						<coordinate2>1...N</coordinate2>
-						<coordinate2_same_as>../../frame(1)/apparent_temperature</coordinate2_same_as>
+						<coordinate2_same_as>../../frame(:)/apparent_temperature</coordinate2_same_as>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -172,9 +172,9 @@
 					<xs:appinfo>
 						<type>static</type>
 						<coordinate1>1...N</coordinate1>
-						<coordinate1_same_as>../../frame(1)/apparent_temperature</coordinate1_same_as>
+						<coordinate1_same_as>../../frame(:)/apparent_temperature</coordinate1_same_as>
 						<coordinate2>1...N</coordinate2>
-						<coordinate2_same_as>../../frame(1)/apparent_temperature</coordinate2_same_as>
+						<coordinate2_same_as>../../frame(:)/apparent_temperature</coordinate2_same_as>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -257,7 +257,7 @@
 		<xs:sequence>
 			<xs:element name="apparent_temperature">
 				<xs:annotation>
-					<xs:documentation>Processed image in apparent temperature. First dimension : row index (horizontal orientation). Second dimension: column index (vertical orientation). The size of this matrix is assumed to be constant over time</xs:documentation>
+					<xs:documentation>Processed image in apparent temperature. First dimension : row index (horizontal orientation). Second dimension: column index (vertical orientation). The size of this matrix is assumed to be constant over time (i.e. same size for all frame indices)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>

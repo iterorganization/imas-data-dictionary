@@ -10,7 +10,7 @@
 			<xs:appinfo>
 				<lifecycle_status>active</lifecycle_status>
 				<lifecycle_version>3.22.0</lifecycle_version>
-				<lifecycle_last_change>3.42.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 				<specific_validation_rules>yes</specific_validation_rules>
 			</xs:appinfo>
 		</xs:annotation>

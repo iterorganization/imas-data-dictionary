@@ -1488,7 +1488,7 @@
 			</xs:element>
 			<xs:element name="current" type="pulse_schedule_reference_pf_active">
 				<xs:annotation>
-					<xs:documentation>Current fed in the coil (for 1 turn, to be multiplied by the number of turns to obtain the generated magnetic field), positive when flowing from side 1 to side 2 of the coil (inside the coil), this numbering being made consistently with the convention that the current is counter-clockwise when seen from above.</xs:documentation>
+					<xs:documentation>Reference waveform of current to be fed into the coil (for 1 turn, to be multiplied by the number of turns to obtain the generated magnetic field).  Positive when the current flows counter-clockwise in the coil when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
 						<change_nbc_version>3.37.1</change_nbc_version>
@@ -1797,7 +1797,7 @@
 		<xs:sequence>
 			<xs:element name="b_field_tor_vacuum_r" type="pulse_schedule_reference_no_aos">
 				<xs:annotation>
-					<xs:documentation>Vacuum field times major radius in the toroidal field magnet. Positive sign means anti-clockwise when viewed from above</xs:documentation>
+					<xs:documentation>Vacuum magnetic field times major radius within the cage of toroidal field coils. Positive sign means magnetic field is orientated counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>T.m</units>
 					</xs:appinfo>

@@ -670,6 +670,48 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="int_1d_time_1">
+		<xs:annotation>
+			<xs:documentation>Similar to a signal (INT_1D) but with timebase one level above, includes a type change information because of a historical correction specific to the ECE IDS</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="data">
+				<xs:annotation>
+					<xs:documentation>Data</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<coordinate1>../../time</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="INT_1D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="validity_timed">
+				<xs:annotation>
+					<xs:documentation>Indicator of the validity of the data for each time slice. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; -1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<coordinate1>../../time</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="INT_1D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="validity">
+				<xs:annotation>
+					<xs:documentation>Indicator of the validity of the data for the whole acquisition period. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; -1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="INT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="signal_int_2d">
 		<xs:annotation>
 			<xs:documentation>Signal (INT_2D) with its time base</xs:documentation>
@@ -752,7 +794,7 @@
 			</xs:element>
 			<xs:element name="validity_timed">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the data for each time slice. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; - 1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
+					<xs:documentation>Indicator of the validity of the data for each time slice. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; -1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
@@ -765,7 +807,7 @@
 			</xs:element>
 			<xs:element name="validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the data for the whole acquisition period. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; - 1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
+					<xs:documentation>Indicator of the validity of the data for the whole acquisition period. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; -1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 					</xs:appinfo>
@@ -798,7 +840,7 @@
 			</xs:element>
 			<xs:element name="validity_timed">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the data for each time slice. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; - 1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
+					<xs:documentation>Indicator of the validity of the data for each time slice. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; -1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
@@ -811,7 +853,7 @@
 			</xs:element>
 			<xs:element name="validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the data for the whole acquisition period. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; - 1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
+					<xs:documentation>Indicator of the validity of the data for the whole acquisition period. 0: valid from automated processing, 1: valid and certified by the diagnostic RO; -1 means problem identified in the data processing (request verification by the diagnostic RO), -2: invalid data, should not be used (values lower than -2 have a code-specific meaning detailing the origin of their invalidity)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 					</xs:appinfo>
@@ -1440,7 +1482,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -1478,7 +1520,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
@@ -1486,6 +1528,9 @@
 						<coordinate1_same_as>../../n_e/data</coordinate1_same_as>
 						<coordinate2>../../n_e/time</coordinate2>
 						<utilities_aoscontext>yes</utilities_aoscontext>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2088,7 +2133,7 @@
 			</xs:element>
 			<xs:element name="b0">
 				<xs:annotation>
-					<xs:documentation>Vacuum toroidal field at R0 [T]; Positive sign means anti-clockwise when viewing from above. The product R0B0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
+					<xs:documentation>Vacuum toroidal field at R0 [T]; Positive sign means counter-clockwise when viewed from above. The product R0B0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>T</units>
@@ -2126,7 +2171,7 @@
 			</xs:element>
 			<xs:element name="b0">
 				<xs:annotation>
-					<xs:documentation>Vacuum toroidal field at b0. Positive sign means anti-clockwise when viewing from above. The product r0*b0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
+					<xs:documentation>Vacuum toroidal field at b0. Positive sign means counter-clockwise when viewed from above. The product r0*b0 must be consistent with the b_tor_vacuum_r field of the tf IDS.</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>T</units>
@@ -2145,11 +2190,14 @@
 		<xs:sequence>
 			<xs:element name="psi_magnetic_axis">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../time</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi_normalization.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2158,11 +2206,14 @@
 			</xs:element>
 			<xs:element name="psi_boundary">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../time</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi_normalization.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2302,7 +2353,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -2757,6 +2808,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
+						<alternative_coordinate1>../rho_tor;../psi;../volume;../area;../surface;../rho_tor_norm</alternative_coordinate1>
 						<units>1</units>
 					</xs:appinfo>
 				</xs:annotation>
@@ -2771,6 +2823,9 @@
 						<coordinate1>../rho_pol_norm</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2844,10 +2899,13 @@
 			</xs:element>
 			<xs:element name="psi_magnetic_axis">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2856,10 +2914,13 @@
 			</xs:element>
 			<xs:element name="psi_boundary">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2923,6 +2984,9 @@
 						<coordinate1>../rho_tor_norm</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2970,10 +3034,13 @@
 			</xs:element>
 			<xs:element name="psi_magnetic_axis">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the magnetic axis (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_magnetic_axis</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2982,10 +3049,13 @@
 			</xs:element>
 			<xs:element name="psi_boundary">
 				<xs:annotation>
-					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary)</xs:documentation>
+					<xs:documentation>Value of the poloidal magnetic flux at the plasma boundary (useful to normalize the psi array values when the radial grid doesn't go from the magnetic axis to the plasma boundary). For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.grid.psi_boundary</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3083,6 +3153,20 @@
 					<xs:group ref="FLT_1D"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="rho_pol_norm">
+				<xs:annotation>
+					<xs:documentation>Normalized poloidal flux coordinate of each measurement (local value for a local measurement, minimum value reached by the line of sight for a line measurement)</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>1</units>
+						<coordinate1>../measured</coordinate1>
+						<introduced_after_version>4.1.1</introduced_after_version>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_1D"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="weight">
 				<xs:annotation>
 					<xs:documentation>Weight given to each measured value</xs:documentation>
@@ -3090,6 +3174,20 @@
 						<type>dynamic</type>
 						<units>1</units>
 						<coordinate1>../measured</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_1D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="sigma">
+				<xs:annotation>
+					<xs:documentation>Standard deviation of the measurement error</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>mixed</units>
+						<coordinate1>../measured</coordinate1>
+						<introduced_after_version>4.1.1</introduced_after_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3510,7 +3608,7 @@
 			</xs:element>
 			<xs:element name="temperature_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -3542,7 +3640,7 @@
 			</xs:element>
 			<xs:element name="density_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -4038,7 +4136,7 @@
 			</xs:element>
 			<xs:element name="temperature_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -4070,7 +4168,7 @@
 			</xs:element>
 			<xs:element name="density_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -4869,7 +4967,7 @@
 			</xs:element>
 			<xs:element name="n_phi">
 				<xs:annotation>
-					<xs:documentation>Array of toroidal mode numbers, where quantities vary as exp(i.n_phi.phi) and phi runs anticlockwise when viewed from above</xs:documentation>
+					<xs:documentation>Array of toroidal mode numbers, where quantities vary as exp(i.n_phi.phi) and phi runs counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<type>dynamic</type>
@@ -7081,7 +7179,7 @@
 				<xs:annotation>
 					<xs:documentation>Midplane values of the motion invariants, for each orbit, evaluated at the minimum of B.grad(B) along the orbit</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.1.0</introduced_after_version>
+						<introduced_after_version>4.1.1</introduced_after_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7090,7 +7188,7 @@
 					<xs:documentation>Normalised volume of the CoM (constants of motion) cell elements. The normalization is made on the maximum value of the CoM volume on the grid, i.e. Delta(E).Delta(lambda).Delta(P_phi).</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>4.1.0</introduced_after_version>
+						<introduced_after_version>4.1.1</introduced_after_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -9124,7 +9222,7 @@
 		<xs:sequence>
 			<xs:element name="ip">
 				<xs:annotation>
-					<xs:documentation>Total plasma current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total plasma current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>A</units>
@@ -9140,7 +9238,7 @@
 			</xs:element>
 			<xs:element name="current_non_inductive">
 				<xs:annotation>
-					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>A</units>
@@ -9156,7 +9254,7 @@
 			</xs:element>
 			<xs:element name="current_bootstrap">
 				<xs:annotation>
-					<xs:documentation>Bootstrap current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Bootstrap current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>A</units>
@@ -9172,7 +9270,7 @@
 			</xs:element>
 			<xs:element name="v_loop">
 				<xs:annotation>
-					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows anti-clockwise when viewed from above)</xs:documentation>
+					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<units>V</units>
@@ -9292,11 +9390,14 @@
 			</xs:element>
 			<xs:element name="resistive_psi_losses">
 				<xs:annotation>
-					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_phi.j_ohm_phi) dV) / Ip ) dt)</xs:documentation>
+					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_phi.j_ohm_phi) dV) / Ip ) dt). Positive when the plasma current flows counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>/time</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>ip_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_ip_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.resistive_psi_losses</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9484,6 +9585,20 @@
 					<xs:group ref="FLT_1D"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="sigma">
+				<xs:annotation>
+					<xs:documentation>Standard deviation of the measurement error</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>mixed</units>
+						<coordinate1>../measured</coordinate1>
+						<introduced_after_version>4.1.1</introduced_after_version>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_1D"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="reconstructed">
 				<xs:annotation>
 					<xs:documentation>Value reconstructed from the fit</xs:documentation>
@@ -9605,12 +9720,15 @@
 					<xs:group ref="FLT_1D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="ionisation_potential">
+			<xs:element name="ionization_potential">
 				<xs:annotation>
-					<xs:documentation>Cumulative and average ionisation potential to reach a given bundle. Defined as sum (x_z* (sum of Epot from z'=0 to z-1)), where Epot is the ionisation potential of ion Xz_+, and x_z is the relative concentration of a given charge state in the bundle, i.e. sum(x_z) = 1 over the bundle.</xs:documentation>
+					<xs:documentation>Cumulative and average ionization potential to reach a given bundle. Defined as sum (x_z* (sum of Epot from z'=0 to z-1)), where Epot is the ionization potential of ion Xz_+, and x_z is the relative concentration of a given charge state in the bundle, i.e. sum(x_z) = 1 over the bundle.</xs:documentation>
 					<xs:appinfo>
 						<units>eV</units>
 						<type>dynamic</type>
+						<change_nbc_version>4.2.0</change_nbc_version>
+						<change_nbc_description>leaf_renamed</change_nbc_description>
+						<change_nbc_previous_name>ionisation_potential</change_nbc_previous_name>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9819,7 +9937,7 @@
 			</xs:element>
 			<xs:element name="z_ion">
 				<xs:annotation>
-					<xs:documentation>Ion charge (of the dominant ionisation state; lumped ions are allowed), volume averaged over plasma radius</xs:documentation>
+					<xs:documentation>Ion charge (of the dominant ionization state; lumped ions are allowed), volume averaged over plasma radius</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>e</units>
@@ -9895,7 +10013,7 @@
 			</xs:element>
 			<xs:element name="temperature_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -9927,7 +10045,7 @@
 			</xs:element>
 			<xs:element name="density_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -10056,7 +10174,7 @@
 			</xs:element>
 			<xs:element name="state" type="plasma_profiles_profiles_1d_ion_state" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Quantities related to the different states of the species (ionisation, energy, excitation, ...)</xs:documentation>
+					<xs:documentation>Quantities related to the different states of the species (ionization, energy, excitation, ...)</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
@@ -10423,7 +10541,7 @@
 			</xs:element>
 			<xs:element name="temperature_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the temperature profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -10455,7 +10573,7 @@
 			</xs:element>
 			<xs:element name="density_validity">
 				<xs:annotation>
-					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; - 1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
+					<xs:documentation>Indicator of the validity of the density profile. 0: valid from automated processing, 1: valid and certified by the RO; -1 means problem identified in the data processing (request verification by the RO), -2: invalid data, should not be used</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 					</xs:appinfo>
@@ -10585,7 +10703,7 @@
 			</xs:element>
 			<xs:element name="ion" type="plasma_profiles_profiles_1d_ion" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences. Ionisation states (and other types of states) must be differentiated at the state level below</xs:documentation>
+					<xs:documentation>Quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences. Ionization states (and other types of states) must be differentiated at the state level below</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
@@ -10860,7 +10978,7 @@
 			</xs:element>
 			<xs:element name="q">
 				<xs:annotation>
-					<xs:documentation>Safety factor</xs:documentation>
+					<xs:documentation>Safety factor. Positive when toroidal current and toroidal magnetic field are in the same direction</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_pol_norm</coordinate1>
 						<type>dynamic</type>
@@ -11034,12 +11152,15 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="ionisation_potential">
+			<xs:element name="ionization_potential">
 				<xs:annotation>
-					<xs:documentation>Cumulative and average ionisation potential to reach a given bundle. Defined as sum (x_z* (sum of Epot from z'=0 to z-1)), where Epot is the ionisation potential of ion Xz’+, and x_z is the relative concentration of a given charge state in the bundle, i.e. sum(x_z) = 1 over the bundle.</xs:documentation>
+					<xs:documentation>Cumulative and average ionization potential to reach a given bundle. Defined as sum (x_z* (sum of Epot from z'=0 to z-1)), where Epot is the ionization potential of ion Xz’+, and x_z is the relative concentration of a given charge state in the bundle, i.e. sum(x_z) = 1 over the bundle.</xs:documentation>
 					<xs:appinfo>
 						<units>eV</units>
 						<type>dynamic</type>
+						<change_nbc_version>4.2.0</change_nbc_version>
+						<change_nbc_description>leaf_renamed</change_nbc_description>
+						<change_nbc_previous_name>ionisation_potential</change_nbc_previous_name>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -11240,7 +11361,7 @@
 			</xs:element>
 			<xs:element name="z_ion">
 				<xs:annotation>
-					<xs:documentation>Ion charge (of the dominant ionisation state; lumped ions are allowed), volume averaged over plasma radius</xs:documentation>
+					<xs:documentation>Ion charge (of the dominant ionization state; lumped ions are allowed), volume averaged over plasma radius</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>e</units>
@@ -11422,7 +11543,7 @@
 			</xs:element>
 			<xs:element name="state" type="plasma_profiles_2d_ion_state" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Quantities related to the different states of the species (ionisation, energy, excitation, ...)</xs:documentation>
+					<xs:documentation>Quantities related to the different states of the species (ionization, energy, excitation, ...)</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
@@ -11453,7 +11574,7 @@
 			</xs:element>
 			<xs:element name="ion" type="plasma_profiles_2d_ion" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>2D quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences. Ionisation states (or other types of states) must be differentiated at the state level below. This array doesn't necessarily have the same size as the profiles_1d/ion array, since 2D data may be relevant only for a subset of ion species.</xs:documentation>
+					<xs:documentation>2D quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences. Ionization states (or other types of states) must be differentiated at the state level below. This array doesn't necessarily have the same size as the profiles_1d/ion array, since 2D data may be relevant only for a subset of ion species.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
@@ -11808,12 +11929,15 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ionisation_potential" type="generic_grid_scalar" maxOccurs="unbounded">
+			<xs:element name="ionization_potential" type="generic_grid_scalar" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Cumulative and average ionisation potential to reach a given bundle. Defined as sum (x_z* (sum of Epot from z'=0 to z-1)), where Epot is the ionisation potential of ion Xz_+, and x_z is the relative concentration of a given charge state in the bundle, i.e. sum(x_z) = 1 over the bundle, given on various grid subsets</xs:documentation>
+					<xs:documentation>Cumulative and average ionization potential to reach a given bundle. Defined as sum (x_z* (sum of Epot from z'=0 to z-1)), where Epot is the ionization potential of ion Xz_+, and x_z is the relative concentration of a given charge state in the bundle, i.e. sum(x_z) = 1 over the bundle, given on various grid subsets</xs:documentation>
 					<xs:appinfo>
 						<units>e</units>
 						<coordinate1>1...N</coordinate1>
+						<change_nbc_version>4.2.0</change_nbc_version>
+						<change_nbc_description>aos_renamed</change_nbc_description>
+						<change_nbc_previous_name>ionisation_potential</change_nbc_previous_name>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12118,7 +12242,7 @@
 			</xs:element>
 			<xs:element name="z_ion">
 				<xs:annotation>
-					<xs:documentation>Ion charge (of the dominant ionisation state; lumped ions are allowed).</xs:documentation>
+					<xs:documentation>Ion charge (of the dominant ionization state; lumped ions are allowed).</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>e</units>
@@ -12247,7 +12371,7 @@
 			</xs:element>
 			<xs:element name="state" type="plasma_profiles_time_slice_ion_charge_state" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Quantities related to the different states of the species (ionisation, energy, excitation, ...)</xs:documentation>
+					<xs:documentation>Quantities related to the different states of the species (ionization, energy, excitation, ...)</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
@@ -12273,7 +12397,7 @@
 			</xs:element>
 			<xs:element name="z_ion">
 				<xs:annotation>
-					<xs:documentation>Ion charge (of the dominant ionisation state; lumped ions are allowed).</xs:documentation>
+					<xs:documentation>Ion charge (of the dominant ionization state; lumped ions are allowed).</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>e</units>
@@ -12682,6 +12806,9 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12803,7 +12930,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -12849,7 +12976,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -12895,7 +13022,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -12931,10 +13058,13 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal magnetic flux</xs:documentation>
+					<xs:documentation>Poloidal magnetic flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -12963,7 +13093,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 						<units>rad</units>
@@ -13009,7 +13139,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -13056,7 +13186,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<units>rad</units>
@@ -13103,7 +13233,7 @@
 			</xs:element>
 			<xs:element name="phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 					</xs:appinfo>
@@ -13239,7 +13369,7 @@
 			</xs:element>
 			<xs:element name="phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 					</xs:appinfo>
@@ -13255,9 +13385,12 @@
 			</xs:element>
 			<xs:element name="psi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -13303,7 +13436,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle  (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle  (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -13337,7 +13470,7 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>
@@ -13346,6 +13479,9 @@
 						<change_nbc_version>3.26.0</change_nbc_version>
 						<change_nbc_description>leaf_renamed</change_nbc_description>
 						<change_nbc_previous_name>psi/data</change_nbc_previous_name>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -13414,7 +13550,7 @@
 			</xs:element>
 			<xs:element name="phi" type="signal_flt_1d">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<units>rad</units>
 					</xs:appinfo>
@@ -13453,7 +13589,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -13502,7 +13638,7 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewing from above)</xs:documentation>
+					<xs:documentation>Toroidal angle (oriented counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>rad</units>
@@ -13528,11 +13664,14 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../r</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -14157,7 +14296,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14327,7 +14466,7 @@
 		<xs:sequence>
 			<xs:element name="x1_unit_vector" type="xyz0d_dynamic_aos3">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14466,7 +14605,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14606,7 +14745,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -14799,7 +14938,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="x2_unit_vector" type="xyz0d_static">
@@ -15028,7 +15167,7 @@
 			</xs:element>
 			<xs:element name="x1_unit_vector" type="xyz0d_static">
 				<xs:annotation>
-					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewing from above). </xs:documentation>
+					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
 						<url>utilities/detector_aperture_coordinates.svg</url>
 					</xs:appinfo>
@@ -16316,11 +16455,14 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux</xs:documentation>
+					<xs:documentation>Poloidal flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
 						<coordinate1>../../length</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>IDSPATH.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

@@ -262,7 +262,15 @@
 			</xs:element>
 			<xs:element name="harmonic" type="int_1d_time_1_and_type_change">
 				<xs:annotation>
-					<xs:documentation>Harmonic detected by the channel. 1 corresponds to the "O1" mode, while 2 corresponds to the "X2" mode. </xs:documentation>
+					<xs:documentation>Harmonic detected by the channel (1 is the fundamental, 2 the second harmonic, ...)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mode" type="int_1d_time_1">
+				<xs:annotation>
+					<xs:documentation>Mode detected by the channel. 1 corresponds to the "O" mode, while 2 corresponds to the "X" mode</xs:documentation>
+<xs:appinfo>
+<introduced_with_version>4.2.0</introduced_with_version>
+</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="line_of_sight" type="line_of_sight_2points">
@@ -402,7 +410,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.2.1</lifecycle_version>
-				<lifecycle_last_change>3.42.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexType>

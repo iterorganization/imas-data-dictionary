@@ -56,7 +56,7 @@
 		<xs:sequence>
 			<xs:element name="positions" type="rphiz1d_static">
 				<xs:annotation>
-					<xs:documentation>Position of each beamlet</xs:documentation>
+					<xs:documentation>Position of each beamlet. The toroidal angle (phi) increases counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
 						<cocos_transformation_expression>.sigma_rphiz_eff</cocos_transformation_expression>
@@ -210,7 +210,7 @@
 		<xs:sequence>
 			<xs:element name="position" type="rphiz0d_static">
 				<xs:annotation>
-					<xs:documentation>R, Z, Phi position of the beamlet group centre</xs:documentation>
+					<xs:documentation>R, Phi, Z position of the beamlet group centre. The toroidal angle (phi) increases counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
 						<cocos_transformation_expression>.sigma_rphiz_eff</cocos_transformation_expression>
@@ -253,7 +253,7 @@
 			</xs:element>
 			<xs:element name="direction">
 				<xs:annotation>
-					<xs:documentation>Direction of the beam seen from above the torus: -1 = clockwise; 1 = counter clockwise</xs:documentation>
+					<xs:documentation>Orientation of the beam when viewed from above: -1 = clockwise; 1 = counter-clockwise</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>

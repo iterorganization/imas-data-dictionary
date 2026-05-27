@@ -2077,11 +2077,14 @@
 			</xs:element>
 			<xs:element name="psi" type="generic_grid_scalar" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux, given on various grid subsets</xs:documentation>
+					<xs:documentation>Poloidal flux, given on various grid subsets. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
 						<introduced_after_version>3.39.0</introduced_after_version>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>wall.description_ggd{i}.ggd{j}.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

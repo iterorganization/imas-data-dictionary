@@ -10,6 +10,13 @@ the coordinate quantity. Alternatively, a coordinate can be a plain index, which
 is indicated as ``1...N`` when the size of the coordinate is variable or -- for
 example -- ``1...3`` when there is a strict number of items -- 3 in this case.
 
+When the path to a coordinate goes through an array of structure and
+the index of the array of structure is indicated as (:), it means that the coordinate 
+node must have the same size for all indices of its ancestor array of structure.
+Example: ``channel(i1)/camera(i2)/frame(:)/apparent_temperature`` in the camera_IR
+IDS indicates that ``apparent_temperature`` has the same size for all indices of the 
+``frame`` array of structure.
+
 Note that time coordinates are special due to the time slice functionality
 of the Access Layer. See the following section for more details.
 

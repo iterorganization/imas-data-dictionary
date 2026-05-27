@@ -10,7 +10,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.42.0</lifecycle_version>
-				<lifecycle_last_change>4.1.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexType>
@@ -54,7 +54,7 @@
 							<coordinate1>time</coordinate1>
 							<type>dynamic</type>
 							<cocos_alias>IDSPATH</cocos_alias>
-							<cocos_replace>core_profiles.profiles_2d{i}</cocos_replace>
+							<cocos_replace>plasma_profiles.profiles_2d{i}</cocos_replace>
 							<introduced_after_version>3.38.1</introduced_after_version>
 							<lifecycle_status>alpha</lifecycle_status>
 							<lifecycle_version>3.39.0</lifecycle_version>

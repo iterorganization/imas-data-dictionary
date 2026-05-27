@@ -320,7 +320,7 @@
 				</xs:element>
 				<xs:element name="b_field_phi_vacuum_r" type="signal_flt_1d">
 					<xs:annotation>
-						<xs:documentation>Vacuum field times major radius in the toroidal field magnet. Positive sign means anti-clockwise when viewed from above</xs:documentation>
+						<xs:documentation>Vacuum magnetic field times major radius within the cage of toroidal field coils. Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 						<xs:appinfo>
 							<units>T.m</units>
 							<cocos_label_transformation>b0_like</cocos_label_transformation>

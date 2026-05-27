@@ -44,7 +44,7 @@
 		<xs:sequence>
 			<xs:element name="ip">
 				<xs:annotation>
-					<xs:documentation>Total plasma current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total plasma current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../time</coordinate1>
 						<units>A</units>
@@ -60,7 +60,7 @@
 			</xs:element>
 			<xs:element name="current_non_inductive">
 				<xs:annotation>
-					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Total non-inductive current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../time</coordinate1>
 						<units>A</units>
@@ -76,7 +76,7 @@
 			</xs:element>
 			<xs:element name="current_bootstrap">
 				<xs:annotation>
-					<xs:documentation>Bootstrap current (toroidal component). Positive sign means anti-clockwise when viewed from above.</xs:documentation>
+					<xs:documentation>Bootstrap current (toroidal component). Positive sign means counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../time</coordinate1>
 						<units>A</units>
@@ -92,7 +92,7 @@
 			</xs:element>
 			<xs:element name="v_loop">
 				<xs:annotation>
-					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows anti-clockwise when viewed from above)</xs:documentation>
+					<xs:documentation>LCFS loop voltage (positive value drives positive ohmic current that flows counter-clockwise when viewed from above)</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../time</coordinate1>
 						<units>V</units>
@@ -212,11 +212,14 @@
 			</xs:element>
 			<xs:element name="resistive_psi_losses">
 				<xs:annotation>
-					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_tor.j_ohm_tor) dV) / Ip ) dt)</xs:documentation>
+					<xs:documentation>Resistive part of the poloidal flux losses, defined as the volume-averaged scalar product of the electric field and the ohmic current density, normalized by the plasma current and integrated in time from the beginning of the plasma discharge: int ( (int(E_field_tor.j_ohm_tor) dV) / Ip ) dt). Positive when the plasma current flows counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../time</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>ip_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_ip_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>core_profiles.global_quantities.resistive_psi_losses</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -986,7 +989,7 @@
 			<xs:appinfo>
 				<lifecycle_status>active</lifecycle_status>
 				<lifecycle_version>3.1.0</lifecycle_version>
-				<lifecycle_last_change>4.1.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 				<specific_validation_rules>yes</specific_validation_rules>
 			</xs:appinfo>
 		</xs:annotation>

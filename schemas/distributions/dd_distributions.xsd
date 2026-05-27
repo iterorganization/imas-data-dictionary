@@ -2836,11 +2836,14 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal magnetic flux</xs:documentation>
+					<xs:documentation>Poloidal magnetic flux. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../rho_tor_norm</coordinate1>
 						<units>Wb</units>
 						<type>dynamic</type>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>distributions.distribution{i}.profiles_2d{j}.grid.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2893,7 +2896,7 @@
 						<coordinate2>../grid/theta_geometric OR ../grid/theta_straight</coordinate2>
 						<units>m</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.1.0</introduced_after_version>
+						<introduced_after_version>4.1.1</introduced_after_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2908,7 +2911,7 @@
 						<coordinate2>../grid/theta_geometric OR ../grid/theta_straight</coordinate2>
 						<units>m</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.1.0</introduced_after_version>
+						<introduced_after_version>4.1.1</introduced_after_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

@@ -12,16 +12,16 @@ jobs:
 
     steps:
     - name: Checkout source repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Checkout destination repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: iterorganization/IMAS-Data-Dictionaries
         path: _destination
         ref: main
         token: ${{ secrets.IMAS_DATA_DICTIONARIES_SECRET }}
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
     - name: Install python dependencies
       run: pip install setuptools_scm saxonche
     - name: Generate DD and validation

@@ -70,11 +70,6 @@ details .dd-summary {
     font-style: italic;
     display: block;
 }
-/* Hide the summary when a node is uncollapsed
-details[open] > * > .dd-summary {
-    display: none;
-}
-*/
 /* Add more spacing after an opened node */
 details.dd[open] {
     margin-bottom: 2.5rem;

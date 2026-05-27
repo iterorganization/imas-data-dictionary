@@ -670,9 +670,9 @@
 					<xs:documentation>Transport quantities related to the energy equation of the charge state considered </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="momentum" type="plasma_transport_model_momentum">
+			<xs:element name="momentum" type="plasma_transport_model_components_4_momentum">
 				<xs:annotation>
-					<xs:documentation>Transport coefficients related to the momentum equations of the state considered. The various components two levels below this node refer to the momentum vector components, while their flux is given in the direction perpendicular to the edges or faces of the grid.</xs:documentation>
+					<xs:documentation>Transport coefficients related to the state momentum equations for various components (directions)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -809,6 +809,14 @@
 			<xs:element name="energy" type="plasma_transport_model_2_energy">
 				<xs:annotation>
 					<xs:documentation>Transport coefficients related to the neutral energy equation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="momentum" type="plasma_transport_model_components_3_momentum">
+				<xs:annotation>
+					<xs:documentation>Transport coefficients related to the neutral momentum equations for various components (directions)</xs:documentation>
+					<xs:appinfo>
+						<introduced_after_version>4.1.1</introduced_after_version>
+					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="multiple_states_flag">
@@ -1020,7 +1028,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.42.0</lifecycle_version>
-				<lifecycle_last_change>4.1.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 				<specific_validation_rules>yes</specific_validation_rules>
 			</xs:appinfo>
 		</xs:annotation>

@@ -7,7 +7,6 @@ import datetime
 import os
 import subprocess
 import sys
-from git import Repo
 
 # Ensure that our extension module can be imported:
 sys.path.append(os.path.curdir)
@@ -51,7 +50,6 @@ dd_autodoc_generate = True
 
 extensions = [
     "sphinx.ext.todo",
-    # "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_immaterial",
@@ -86,23 +84,12 @@ html_theme_options = {
         "repo": "fontawesome/brands/github",
     },
     "features": [
-        # "navigation.expand",
-        # "navigation.tabs",
         "navigation.sections",
         "navigation.instant",
-        # "header.autohide",
         "navigation.top",
-        # "navigation.tracking",
-        # "search.highlight",
-        # "search.share",
-        # "toc.integrate",
-        # "toc.follow",
         "toc.sticky",
-        # "content.tabs.link",
         "announce.dismiss",
     ],
-    # "toc_title_is_page_title": True,
-    # "globaltoc_collapse": True,
     "palette": [
         {
             "media": "(prefers-color-scheme: light)",

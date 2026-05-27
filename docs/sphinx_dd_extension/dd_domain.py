@@ -3,7 +3,6 @@
 Logic is partly based on code in the :external:py:mod:`sphinx.domains` module.
 """
 
-
 from functools import partial
 import logging
 from pathlib import Path
@@ -142,7 +141,6 @@ class DDElement(SphinxDirective):
         self.state.nested_parse(self.content, 0, content_node)
         node += content_node.children
 
-        # return [indexnode, node]
         return [node]
 
 
@@ -447,7 +445,7 @@ class DDNode(nodes.Element):
 
 # Visitors of DDNode for HTML documentation:
 def visit_ddnode(self, node: Element) -> None:
-    self.body.append(self.starttag(node, "details"))
+    self.body.append(self.starttag(node, "details", title="Click to expand"))
 
 
 def depart_ddnode(self, node: Element) -> None:
@@ -521,7 +519,7 @@ def visit_ddpermalink(self, node: Element) -> None:
 
 
 def depart_ddpermalink(self, node: Element) -> None:
-    pass
+    pass  # nothing to be done
 
 
 class ExpandCollapseNode(nodes.Inline, nodes.Element):
@@ -540,7 +538,7 @@ def visit_expandcollapsenode(self, node: Element) -> None:
 
 
 def depart_expandcollapsenode(self, node: Element) -> None:
-    pass
+    pass  # nothing to be done
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:

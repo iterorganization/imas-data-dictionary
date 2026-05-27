@@ -34,6 +34,7 @@
 	<xs:include schemaLocation="schemas/divertors/dd_divertors.xsd"/>
 	<xs:include schemaLocation="schemas/ec_launchers/dd_ec_launchers.xsd"/>
 	<xs:include schemaLocation="schemas/ece/dd_ece.xsd"/>
+	<xs:include schemaLocation="schemas/ece_imaging/dd_ece_imaging.xsd"/>
 	<xs:include schemaLocation="schemas/edge_profiles/dd_edge_profiles.xsd"/>
 	<xs:include schemaLocation="schemas/edge_sources/dd_edge_sources.xsd"/>
 	<xs:include schemaLocation="schemas/edge_transport/dd_edge_transport.xsd"/>
@@ -124,6 +125,7 @@
 				<xs:element ref="divertors" maxOccurs="2"/>
 				<xs:element ref="ec_launchers" maxOccurs="2"/>
 				<xs:element ref="ece" maxOccurs="3"/>
+				<xs:element ref="ece_imaging" maxOccurs="2"/>
 				<xs:element ref="edge_profiles" maxOccurs="10"/>
 				<xs:element ref="edge_sources" maxOccurs="10"/>
 				<xs:element ref="edge_transport" maxOccurs="10"/>

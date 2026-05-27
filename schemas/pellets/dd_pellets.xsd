@@ -191,11 +191,14 @@
 			</xs:element>
 			<xs:element name="psi">
 				<xs:annotation>
-					<xs:documentation>Poloidal flux along the pellet path </xs:documentation>
+					<xs:documentation>Poloidal flux along the pellet path. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>Wb</units>
 						<type>dynamic</type>
 						<coordinate1>../distance</coordinate1>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>pellets.time_slice{i}.pellet{j}.path_profiles.psi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

@@ -347,11 +347,14 @@
 			</xs:element>
 			<xs:element name="phi">
 				<xs:annotation>
-					<xs:documentation>Toroidal flux</xs:documentation>
+						<xs:documentation>Toroidal flux. Positive when the toroidal magnetic field is counter-clockwise when viewed from above</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<units>Wb</units>
+						<cocos_label_transformation>b0_like</cocos_label_transformation>
+						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>sawteeth.profiles_1d{i}.phi</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -360,11 +363,14 @@
 			</xs:element>
 			<xs:element name="psi_star_pre_crash">
 				<xs:annotation>
-					<xs:documentation>Psi* = psi - phi, just before the sawtooth crash</xs:documentation>
+						<xs:documentation>Helical magnetic flux for the m=1, n=1 mode (psi* = psi - phi), just before the sawtooth crash. For a positive helicity (safety factor profile) it decreases from the magnetic axis to the boundary.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>sawteeth.profiles_1d{i}.psi_star_pre_crash</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -373,11 +379,14 @@
 			</xs:element>
 			<xs:element name="psi_star_post_crash">
 				<xs:annotation>
-					<xs:documentation>Psi* = psi - phi, after the sawtooth crash</xs:documentation>
+						<xs:documentation>Helical magnetic flux for the m=1, n=1 mode (psi* = psi - phi), after the sawtooth crash. For a positive helicity (safety factor profile) it decreases from the magnetic axis to the boundary.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<type>dynamic</type>
 						<units>Wb</units>
+						<cocos_label_transformation>psi_like</cocos_label_transformation>
+						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
+						<cocos_leaf_name_aos_indices>sawteeth.profiles_1d{i}.psi_star_post_crash</cocos_leaf_name_aos_indices>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

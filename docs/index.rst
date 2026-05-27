@@ -15,7 +15,6 @@ can be used for more advanced search queries.
 
    intro
    data_dictionary_glossary
-   generated/changelog/git
    generated/changelog/ids
 
 

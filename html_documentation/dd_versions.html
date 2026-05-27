@@ -18,13 +18,38 @@
 			</thead>
 			<p><a href="html_documentation.html">Back to top IDS list</a></p>
 			<tr>
-				<td>develop</td>
+				<td><b>develop</b></td>
 				<td>
           <ul>Additions
+					<li>Extension of the occurence_type identifier list for the PLASMA_* IDSs</li>
 				    <li>Extension of the DISTRIBUTIONS and DISTRIBUTIONS_SOURCES IDS with constants of motion</li>
+					  <li><b>New ECE_IMAGING IDS</b></li>
+            <li>Extension of the fitting structures in CORE_PROFILES, PLASMA_PROFILES, EDGE_PROFILES and EQUILIBRIUM</li>
+ 				    <li>Extension of the GYROKINETICS_LOCAL IDS with a non-linear moment</li>
+ 				    <li>Adding profiles_1d/triangularity in the EQUILIBRIUM IDS</li>
+ 				    <li>Adding coil/inductance in the PF_ACTIVE IDS</li>
+ 				    <li>Adding total instantaneous fusion power in the SUMMARY IDS</li>
+ 				    <li>Adding Boron local velocity_phi in the SUMMARY IDS</li>
+            <li>Adding information about temperature dependence of the coil resistance in PF_ACTIVE and clarification of some definitions</li>
           </ul>
-        </td>
+					<ul>Changes
+					   <li>Apply new identifier upper case convention to core_source_identifier and plasma_source_identifier</li>
+						<li>Fix plasma_transport/model()/profiles_1d()/neutral()/state()/momentum, which had a GGD-like structure instead of a profiles_1d like structure</li>
+				    <li>Rename ionisation_potential to ionization_potential in the PLASMA_PROFILES IDS</li>
+				    <li>Fix some units in the SUMMARY IDS</li>
+				    <li>In the ECE IDS, separate out the definition of mode (new node) and harmonic (new definition for this node)</li>
+				  </ul>
+       </td>
       </tr>
+	  <tr>
+        <td><b>4.1.1</b></td>
+        <td>
+				  <ul>
+					<li>Fix missing alternate coordinate in plasma_profiles/profiles_1d/grid/psi</li>
+					<li>Fix identifiers layout when pushing archive to imas-data-dictionaries</li>
+				  </ul>
+		</td>
+	  </tr>	
       <tr>
         <td><b>4.1.0</b></td>
         <td>

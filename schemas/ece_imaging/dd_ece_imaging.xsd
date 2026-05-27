@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by USER USER (CEA - CENTRE DE CADARACHE) -->
+<?modxslt-stylesheet type="text/xsl" media="fuffa, screen and $GET[stylesheet]" href="./%24GET%5Bstylesheet%5D" alternate="no" title="Translation using provided stylesheet" charset="UTF-8" ?>
+<?modxslt-stylesheet type="text/xsl" media="screen" alternate="no" title="Show raw source of the XML file" charset="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../utilities/dd_support.xsd"/>
+	<xs:complexType name="ece_imaging_channel">
+		<xs:annotation>
+			<xs:documentation>Charge exchange channel</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="frequency" type="physical_quantity_flt_1d_time_1">
+				<xs:annotation>
+					<xs:documentation>Frequency of the channel</xs:documentation>
+					<xs:appinfo>
+						<units>Hz</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="harmonic" type="int_1d_time_1">
+				<xs:annotation>
+					<xs:documentation>Harmonic detected by the channel (1 is the fundamental, 2 the second harmonic, ...)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mode" type="int_1d_time_1">
+				<xs:annotation>
+					<xs:documentation>Mode detected by the channel. 1 corresponds to the "O" mode, while 2 corresponds to the "X" mode</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="if_bandwidth">
+				<xs:annotation>
+					<xs:documentation>Full-width of the Intermediate Frequency (IF) bandpass filter</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>Hz</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="position" type="rphizrhopsitheta1d_dynamic_aos1_common_time_1">
+				<xs:annotation>
+					<xs:documentation>Position of the measurements (taking into account the suprathermal shift)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="delta_position_suprathermal" type="rphizrhopsitheta1d_dynamic_aos1_common_time_1">
+				<xs:annotation>
+					<xs:documentation>Simple estimate of the difference in position induced by the presence of suprathermal electrons. Position without corrections = position - delta_position_suprathermal</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="t_radiation_norm" type="physical_quantity_flt_1d_time_1">
+				<xs:annotation>
+					<xs:documentation>Radiation temperature fluctuations normalised to the time-average temperature of this channel</xs:documentation>
+					<xs:appinfo>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="optical_depth" type="physical_quantity_flt_1d_time_1">
+				<xs:annotation>
+					<xs:documentation>Optical depth of the plasma at the position of the measurement. This parameter is a proxy for the local / non-local character of the ECE emission. It must be greater than 1 to guarantee that the measurement is dominated by local ECE emission (non-local otherwise).</xs:documentation>
+					<xs:appinfo>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="time" type="flt_1d_type">
+				<xs:annotation>
+					<xs:documentation>Timebase for the dynamic data of this channel</xs:documentation>
+					<xs:appinfo>
+						<coordinate1>1...N</coordinate1>
+						<type>dynamic</type>
+						<units>s</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ece_imaging_los">
+		<xs:annotation>
+			<xs:documentation>Line_of_sight of an ECE imaging system</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="points" type="line_of_sight_2points">
+				<xs:annotation>
+					<xs:documentation>Line of sight defined by two points. This definition doesn't account for the beam deviation by the plasma optical properties. By convention, the first point is the closest to the diagnostic.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="channel" type="ece_imaging_channel" maxOccurs="30">
+				<xs:annotation>
+					<xs:documentation>Set of channels (frequency)</xs:documentation>
+					<xs:appinfo>
+						<coordinate1>1...N</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ece_imaging">
+		<xs:annotation>
+			<xs:documentation>Electron cyclotron emission imaging diagnostic</xs:documentation>
+			<xs:appinfo>
+				<lifecycle_status>alpha</lifecycle_status>
+				<lifecycle_version>4.2.0</lifecycle_version>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ids_properties"/>
+				<xs:element name="line_of_sight" type="ece_imaging_los" maxOccurs="30">
+					<xs:annotation>
+						<xs:documentation>Set of lines of sight</xs:documentation>
+						<xs:appinfo>
+							<coordinate1>1...N</coordinate1>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="polarizer" type="polarizer" maxOccurs="3">
+					<xs:annotation>
+						<xs:documentation>Set of polarizers placed in front of the diagnostic (if any). Polarizers are assumed to be orthogonal to the line of sight, so that the x3 unit vector is aligned with the line of sight</xs:documentation>
+						<xs:appinfo>
+							<coordinate1>1...N</coordinate1>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="latency">
+					<xs:annotation>
+						<xs:documentation>Upper bound of the delay between physical information received by the detector and the data available on the real-time network.</xs:documentation>
+						<xs:appinfo>
+							<type>static</type>
+							<units>s</units>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:group ref="FLT_0D"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="code"/>
+				<xs:element ref="time"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
