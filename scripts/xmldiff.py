@@ -226,7 +226,9 @@ class XMLDiffer:
             )
             if diff is None:
                 # Return an empty diff
-                return ElementDiff(path = root1.tag, tag = root1.tag, identifier=root1.tag, state="none")
+                return ElementDiff(
+                    path=root1.tag, tag=root1.tag, identifier=root1.tag, state="none"
+                )
             else:
                 return diff
 
