@@ -733,6 +733,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
+						<utilities_aoscontext>yes</utilities_aoscontext>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -745,6 +746,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
+						<utilities_aoscontext>yes</utilities_aoscontext>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
