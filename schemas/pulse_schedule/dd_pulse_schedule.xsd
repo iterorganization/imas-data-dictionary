@@ -751,6 +751,37 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="pulse_schedule_ec_beam_polarization">
+		<xs:annotation>
+			<xs:documentation>EC beam polarization</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="o_mode_fraction" type="pulse_schedule_reference_ec">
+				<xs:annotation>
+					<xs:documentation>Fraction of EC beam power launched in ordinary (O) mode. If all power is launched in ordinary mode (O-mode), o_mode_fraction = 1.0. If all  power is launched in extraordinary mode (X-mode), o_mode_fraction = 0.0</xs:documentation>
+					<xs:appinfo>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="azimuthal_angle" type="pulse_schedule_reference_ec">
+				<xs:annotation>
+					<xs:documentation>Poincare sphere angle psi for mixed mode</xs:documentation>
+					<xs:appinfo>
+						<units>rad</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ellipticity_angle" type="pulse_schedule_reference_ec">
+				<xs:annotation>
+					<xs:documentation>Poincare sphere angle chi for mixed mode</xs:documentation>
+					<xs:appinfo>
+						<units>rad</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="pulse_schedule_ec_mirror">
 		<xs:annotation>
 			<xs:documentation>EC mirror</xs:documentation>
@@ -784,6 +815,15 @@
 					<xs:documentation>Set of degrees of freedom for this mirror, allowing the mirror to move around its reference position indicated in ../geometry. Can be cascaded for composite movements.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="deposition_rho_tor_norm" type="pulse_schedule_reference_ec">
+				<xs:annotation>
+					<xs:documentation>Normalized toroidal flux coordinate at which the main deposition should occur. For tracking a rational surface use a negative value (for example -1.5 or -2.0)"</xs:documentation>
+					<xs:appinfo>
+						<units>1</units>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -863,6 +903,14 @@
 						<change_nbc_version>3.26.0</change_nbc_version>
 						<change_nbc_description>structure_renamed</change_nbc_description>
 						<change_nbc_previous_name>launching_angle_tor</change_nbc_previous_name>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="polarization" type="pulse_schedule_ec_beam_polarization">
+				<xs:annotation>
+					<xs:documentation>Wave polarization</xs:documentation>
+					<xs:appinfo>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
