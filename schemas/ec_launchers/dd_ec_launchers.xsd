@@ -457,6 +457,14 @@
 					<xs:group ref="INT_1D"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="source_index" type="signal_int_1d">
+				<xs:annotation>
+					<xs:documentation>Index of the source (in the source array of structures) connected to the waveguide aperture</xs:documentation>
+					<xs:appinfo>
+						<introduced_with_version>4.2.0</introduced_with_version>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ec_launchers_source">
@@ -570,9 +578,9 @@
 					<xs:group ref="INT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="source_index">
+			<xs:element name="mirror_index">
 				<xs:annotation>
-					<xs:documentation>Index of the source (in the source array of structures) connected to the waveguide aperture originating this beam (i.e., waveguide_aperture(beam/waveguide_index))</xs:documentation>
+					<xs:documentation>Index of the last mirror (in the mirror array of structures) on which the beam is reflected before going into the plasma. If non-empty, must be the same as the last element of waveguide(waveguide_index)/mirror_indices</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 						<introduced_with_version>4.2.0</introduced_with_version>
