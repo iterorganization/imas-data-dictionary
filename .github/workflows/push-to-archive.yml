@@ -12,9 +12,9 @@ jobs:
 
     steps:
     - name: Checkout source repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: Checkout destination repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         repository: iterorganization/IMAS-Data-Dictionaries
         path: _destination
