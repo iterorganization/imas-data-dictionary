@@ -314,7 +314,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -322,7 +322,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -330,7 +330,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the object surface and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>

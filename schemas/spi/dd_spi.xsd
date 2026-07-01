@@ -199,7 +199,7 @@
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="direction" type="xyz0d_constant">
+			<xs:element name="direction" type="xyz0d_constant_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Unit vector of the cone direction</xs:documentation>
 				</xs:annotation>
@@ -209,12 +209,12 @@
 					<xs:documentation>Coordinates of the origin of the shatter cone</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="unit_vector_major" type="xyz0d_static">
+			<xs:element name="unit_vector_major" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Major unit vector describing the geometry of the elliptic shatter cone</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="unit_vector_minor" type="xyz0d_static">
+			<xs:element name="unit_vector_minor" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Minor unit vector describing the geometry of the elliptic shatter cone</xs:documentation>
 				</xs:annotation>
@@ -521,7 +521,7 @@
 					<xs:documentation>Description of the propellant gas</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="injection_direction" type="xyz0d_constant">
+			<xs:element name="injection_direction" type="xyz0d_constant_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Unit vector of the unshattered pellet velocity direction right before shattering</xs:documentation>
 				</xs:annotation>
