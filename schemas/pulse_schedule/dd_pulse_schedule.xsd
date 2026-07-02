@@ -729,7 +729,7 @@
 				<xs:annotation>
 					<xs:documentation>Type of movement</xs:documentation>
 					<xs:appinfo>
-						<doc_identifier>ec_launchers/frame_DOF_identifier.xml</doc_identifier>
+						<doc_identifier>ec_launchers/degrees_of_freedom_identifier.xml</doc_identifier>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
