@@ -568,7 +568,7 @@
 			</xs:element>
 			<xs:element name="waveguide_index">
 				<xs:annotation>
-					<xs:documentation>Index of the waveguide (in the waveguide array of structure) originating the beam</xs:documentation>
+					<xs:documentation>Index of the waveguide (in the waveguide array of structure) through which the beam passes</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
 						<introduced_with_version>4.2.0</introduced_with_version>
