@@ -7198,7 +7198,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-3</units>
-						<introduced_after>3.34.0</introduced_after>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7293,7 +7293,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-3</units>
-						<introduced_after>3.34.0</introduced_after>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
