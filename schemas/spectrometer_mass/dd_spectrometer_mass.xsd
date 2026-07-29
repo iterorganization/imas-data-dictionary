@@ -165,7 +165,7 @@
 						<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 						<xs:appinfo>
 							<type>static</type>
-							<introduced_after_version>3</introduced_after_version>
+							<introduced_with_version>4.0.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -177,7 +177,7 @@
 						<xs:documentation>Set of mass channels, each corresponding to a given atomic mass measured continuously by the spectrometer</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -187,7 +187,7 @@
 						<xs:appinfo>
 							<coordinate1>time</coordinate1>
 							<type>dynamic</type>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -197,7 +197,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>A</units>
-							<introduced_after_version>3.41.0</introduced_after_version>
+							<introduced_with_version>3.42.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -210,7 +210,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>V</units>
-							<introduced_after_version>3.41.0</introduced_after_version>
+							<introduced_with_version>3.42.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -223,7 +223,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

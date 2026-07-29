@@ -128,7 +128,7 @@
 						<type>constant</type>
 						<units>rad</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -157,7 +157,7 @@
 						<coordinate1>../angles</coordinate1>
 						<coordinate2>../energies</coordinate2>
 						<coordinate3>/time</coordinate3>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -171,7 +171,7 @@
 						<type>dynamic</type>
 						<units>1</units>
 						<coordinate1>/time</coordinate1>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -339,7 +339,7 @@
 					<xs:documentation>Sputtering coefficients due to a set of incident species</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -593,7 +593,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -605,7 +605,7 @@
 					<xs:documentation>Type of component of this unit</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>wall/wall_component_identifier.xml</doc_identifier>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -650,7 +650,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -662,7 +662,7 @@
 					<xs:documentation>Nuclear power density heating this unit evaluated at the midplane (whenever relevant)</xs:documentation>
 					<xs:appinfo>
 						<units>W.m^-3</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -671,7 +671,7 @@
 					<xs:documentation>Nuclear power heating this unit</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1997,7 +1997,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>V</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2005,7 +2005,7 @@
 				<xs:annotation>
 					<xs:documentation>Fraction of incoming particles that is reflected back to the vacuum chamber</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2013,7 +2013,7 @@
 				<xs:annotation>
 					<xs:documentation>Particle fluxes. The incident and emitted components are distinguished. The net flux received by the wall is equal to incident - emitted</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2021,7 +2021,7 @@
 				<xs:annotation>
 					<xs:documentation>Energy fluxes. The incident and emitted components are distinguished. The net flux received by the wall is equal to incident - emitted</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2031,7 +2031,7 @@
 					<xs:appinfo>
 						<units>A.m^-2</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2041,7 +2041,7 @@
 					<xs:appinfo>
 						<units>T</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2051,7 +2051,7 @@
 					<xs:appinfo>
 						<units>N.m^-3</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2061,7 +2061,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>V.m^-1</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2071,7 +2071,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>T.m</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2081,7 +2081,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Wb</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<cocos_label_transformation>psi_like</cocos_label_transformation>
 						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>wall.description_ggd{i}.ggd{j}.psi</cocos_leaf_name_aos_indices>
@@ -2094,7 +2094,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>V</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2104,7 +2104,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>ohm.m</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2265,7 +2265,7 @@
 					<xs:appinfo>
 						<coordinate1>time</coordinate1>
 						<coordinate1_same_as>../grid_ggd</coordinate1_same_as>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 						<type>dynamic</type>
 					</xs:appinfo>
 				</xs:annotation>
@@ -2276,7 +2276,7 @@
 					<xs:appinfo>
 						<coordinate1>time</coordinate1>
 						<coordinate1_same_as>../grid_ggd</coordinate1_same_as>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<type>dynamic</type>
 					</xs:appinfo>
 				</xs:annotation>
@@ -2287,7 +2287,7 @@
 					<xs:appinfo>
 						<coordinate1>time</coordinate1>
 						<coordinate1_same_as>../grid_ggd</coordinate1_same_as>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<type>dynamic</type>
 					</xs:appinfo>
 				</xs:annotation>
@@ -2298,7 +2298,7 @@
 					<xs:appinfo>
 						<coordinate1>time</coordinate1>
 						<coordinate1_same_as>../grid_ggd</coordinate1_same_as>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<type>dynamic</type>
 					</xs:appinfo>
 				</xs:annotation>
@@ -2330,7 +2330,7 @@
 					<xs:annotation>
 						<xs:documentation>Reference temperature for which the machine description data is given in this IDS</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -2359,7 +2359,7 @@
 						<xs:documentation>Peak power flux on the first wall (excluding the divertors surface)</xs:documentation>
 						<xs:appinfo>
 							<units>W.m^-2</units>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -2369,7 +2369,7 @@
 						<xs:appinfo>
 							<units>m^3</units>
 							<type>static</type>
-							<introduced_after_version>3.36.0</introduced_after_version>
+							<introduced_with_version>3.37.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

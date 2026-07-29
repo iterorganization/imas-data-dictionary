@@ -37,7 +37,7 @@
 				<xs:annotation>
 					<xs:documentation>Position of the laser end point</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -45,7 +45,7 @@
 				<xs:annotation>
 					<xs:documentation>Laser wavelength</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<type>static</type>
 						<units>m</units>
 					</xs:appinfo>
@@ -58,7 +58,7 @@
 				<xs:annotation>
 					<xs:documentation>Laser cross sectional area</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<type>static</type>
 						<units>m</units>
 					</xs:appinfo>
@@ -153,7 +153,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -164,7 +164,7 @@
 				<xs:annotation>
 					<xs:documentation>Description of the line of sight of the channel, given by 2 points</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -173,7 +173,7 @@
 					<xs:documentation>Index of the polychromator used by this channel (refers to the ../../polychromator array)</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -185,7 +185,7 @@
 					<xs:documentation>Angle formed by the laser beam wave vector and the line of sight, counted clockwise when projected in the poloidal plane</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 						<units>rad</units>
 						<coordinate1>../../laser</coordinate1>
 					</xs:appinfo>
@@ -200,7 +200,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -212,7 +212,7 @@
 					<xs:documentation>Solid angle of the line of sight</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -242,7 +242,7 @@
 					<xs:documentation>Distance between the measurement position and the separatrix, mapped along flux surfaces to the outboard midplane, in the major radius direction. Positive value means the measurement is outside of the separatrix.</xs:documentation>
 					<xs:appinfo>
 						<units>m</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -270,7 +270,7 @@
 						<units>mixed</units>
 						<coordinate1>../../polychromator(channel(i1)/polychromator_index)/wavelength_band</coordinate1>
 						<coordinate2>../t_e/time</coordinate2>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -296,7 +296,7 @@
 						<xs:documentation>Choice of midplane definition for the mapping of measurements on an equilibrium. Indicate the IMAS URI of the used equilibrium IDS in the ids_properties/provenance section.</xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/midplane_identifier.xml</doc_identifier>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -313,7 +313,7 @@
 						<xs:documentation>Set of probing lasers</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.41.0</introduced_after_version>
+							<introduced_with_version>3.42.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -322,7 +322,7 @@
 						<xs:documentation>Set of polychromators</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.41.0</introduced_after_version>
+							<introduced_with_version>3.42.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -332,7 +332,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

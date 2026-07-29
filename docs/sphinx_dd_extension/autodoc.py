@@ -131,7 +131,7 @@ def parse_lifecycle_status(field: ElementTree.Element) -> List[str]:
     lifecycle_status = field.get("lifecycle_status")
     lifecycle_version = field.get("lifecycle_version")
     lifecycle_last_change = field.get("lifecycle_last_change")
-    introduced_after_version = field.get("introduced_after_version")
+    introduced_with_version = field.get("introduced_with_version")
 
     if lifecycle_status == "obsolescent":
         result.append(f".. deprecated:: {lifecycle_version}")
@@ -141,8 +141,8 @@ def parse_lifecycle_status(field: ElementTree.Element) -> List[str]:
     elif lifecycle_status:
         logger.warning("Unknown lifecycle status %s", lifecycle_status)
 
-    if introduced_after_version:
-        result.append(f".. versionadded:: >{introduced_after_version}")
+    if introduced_with_version:
+        result.append(f".. versionadded:: {introduced_with_version}")
 
     if lifecycle_last_change:
         result.append(f".. versionchanged:: {lifecycle_last_change}")

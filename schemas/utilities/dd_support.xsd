@@ -733,6 +733,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
+						<utilities_aoscontext>yes</utilities_aoscontext>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -745,6 +746,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
+						<utilities_aoscontext>yes</utilities_aoscontext>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1689,7 +1691,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1768,7 +1770,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1831,7 +1833,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1930,7 +1932,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2005,7 +2007,7 @@
 						<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -2484,7 +2486,7 @@
 				<xs:annotation>
 					<xs:documentation>The cross-section perpendicular to the conductor contour is described by a series of contour points, given by their relative position with respect to the start point of each element. If the size of this array of structure is equal to 1, then the cross-section is given only for the first element and translated along the conductor elements. Otherwise, it's given explictly for each element, allowing to describe changes of the cross section shape</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../elements/types OR 1...1</coordinate1>
 						<change_nbc_version>3.40.0</change_nbc_version>
 						<change_nbc_description>type_changed</change_nbc_description>
@@ -2541,7 +2543,7 @@
 						<change_nbc_version>4.1.0</change_nbc_version>
 						<change_nbc_description>leaf_renamed</change_nbc_description>
 						<change_nbc_previous_name>name</change_nbc_previous_name>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2615,7 +2617,7 @@
 					<xs:documentation>Fast neutron flux arriving on the inboard side of this coil </xs:documentation>
 					<xs:appinfo>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3212,7 +3214,7 @@
 						<type>dynamic</type>
 						<units>1</units>
 						<coordinate1>../measured</coordinate1>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3239,7 +3241,7 @@
 						<type>dynamic</type>
 						<units>mixed</units>
 						<coordinate1>../measured</coordinate1>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3448,7 +3450,7 @@
 					<xs:documentation>Velocity at the position of maximum major radius on every flux surface</xs:documentation>
 					<xs:appinfo>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -5830,7 +5832,7 @@
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -5845,7 +5847,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate2>1...N</coordinate2>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -5892,7 +5894,7 @@
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -5907,7 +5909,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate2>1...N</coordinate2>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -6084,7 +6086,7 @@
 					<xs:documentation>Content of the ../object/geometry node for this dimension</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>utilities/ggd_geometry_content_identifier.xml</doc_identifier>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -6218,7 +6220,7 @@
 						<coordinate2>1...N</coordinate2>
 						<units>mixed</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.35.0</introduced_after_version>
+						<introduced_with_version>3.36.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -6245,7 +6247,7 @@
 					<xs:documentation>Content of the ../object/geometry node for this dimension</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>utilities/ggd_geometry_content_identifier.xml</doc_identifier>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7168,7 +7170,7 @@
 					<xs:documentation>Poloidal orbit frequency (transit or bounce) at the grid location (in phase space)</xs:documentation>
 					<xs:appinfo>
 						<units>rad.s^-1</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7177,7 +7179,7 @@
 					<xs:documentation>Toroidal orbit frequency (transit or precession) at the grid location (in phase space)</xs:documentation>
 					<xs:appinfo>
 						<units>rad.s^-1</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7205,7 +7207,7 @@
 					<xs:documentation>Value of the distribution function at the grid position in phase space. The interpolation coefficients refer to a C-2 spline.</xs:documentation>
 					<xs:appinfo>
 						<units>m^-6.s^3</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7214,7 +7216,7 @@
 					<xs:documentation>Orbit description of the particle at this position in phase space. First dimension is the element index. Second dimension is the time along the orbit. Third dimension contains the particle phase space coordinates.</xs:documentation>
 					<xs:appinfo>
 						<units>mixed</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7223,7 +7225,7 @@
 					<xs:documentation>Orbit type identifier</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>utilities/orbit_type_identifier.xml</doc_identifier>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7231,7 +7233,7 @@
 				<xs:annotation>
 					<xs:documentation>Midplane values of the motion invariants, for each orbit, evaluated at the minimum of B.grad(B) along the orbit</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7240,7 +7242,7 @@
 					<xs:documentation>Normalised volume of the CoM (constants of motion) cell elements. The normalization is made on the maximum value of the CoM volume on the grid, i.e. Delta(E).Delta(lambda).Delta(P_phi).</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8020,7 +8022,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8030,7 +8032,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8040,7 +8042,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>W.m^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8050,7 +8052,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8060,7 +8062,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8070,7 +8072,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>W.m^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8080,7 +8082,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8090,7 +8092,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8100,7 +8102,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>W.m^-2</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8156,7 +8158,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8166,7 +8168,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8176,7 +8178,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>kg.m^-1.s^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8186,7 +8188,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8196,7 +8198,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8206,7 +8208,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>kg.m^-1.s^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8216,7 +8218,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8226,7 +8228,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8236,7 +8238,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>kg.m^-1.s^-2</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8292,7 +8294,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8302,7 +8304,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8312,7 +8314,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8322,7 +8324,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8332,7 +8334,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8342,7 +8344,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8352,7 +8354,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8362,7 +8364,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8372,7 +8374,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -9476,7 +9478,7 @@
 						<coordinate1>/time</coordinate1>
 						<units>eV</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9490,7 +9492,7 @@
 						<coordinate1>/time</coordinate1>
 						<units>m^-3</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9503,7 +9505,7 @@
 					<xs:appinfo>
 						<coordinate1>../../profiles_1d(itime)/ion</coordinate1>
 						<utilities_aoscontext>yes</utilities_aoscontext>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -9513,7 +9515,7 @@
 					<xs:appinfo>
 						<units>s</units>
 						<type>constant</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9644,7 +9646,7 @@
 						<type>dynamic</type>
 						<units>mixed</units>
 						<coordinate1>../measured</coordinate1>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9853,7 +9855,7 @@
 					<xs:documentation>Velocity at the position of maximum major radius on every flux surface</xs:documentation>
 					<xs:appinfo>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12721,7 +12723,7 @@
 					<xs:appinfo>
 						<units>A.m^-2</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12740,7 +12742,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>A.m^-2</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -14440,7 +14442,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -14881,7 +14883,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -15026,7 +15028,7 @@
 				<xs:annotation>
 					<xs:documentation>Position of the center of the sphere which defines the mirror, in the case of a spherical mirror (geometry_type = 2), derived from the above geometric data</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -15865,7 +15867,7 @@
 				<xs:annotation>
 					<xs:documentation>The element is an annulus of centre R, Z, with inner radius radius_inner and outer radius radius_outer</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -15873,7 +15875,7 @@
 				<xs:annotation>
 					<xs:documentation>The element is approximated by a rectangle defined by a central segment and a thickness in the direction perpendicular to the segment</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -15900,7 +15902,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16211,7 +16213,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16339,7 +16341,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16365,7 +16367,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<doc_identifier>utilities/materials_identifier.xml</doc_identifier>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -16376,7 +16378,7 @@
 						<type>static</type>
 						<coordinate1>../material</coordinate1>
 						<units>1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16756,7 +16758,7 @@
 						<units>1</units>
 						<type>dynamic</type>
 						<coordinate1>../../length</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16770,7 +16772,7 @@
 						<units>1</units>
 						<type>dynamic</type>
 						<coordinate1>../../length</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -17048,7 +17050,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<url>../../IMAS-URI-scheme.html</url>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -17092,7 +17094,7 @@
 						<xs:documentation>User-defined name for this IDS occurrence</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -17115,7 +17117,7 @@
 						<xs:documentation>Type of data contained in this occurrence</xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/occurrence_type_identifier.xml</doc_identifier>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -17161,7 +17163,7 @@
 						<xs:appinfo>
 							<lifecycle_status>alpha</lifecycle_status>
 							<lifecycle_version>3.39.0</lifecycle_version>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

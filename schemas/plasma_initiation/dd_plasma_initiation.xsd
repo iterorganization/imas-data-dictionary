@@ -330,7 +330,7 @@
 						<cocos_label_transformation>ip_like</cocos_label_transformation>
 						<cocos_transformation_expression>.sigma_ip_eff</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>plasma_initiation.global_quantities.ip.data</cocos_leaf_name_aos_indices>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -339,7 +339,7 @@
 					<xs:documentation>Volume averaged electron temperature (average over the plasma volume up to the LCFS)</xs:documentation>
 					<xs:appinfo>
 						<units>eV</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -348,7 +348,7 @@
 					<xs:documentation>Volume averaged electron density (average over the plasma volume up to the LCFS)</xs:documentation>
 					<xs:appinfo>
 						<units>m^-3</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -356,7 +356,7 @@
 				<xs:annotation>
 					<xs:documentation>Quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -365,7 +365,7 @@
 				<xs:annotation>
 					<xs:documentation>Quantities related to the different neutral species</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -403,7 +403,7 @@
 						<xs:documentation>2D profiles in the poloidal plane, given at various time slices</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>time</coordinate1>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 							<type>dynamic</type>
 						</xs:appinfo>
 					</xs:annotation>

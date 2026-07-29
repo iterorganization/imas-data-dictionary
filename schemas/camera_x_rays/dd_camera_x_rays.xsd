@@ -61,7 +61,7 @@
 						<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 						<xs:appinfo>
 							<type>static</type>
-							<introduced_after_version>3</introduced_after_version>
+							<introduced_with_version>4.0.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -81,7 +81,7 @@
 					<xs:annotation>
 						<xs:documentation>Electron temperature at the magnetic axis, inferred from ratios of soft x-rays emissivity at different energies</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 							<units>eV</units>
 						</xs:appinfo>
 					</xs:annotation>

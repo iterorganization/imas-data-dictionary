@@ -99,7 +99,7 @@
 					<xs:appinfo>
 						<type>constant</type>
 						<units>1</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../../species_all/angle_pol_equilibrium</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -113,7 +113,7 @@
 					<xs:appinfo>
 						<type>constant</type>
 						<units>1</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../../species_all/angle_pol_equilibrium</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -158,7 +158,7 @@
 					<xs:appinfo>
 						<type>constant</type>
 						<units>1</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -171,7 +171,7 @@
 					<xs:appinfo>
 						<type>constant</type>
 						<units>1</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -184,7 +184,7 @@
 					<xs:appinfo>
 						<type>constant</type>
 						<units>1</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -365,7 +365,7 @@
 						<type>constant</type>
 						<units>rad</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -464,7 +464,7 @@
 					<xs:documentation>Flag = 1 if the geometric dependence of the grad-B drift is approximated to be that of the curvature drift (including the pressure gradient contribution), 0 otherwise. Using this approximation (Flag=1) is only recommended together with the neglect of parallel magnetic field fluctuations</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -624,7 +624,7 @@
 						<coordinate1>../../../../../species</coordinate1>
 						<coordinate2>../../angle_pol</coordinate2>
 						<coordinate3>../../time_norm</coordinate3>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2741,7 +2741,7 @@
 				<xs:annotation>
 					<xs:documentation>Electrostatic potential, magnetic field and magnetic vector potential</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2749,7 +2749,7 @@
 				<xs:annotation>
 					<xs:documentation>Code-specific parameters used for this eigenmode</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2758,7 +2758,7 @@
 					<xs:documentation>Flag = 1 if this is an initial value run, 0 for an eigenvalue run</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2957,7 +2957,7 @@
 				<xs:annotation>
 					<xs:documentation>Code-specific parameters used for the non-linear simulation</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2980,7 +2980,7 @@
 				<xs:annotation>
 					<xs:documentation>3D fluxes (flux surface averaged, summed over kx)</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3043,7 +3043,7 @@
 				<xs:annotation>
 					<xs:documentation>3D fluxes (flux surface averaged, summed over kx)</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3066,7 +3066,7 @@
 				<xs:annotation>
 					<xs:documentation>Moments (normalized) of the perturbed distribution function of particles</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3102,7 +3102,7 @@
 					<xs:annotation>
 						<xs:documentation>Linear simulation</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -3110,7 +3110,7 @@
 					<xs:annotation>
 						<xs:documentation>Non-linear simulation</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

@@ -540,7 +540,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -571,7 +571,7 @@
 				<xs:annotation>
 					<xs:documentation>Static part of the geometry of the emission antenna</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -579,7 +579,7 @@
 				<xs:annotation>
 					<xs:documentation>Static part of the geometry of the detection antenna, to be filled only if it is distinct from the emission antenna.</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -626,7 +626,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate1_same_as>../frequencies/data</coordinate1_same_as>
 						<units>V</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -689,7 +689,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

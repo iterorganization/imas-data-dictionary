@@ -583,7 +583,7 @@
 						<coordinate1>../../../grid/rho_tor_norm</coordinate1>
 						<units>s^-1</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.40.0</introduced_after_version>
+						<introduced_with_version>3.40.1</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -615,7 +615,7 @@
 						<coordinate1>../../../grid/rho_tor_norm</coordinate1>
 						<units>W</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.40.0</introduced_after_version>
+						<introduced_with_version>3.40.1</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -699,7 +699,7 @@
 						<coordinate1>../../grid/rho_tor_norm</coordinate1>
 						<units>s^-1</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.40.0</introduced_after_version>
+						<introduced_with_version>3.40.1</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -731,7 +731,7 @@
 						<coordinate1>../../grid/rho_tor_norm</coordinate1>
 						<units>W</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.40.0</introduced_after_version>
+						<introduced_with_version>3.40.1</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -891,7 +891,7 @@
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<units>m^-3.s^-1</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -902,7 +902,7 @@
 				<xs:annotation>
 					<xs:documentation>Decomposition of the source term for total ion density equation into implicit and explicit parts</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -913,7 +913,7 @@
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<units>s^-1</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1191,7 +1191,7 @@
 				<xs:annotation>
 					<xs:documentation>Code-specific parameters used for this source</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

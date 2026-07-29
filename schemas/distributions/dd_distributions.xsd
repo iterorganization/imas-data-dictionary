@@ -569,7 +569,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -582,7 +582,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -595,7 +595,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>W</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1616,7 +1616,7 @@
 						<coordinate2>../../grid/z OR ../../grid/theta_geometric OR ../../grid/theta_straight</coordinate2>
 						<units>Pa</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2460,7 +2460,7 @@
 						<coordinate1>../../grid/rho_tor_norm</coordinate1>
 						<units>Pa</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2642,7 +2642,7 @@
 						<coordinate1>../grid/rho_tor_norm</coordinate1>
 						<units>Pa</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2896,7 +2896,7 @@
 						<coordinate2>../grid/theta_geometric OR ../grid/theta_straight</coordinate2>
 						<units>m</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2911,7 +2911,7 @@
 						<coordinate2>../grid/theta_geometric OR ../grid/theta_straight</coordinate2>
 						<units>m</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2996,7 +2996,7 @@
 						<coordinate2>../grid/z OR ../grid/theta_geometric OR ../grid/theta_straight</coordinate2>
 						<units>Pa</units>
 						<type>dynamic</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

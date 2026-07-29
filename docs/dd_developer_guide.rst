@@ -1087,7 +1087,7 @@ Adding node creation tag in the DD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Following a feature request, it was decided to introduce metadata
-indicating after which tag a node has been introduced into the DD. In
+indicating with which tag a node has been introduced into the DD. In
 case of a structure node, this information applies by default to all
 of its descendants.
 
@@ -1096,7 +1096,13 @@ This done with the following metadata, to be located within the
 
 .. code-block:: xml
 
-   <introduced_after_version>LAST TAG BEFORE THE INTRODUCTION OF THE NODE</introduced_after_version>
+   <introduced_with_version>TAG AT WHICH THE NODE IS INTRODUCED</introduced_with_version>
+
+Note that between version 3.32.1 (beginning of this feature) and
+version 4.1.0 included, this information was indicated as the version
+**after** which a node has been introduced in the DD
+(so the last version before the introduction of the node).
+The metadata name was then <introduced_after_version>.
 
 These metadata will be added manually at each DD extension, from June
 2021 onwards. At some point, it would be worth to replace this manual

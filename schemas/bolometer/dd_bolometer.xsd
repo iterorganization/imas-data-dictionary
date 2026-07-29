@@ -4,6 +4,33 @@
 <?modxslt-stylesheet type="text/xsl" media="screen" alternate="no" title="Show raw source of the XML file" charset="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="../utilities/dd_support.xsd"/>
+	<xs:complexType name="bolometer_channel_ggd">
+		<xs:annotation>
+			<xs:documentation>Equilibrium at a given time slice</xs:documentation>
+			<xs:appinfo>
+				<type>dynamic</type>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="geometry_matrix" type="generic_grid_scalar">
+				<xs:annotation>
+					<xs:documentation>Geometry matrix allowing to convert the power emitted by volume elements of the /ggd_grid into power measured by this channel. Power = sum_over ggd_volume_elements*geometry_matrix*emissivity</xs:documentation>
+					<xs:appinfo>
+						<units>m^3</units>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="time" type="flt_type">
+				<xs:annotation>
+					<xs:documentation>Time</xs:documentation>
+					<xs:appinfo>
+						<units>s</units>
+						<type>dynamic</type>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="bolometer_channel">
 		<xs:annotation>
 			<xs:documentation>Bolometer channel</xs:documentation>
@@ -25,7 +52,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -50,7 +77,7 @@
 					<xs:documentation>Number of sub-collimators</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -63,7 +90,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -100,6 +127,15 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="temperature" type="signal_flt_1d">
+				<xs:annotation>
+					<xs:documentation>Temperature of detector foil</xs:documentation>
+					<xs:appinfo>
+						<units>K</units>
+						<introduced_with_version>4.2.0</introduced_with_version>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="validity_timed" type="signal_int_1d">
 				<xs:annotation>
 					<xs:documentation>Indicator of the validity of the channel as a function of time (0 means valid, negative values mean non-valid)</xs:documentation>
@@ -115,6 +151,15 @@
 				<xs:complexType>
 					<xs:group ref="INT_0D"/>
 				</xs:complexType>
+			</xs:element>
+			<xs:element name="ggd" type="bolometer_channel_ggd" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Quantities based on GGD coordinates</xs:documentation>
+					<xs:appinfo>
+						<coordinate1>time</coordinate1>
+						<type>dynamic</type>
+					</xs:appinfo>
+				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
@@ -139,7 +184,7 @@
 					<xs:documentation>Description, e.g. “Camera viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -170,7 +215,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.7.4</lifecycle_version>
-				<lifecycle_last_change>4.1.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexType>
@@ -181,7 +226,7 @@
 						<xs:documentation>Set of cameras</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -228,7 +273,7 @@
 						<xs:documentation>Selection of one of a set of grid types for the 2D power density map</xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/poloidal_plane_coordinates_identifier.xml</doc_identifier>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -236,7 +281,7 @@
 					<xs:annotation>
 						<xs:documentation>Definition of the 2D grid (the content of dim1 and dim2 is defined by the selected grid_type)</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 							<cocos_alias>IDSPATH</cocos_alias>
 							<cocos_replace>bolometer</cocos_replace>
 						</xs:appinfo>
@@ -246,10 +291,19 @@
 					<xs:annotation>
 						<xs:documentation>Power density map in the poloidal cross-section, obtained from tomographic inversion of the bolometer data</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 							<coordinate1>../grid/dim1</coordinate1>
 							<coordinate2>../grid/dim2</coordinate2>
 							<units>W.m^-3</units>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="grid_ggd" type="generic_grid_aos3_root" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>GGD grid. The timebase of this array of structure must be a subset of the timebase on which physical quantities are described (camera/channel/ggd)</xs:documentation>
+						<xs:appinfo>
+							<coordinate1>time</coordinate1>
+							<type>dynamic</type>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -259,7 +313,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

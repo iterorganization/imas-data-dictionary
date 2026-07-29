@@ -266,7 +266,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -437,7 +437,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -450,7 +450,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -462,7 +462,7 @@
 					<xs:documentation>Crystal mesh type</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>spectrometer_x_ray_crystal/crystal_mesh_identifier.xml</doc_identifier>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -508,7 +508,7 @@
 				<xs:annotation>
 					<xs:documentation>Instrument function for this bin (replaces the ../../instrument function in case vertical binning is used), i.e. response of the detector to a monochromatic emission passing through the spectrometer. The resulting image on the detector will be a 2-D distribution of pixel values, for each wavelength. It can be given as explicit values for each detector pixel (values node) or as a parametric function of wavelength (described by the other nodes) </xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -528,7 +528,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate1_same_as>../../wavelength_frames</coordinate1_same_as>
 						<coordinate2>../../z_frames</coordinate2>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -544,7 +544,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate1_same_as>../../wavelength_frames</coordinate1_same_as>
 						<coordinate2>../../bin</coordinate2>
-						<introduced_after_version>3.35.0</introduced_after_version>
+						<introduced_with_version>3.36.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -730,7 +730,7 @@
 					<xs:documentation>Set of bins (binning in the vertical dimension) defined to increase the signal to noise ratio of the spectra</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.35.0</introduced_after_version>
+						<introduced_with_version>3.36.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -750,7 +750,7 @@
 						<type>static</type>
 						<units>eV</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -764,7 +764,7 @@
 						<type>static</type>
 						<units>1</units>
 						<coordinate1>../energies</coordinate1>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -775,7 +775,7 @@
 				<xs:annotation>
 					<xs:documentation>Profiles proxies are given in the vertical direction of the detector. They are estimated directly from the camera, without tomographic inversion. Binning is allowed so the number of profile points may be lower than the length of z_frames. Physical quantities deduced from the measured spectra are given for each profile point. They correspond to the spectra integrated along lines of sight, defined by a first point given by the centre of the crystal and a second point (depending on the profile point) described below.</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -783,7 +783,7 @@
 				<xs:annotation>
 					<xs:documentation>Instrument function (to be used in case vertical binning is not used), i.e. response of the detector to a monochromatic emission passing through the spectrometer. The resulting image on the detector will be a 2-D distribution of pixel values, for each wavelength. It can be given as explicit values for each detector pixel (values node) or as a parametric function of wavelength (described by the other nodes) </xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -806,7 +806,7 @@
 						<xs:documentation>Measurement channel, composed of a camera, a crystal, and (optional) a set of reflectors. The light coming from the plasma passes through the (optional) set of reflectors, then the crystal and arrives at the camera</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.33.0</introduced_after_version>
+							<introduced_with_version>3.34.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -816,7 +816,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

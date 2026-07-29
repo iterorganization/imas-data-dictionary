@@ -121,7 +121,7 @@
 					<xs:documentation>Description, e.g. mid-plane gap</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -231,7 +231,7 @@
 				<xs:annotation>
 					<xs:documentation>Expression for calculating the residual deviation between the left and right hand side of the Grad Shafranov equation</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 						<doc_identifier>equilibrium/equilibrium_gs_deviation_identifier.xml</doc_identifier>
 					</xs:appinfo>
 				</xs:annotation>
@@ -242,7 +242,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>mixed</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -254,7 +254,7 @@
 					<xs:documentation>Convergence result</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>equilibrium/equilibrium_convergence_status_identifier.xml</doc_identifier>
-						<introduced_after_version>3.40.0</introduced_after_version>
+						<introduced_with_version>3.40.1</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -298,7 +298,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>m</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -484,7 +484,7 @@
 				<xs:annotation>
 					<xs:documentation>Position and distance to the plasma boundary of the point of the first wall which is the closest to plasma boundary</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 						<change_nbc_version>4.0.0</change_nbc_version>
 						<change_nbc_description>structure_renamed</change_nbc_description>
 						<change_nbc_previous_name>../boundary_separatrix/closest_wall_point</change_nbc_previous_name>
@@ -495,7 +495,7 @@
 				<xs:annotation>
 					<xs:documentation>Outboard point on the separatrix on which dr/dz = 0 (local maximum of the major radius of the separatrix). In case of multiple local maxima, the closest one from z=z_magnetic_axis is chosen. </xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 						<change_nbc_version>4.0.0</change_nbc_version>
 						<change_nbc_description>structure_renamed</change_nbc_description>
 						<change_nbc_previous_name>../boundary_separatrix/dr_dz_zero_point</change_nbc_previous_name>
@@ -507,7 +507,7 @@
 					<xs:documentation>Set of gaps, defined by a reference point and a direction.</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 						<change_nbc_version>4.0.0</change_nbc_version>
 						<change_nbc_description>aos_renamed</change_nbc_description>
 						<change_nbc_previous_name>../boundary_separatrix/gap</change_nbc_previous_name>
@@ -520,7 +520,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>m</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<change_nbc_version>4.1.0</change_nbc_version>
 						<change_nbc_description>leaf_renamed</change_nbc_description>
 						<change_nbc_previous_name>../global_quantities/rho_tor_boundary</change_nbc_previous_name>
@@ -536,7 +536,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
 						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.boundary.phi</cocos_leaf_name_aos_indices>
@@ -552,7 +552,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<cocos_label_transformation>b0_like</cocos_label_transformation>
 						<cocos_transformation_expression>.sigma_b0_eff</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.boundary.phi_poloidal_current</cocos_leaf_name_aos_indices>
@@ -694,7 +694,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>1</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -707,7 +707,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>Wb</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<cocos_label_transformation>psi_like</cocos_label_transformation>
 						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.q_min.psi</cocos_leaf_name_aos_indices>
@@ -896,7 +896,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>m</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<lifecycle_status>obsolescent</lifecycle_status>
 						<lifecycle_version>4.1.0</lifecycle_version>
 					</xs:appinfo>
@@ -987,7 +987,7 @@
 						<cocos_transformation_expression>.sigma_ip_eff</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>core_profiles.global_quantities.v_loop</cocos_leaf_name_aos_indices>
 						<cocos_leaf_name_aos_indices>equilibrium.time_slice{i}.global_quantities.v_external</cocos_leaf_name_aos_indices>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1012,7 +1012,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>ohm</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1083,7 +1083,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>m</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1195,7 +1195,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>as_parent</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1300,7 +1300,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>as_parent</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1408,7 +1408,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>as_parent</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1516,7 +1516,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>as_parent</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1621,7 +1621,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>as_parent</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1824,7 +1824,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>Pa</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<url>https://doi.org/10.13182/FST48-968</url>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1856,7 +1856,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>A.m^-2</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1882,7 +1882,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<units>1</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<uri>https://arxiv.org/abs/1009.2755</uri>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1895,7 +1895,7 @@
 					<xs:documentation>Number of degrees of freedom of the identification model</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1907,7 +1907,7 @@
 					<xs:documentation>Number of constraints used (i.e. having a non-zero weight)</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1944,7 +1944,7 @@
 						<type>dynamic</type>
 						<coordinate1>../psi</coordinate1>
 						<units>1</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2187,7 +2187,7 @@
 						<coordinate1>../psi</coordinate1>
 						<units>1</units>
 						<url>equilibrium/DefinitionEqBoundary.svg</url>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2599,7 +2599,7 @@
 					<xs:documentation>Type of profiles (distinguishes contribution from plasma, vaccum fields and total fields)</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>equilibrium/equilibrium_profiles_2d_identifier.xml</doc_identifier>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2939,7 +2939,7 @@
 				<xs:annotation>
 					<xs:documentation>Description of the topological connectivity of the poloidal flux map critical points as an undirected graph. Critical points are ether local extremum (o-points) or saddle points (x-points) of the poloidal flux map. X-points have zero gradients in orthogonal directions but are not local extremum of the poloidal flux map whilst O-points are.</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 						<lifecycle_status>alpha</lifecycle_status>
 						<lifecycle_version>4.0.0</lifecycle_version>
 					</xs:appinfo>
