@@ -254,11 +254,6 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="path_geometry" type="line_of_sight_2points_dynamic_aos3">
-				<xs:annotation>
-					<xs:documentation>Geometry of the pellet path in the vaccuum chamber</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="path_profiles" type="pi_injector_pellet_path_profiles">
 				<xs:annotation>
 					<xs:documentation>1-D profiles of plasma and pellet along the pellet path </xs:documentation>
@@ -486,7 +481,7 @@
 	</xs:complexType>
 	<xs:complexType name="pi_single">
 		<xs:annotation>
-			<xs:documentation>Description of a single spi system</xs:documentation>
+			<xs:documentation>Description of a single injector</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="name">
@@ -526,9 +521,14 @@
 					<xs:documentation>Description of the propellant gas</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="injection_direction" type="xyz0d_constant_dimensionless">
+			<xs:element name="injection_direction" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Unit vector of the pellet velocity direction at the exit of the injector</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="injection_position" type="rphiz0d_static">
+				<xs:annotation>
+					<xs:documentation>Position of the centre of the exit surface of the injector</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -548,7 +548,7 @@
 				<xs:element ref="ids_properties"/>
 				<xs:element name="injector" type="pi_single" maxOccurs="5">
 					<xs:annotation>
-						<xs:documentation>Set of pellet injectors</xs:documentation>
+						<xs:documentation>Set of pellet injectors, defined as a pellet injection tube connected to the plasma chamber </xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
 						</xs:appinfo>
