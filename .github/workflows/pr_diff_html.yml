@@ -1,4 +1,4 @@
-name: Comment on Pull Request with XML diff link
+name: Upload XML diff to Azure
 
 on:
   workflow_run:
@@ -11,7 +11,7 @@ permissions:
   actions: read
 
 jobs:
-  comment:
+  upload_diff:
     environment:
       name: azure
       deployment: false
@@ -84,86 +84,4 @@ jobs:
             --name "pr-${{ steps.pr_info.outputs.pr_number }}/index.html" \
             --content-type "text/html" \
             --auth-mode key
-    - name: Check and wait for readthedocs (Max 10s)
-      id: check-workflows
-      uses: actions/github-script@v8
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const sha = context.payload.workflow_run.head_sha;
-          console.log(`Checking workflow runs for SHA: ${sha}`);
-          
-          const maxWaitMs = 10000; // 10 seconds
-          const intervalMs = 2000; // 2 seconds between checks
-          let elapsedMs = 0;
-           
-          // Helper function to pause execution
-          const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-            
-          while (elapsedMs <= maxWaitMs) {
-            console.log(`\nFetching API... (Elapsed: ${elapsedMs/1000}s)`);
-            
-            const { data } = await github.rest.actions.listWorkflowRunsForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              head_sha: sha,
-            });
-              
-            const runs = data.workflow_runs;
-            const wf = runs.find(r => r.name === 'readthedocs/actions');
-            
-            if (wf) {
-              if (wf.status === 'completed') {
-                break;
-              }
-            }
-              
-            // If we haven't reached the max wait time, sleep and try again
-            if (elapsedMs < maxWaitMs) {
-              console.log(`Waiting ${intervalMs/1000} seconds...`);
-              await sleep(intervalMs);
-            }
-              
-            elapsedMs += intervalMs;
-          }
-            
-          throw new Error("Timed out waiting for readthedocs/actions to complete.");
-    - name: 'Update PR Description with Diff Link'
-      uses: actions/github-script@v8
-      env:
-        PR_NUMBER: ${{ steps.pr_info.outputs.pr_number }}
-        PREVIEW_URL: ${{secrets.PREVIEW_URL}}
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const pull_number = Number(process.env.PR_NUMBER);
-          const previewUrl = process.env.PREVIEW_URL
-
-          const pr = await github.rest.pulls.get({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            pull_number: pull_number,
-          });
-
-          let body = pr.data.body || '';
-
-          const startMarker = '<!-- xml-diff imas-data-dictionary start -->';
-          const endMarker = '<!-- xml-diff imas-data-dictionary end -->';
-          const contentBlock = `${startMarker}\n----\n📚 XML Diff 📚: ${previewUrl}\n\n${endMarker}`;
-
-          const regex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`);
-          
-          if (regex.test(body)) {
-            body = body.replace(regex, contentBlock);
-            console.log("Existing XML Diff block found and updated.");
-          } else {
-            body = body ? `${body}\n\n${contentBlock}` : contentBlock;
-            console.log("XML Diff block added to the end of the PR description.");
-          }
-
-          await github.rest.pulls.update({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            pull_number: pull_number,
-            body: body,
-          });
+    
