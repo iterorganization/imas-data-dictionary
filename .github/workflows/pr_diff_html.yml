@@ -83,5 +83,6 @@ jobs:
             --container-name '$web' \
             --name "pr-${{ steps.pr_info.outputs.pr_number }}/index.html" \
             --content-type "text/html" \
+            --overwrite \
             --auth-mode key
     
