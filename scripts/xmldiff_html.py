@@ -1,7 +1,7 @@
 import argparse
 import os
 import sys
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader
 from xmldiff import XMLDiffer
 
 
@@ -20,7 +20,7 @@ class HTMLDiffGenerator:
         template_dir = os.path.dirname(os.path.abspath(__file__))
         env = Environment(
             loader=FileSystemLoader([template_dir, os.getcwd()]),
-            autoescape=select_autoescape(["html", "xml"]),
+            autoescape=True,
             trim_blocks=True,
             lstrip_blocks=True,
         )
