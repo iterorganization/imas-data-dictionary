@@ -1,4 +1,4 @@
-name: readthedocs/actions
+name: Update description with links
 on:
   pull_request_target:
     types:
