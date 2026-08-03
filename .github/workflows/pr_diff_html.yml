@@ -24,17 +24,23 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
+          const head_sha = context.payload.workflow_run.head_sha;
           const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            commit_sha: context.payload.workflow_run.head_sha,
+            commit_sha: head_sha,
           });
-          
-          if (!prs.data || prs.data.length === 0) {
-            throw new Error("No open or closed pull request found associated with this commit SHA.");
+
+          // Only accept PRs whose current head is the commit this diff was
+          // built from, so a commit that merely appears in another PR's
+          // history cannot redirect the upload to that PR's page.
+          const matching = prs.data.filter((pr) => pr.head.sha === head_sha);
+
+          if (matching.length === 0) {
+            throw new Error("No pull request found whose head matches this commit SHA.");
           }
-          
-          const issue_number = prs.data[0].number;
+
+          const issue_number = (matching.find((pr) => pr.state === 'open') ?? matching[0]).number;
           console.log(`Successfully resolved PR number: ${issue_number}`);
           
           core.setOutput('pr_number', issue_number);
