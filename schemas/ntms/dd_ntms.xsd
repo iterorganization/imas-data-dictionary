@@ -22,16 +22,14 @@
 					<xs:group ref="FLT_1D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="name">
+			<xs:element name="type" type="identifier_dynamic_aos3">
 				<xs:annotation>
-					<xs:documentation>Name of the contribution</xs:documentation>
+					<xs:documentation>Type of the contribution</xs:documentation>
 					<xs:appinfo>
-						<type>dynamic</type>
+						<introduced_with_version>4.2.0</introduced_with_version>
+						<doc_identifier>ntms/ntms_deltaw_identifier.xml</doc_identifier>
 					</xs:appinfo>
 				</xs:annotation>
-				<xs:complexType>
-					<xs:group ref="STR_0D"/>
-				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
@@ -273,16 +271,14 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="name">
+			<xs:element name="type" type="identifier_dynamic_aos3">
 				<xs:annotation>
-					<xs:documentation>Name of the contribution</xs:documentation>
+					<xs:documentation>Type of the contribution</xs:documentation>
 					<xs:appinfo>
-						<type>dynamic</type>
+						<introduced_with_version>4.2.0</introduced_with_version>
+						<doc_identifier>ntms/ntms_deltaw_identifier.xml</doc_identifier>
 					</xs:appinfo>
 				</xs:annotation>
-				<xs:complexType>
-					<xs:group ref="STR_0D"/>
-				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
@@ -615,7 +611,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.0.4</lifecycle_version>
-				<lifecycle_last_change>3.0.4</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexType>

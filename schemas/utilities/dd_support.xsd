@@ -273,6 +273,58 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="signal_flt_1d_interlock">
+		<xs:annotation>
+			<xs:documentation>Signal (FLT_1D) with its time base, for interlock system with the description of the signal</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name">
+				<xs:annotation>
+					<xs:documentation>Short string identifier (unique for a given device)</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="STR_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="description">
+				<xs:annotation>
+					<xs:documentation>Description, e.g. “filtered interferometer signal for a specific line of sight”</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="STR_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="data">
+				<xs:annotation>
+					<xs:documentation>Data</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>as_parent</units>
+						<coordinate1>../time</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_1D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="time" type="flt_1d_type">
+				<xs:annotation>
+					<xs:documentation>Time</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>s</units>
+						<coordinate1>1...N</coordinate1>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="signal_flt_1d_units_level_2">
 		<xs:annotation>
 			<xs:documentation>Signal (FLT_1D) with its time base, data units 2 levels above</xs:documentation>
@@ -681,6 +733,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
+						<utilities_aoscontext>yes</utilities_aoscontext>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -693,6 +746,7 @@
 					<xs:appinfo>
 						<type>dynamic</type>
 						<coordinate1>../../time</coordinate1>
+						<utilities_aoscontext>yes</utilities_aoscontext>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1637,7 +1691,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1716,7 +1770,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1779,7 +1833,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1878,7 +1932,7 @@
 					<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1953,7 +2007,7 @@
 						<xs:documentation>Short description of the software (type, purpose)</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -2432,7 +2486,7 @@
 				<xs:annotation>
 					<xs:documentation>The cross-section perpendicular to the conductor contour is described by a series of contour points, given by their relative position with respect to the start point of each element. If the size of this array of structure is equal to 1, then the cross-section is given only for the first element and translated along the conductor elements. Otherwise, it's given explictly for each element, allowing to describe changes of the cross section shape</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../elements/types OR 1...1</coordinate1>
 						<change_nbc_version>3.40.0</change_nbc_version>
 						<change_nbc_description>type_changed</change_nbc_description>
@@ -2489,7 +2543,7 @@
 						<change_nbc_version>4.1.0</change_nbc_version>
 						<change_nbc_description>leaf_renamed</change_nbc_description>
 						<change_nbc_previous_name>name</change_nbc_previous_name>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -2563,7 +2617,7 @@
 					<xs:documentation>Fast neutron flux arriving on the inboard side of this coil </xs:documentation>
 					<xs:appinfo>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3160,7 +3214,7 @@
 						<type>dynamic</type>
 						<units>1</units>
 						<coordinate1>../measured</coordinate1>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3187,7 +3241,7 @@
 						<type>dynamic</type>
 						<units>mixed</units>
 						<coordinate1>../measured</coordinate1>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -3396,7 +3450,7 @@
 					<xs:documentation>Velocity at the position of maximum major radius on every flux surface</xs:documentation>
 					<xs:appinfo>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -5778,7 +5832,7 @@
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -5793,7 +5847,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate2>1...N</coordinate2>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -5840,7 +5894,7 @@
 						<type>dynamic</type>
 						<coordinate1>1...N</coordinate1>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -5855,7 +5909,7 @@
 						<coordinate1>1...N</coordinate1>
 						<coordinate2>1...N</coordinate2>
 						<units>as_parent</units>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -6032,7 +6086,7 @@
 					<xs:documentation>Content of the ../object/geometry node for this dimension</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>utilities/ggd_geometry_content_identifier.xml</doc_identifier>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -6166,7 +6220,7 @@
 						<coordinate2>1...N</coordinate2>
 						<units>mixed</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.35.0</introduced_after_version>
+						<introduced_with_version>3.36.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -6193,7 +6247,7 @@
 					<xs:documentation>Content of the ../object/geometry node for this dimension</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>utilities/ggd_geometry_content_identifier.xml</doc_identifier>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7116,7 +7170,7 @@
 					<xs:documentation>Poloidal orbit frequency (transit or bounce) at the grid location (in phase space)</xs:documentation>
 					<xs:appinfo>
 						<units>rad.s^-1</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7125,7 +7179,7 @@
 					<xs:documentation>Toroidal orbit frequency (transit or precession) at the grid location (in phase space)</xs:documentation>
 					<xs:appinfo>
 						<units>rad.s^-1</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7153,7 +7207,7 @@
 					<xs:documentation>Value of the distribution function at the grid position in phase space. The interpolation coefficients refer to a C-2 spline.</xs:documentation>
 					<xs:appinfo>
 						<units>m^-6.s^3</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7162,7 +7216,7 @@
 					<xs:documentation>Orbit description of the particle at this position in phase space. First dimension is the element index. Second dimension is the time along the orbit. Third dimension contains the particle phase space coordinates.</xs:documentation>
 					<xs:appinfo>
 						<units>mixed</units>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7171,7 +7225,7 @@
 					<xs:documentation>Orbit type identifier</xs:documentation>
 					<xs:appinfo>
 						<doc_identifier>utilities/orbit_type_identifier.xml</doc_identifier>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7179,7 +7233,7 @@
 				<xs:annotation>
 					<xs:documentation>Midplane values of the motion invariants, for each orbit, evaluated at the minimum of B.grad(B) along the orbit</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7188,7 +7242,7 @@
 					<xs:documentation>Normalised volume of the CoM (constants of motion) cell elements. The normalization is made on the maximum value of the CoM volume on the grid, i.e. Delta(E).Delta(lambda).Delta(P_phi).</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7968,7 +8022,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7978,7 +8032,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7988,7 +8042,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>W.m^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -7998,7 +8052,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8008,7 +8062,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8018,7 +8072,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>W.m^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8028,7 +8082,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8038,7 +8092,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8048,7 +8102,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>W.m^-2</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8104,7 +8158,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8114,7 +8168,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8124,7 +8178,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>kg.m^-1.s^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8134,7 +8188,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8144,7 +8198,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8154,7 +8208,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>kg.m^-1.s^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8164,7 +8218,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8174,7 +8228,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8184,7 +8238,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>kg.m^-1.s^-2</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8240,7 +8294,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8250,7 +8304,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8260,7 +8314,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8270,7 +8324,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8280,7 +8334,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8290,7 +8344,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8300,7 +8354,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8310,7 +8364,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -8320,7 +8374,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-2.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -9424,7 +9478,7 @@
 						<coordinate1>/time</coordinate1>
 						<units>eV</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9438,7 +9492,7 @@
 						<coordinate1>/time</coordinate1>
 						<units>m^-3</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9451,7 +9505,7 @@
 					<xs:appinfo>
 						<coordinate1>../../profiles_1d(itime)/ion</coordinate1>
 						<utilities_aoscontext>yes</utilities_aoscontext>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -9461,7 +9515,7 @@
 					<xs:appinfo>
 						<units>s</units>
 						<type>constant</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9592,7 +9646,7 @@
 						<type>dynamic</type>
 						<units>mixed</units>
 						<coordinate1>../measured</coordinate1>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -9801,7 +9855,7 @@
 					<xs:documentation>Velocity at the position of maximum major radius on every flux surface</xs:documentation>
 					<xs:appinfo>
 						<units>m.s^-1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12669,7 +12723,7 @@
 					<xs:appinfo>
 						<units>A.m^-2</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -12688,7 +12742,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>A.m^-2</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -14072,6 +14126,140 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="xyz0d_static_dimensionless">
+		<xs:annotation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, static, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="x">
+				<xs:annotation>
+					<xs:documentation>Component along X axis</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="y">
+				<xs:annotation>
+					<xs:documentation>Component along Y axis</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="z">
+				<xs:annotation>
+					<xs:documentation>Component along Z axis</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="xyz0d_dynamic_aos3_dimensionless">
+		<xs:annotation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, dynamic within an AoS3, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+			<xs:appinfo>
+				<aos3Parent>yes</aos3Parent>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="x">
+				<xs:annotation>
+					<xs:documentation>Component along X axis</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="y">
+				<xs:annotation>
+					<xs:documentation>Component along Y axis</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="z">
+				<xs:annotation>
+					<xs:documentation>Component along Z axis</xs:documentation>
+					<xs:appinfo>
+						<type>dynamic</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="xyz0d_constant_dimensionless">
+		<xs:annotation>
+			<xs:documentation>Structure for list of X, Y, Z components (0D, constant, dimensionless). Used for unit vectors, direction vectors, and other dimensionless Cartesian triplets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="x">
+				<xs:annotation>
+					<xs:documentation>Component along X axis</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="y">
+				<xs:annotation>
+					<xs:documentation>Component along Y axis</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="z">
+				<xs:annotation>
+					<xs:documentation>Component along Z axis</xs:documentation>
+					<xs:appinfo>
+						<type>constant</type>
+						<units>1</units>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="FLT_0D"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="xyz1d_positions_static">
 		<xs:annotation>
 			<xs:documentation>Structure for list of X, Y, Z positions (1D, static)</xs:documentation>
@@ -14254,7 +14442,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -14294,7 +14482,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14302,7 +14490,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14310,7 +14498,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the filter surface and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14464,7 +14652,7 @@
 			<xs:documentation>Dynamic description of X1, X2, X3 vectors for a planar object within an AoS type 3</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="x1_unit_vector" type="xyz0d_dynamic_aos3">
+			<xs:element name="x1_unit_vector" type="xyz0d_dynamic_aos3_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14472,7 +14660,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_dynamic_aos3">
+			<xs:element name="x2_unit_vector" type="xyz0d_dynamic_aos3_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14480,7 +14668,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_dynamic_aos3">
+			<xs:element name="x3_unit_vector" type="xyz0d_dynamic_aos3_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the detector/aperture plane and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14603,7 +14791,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14611,7 +14799,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14619,7 +14807,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the detector/aperture plane and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14695,7 +14883,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -14743,7 +14931,7 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -14751,7 +14939,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -14759,7 +14947,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the object surface and oriented towards the plasma.</xs:documentation>
 					<xs:appinfo>
@@ -14840,7 +15028,7 @@
 				<xs:annotation>
 					<xs:documentation>Position of the center of the sphere which defines the mirror, in the case of a spherical mirror (geometry_type = 2), derived from the above geometric data</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -14936,17 +15124,17 @@
 					<xs:group ref="FLT_0D"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the polarizer plane and oriented towards the plasma.</xs:documentation>
 				</xs:annotation>
@@ -15165,7 +15353,7 @@
 					<xs:documentation>Position of the camera centre</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x1_unit_vector" type="xyz0d_static">
+			<xs:element name="x1_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X1 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X1 vector is more horizontal than X2 (has a smaller abs(Z) component) and oriented in the positive phi direction (counter-clockwise when viewed from above). </xs:documentation>
 					<xs:appinfo>
@@ -15173,7 +15361,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x2_unit_vector" type="xyz0d_static">
+			<xs:element name="x2_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X2 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X2 axis is orthonormal so that uX2 = uX3 x uX1.</xs:documentation>
 					<xs:appinfo>
@@ -15181,7 +15369,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="x3_unit_vector" type="xyz0d_static">
+			<xs:element name="x3_unit_vector" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Components of the X3 direction unit vector in the (X,Y,Z) coordinate system, where X is the major radius axis for phi = 0, Y is the major radius axis for phi = pi/2, and Z is the height axis. The X3 axis is normal to the camera plane and oriented towards the plasma.</xs:documentation>
 				</xs:annotation>
@@ -15663,7 +15851,7 @@
 				<xs:annotation>
 					<xs:documentation>The element is an annulus of centre R, Z, with inner radius radius_inner and outer radius radius_outer</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -15671,7 +15859,7 @@
 				<xs:annotation>
 					<xs:documentation>The element is approximated by a rectangle defined by a central segment and a thickness in the direction perpendicular to the segment</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -15698,7 +15886,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16009,7 +16197,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16137,7 +16325,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16163,7 +16351,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<doc_identifier>utilities/materials_identifier.xml</doc_identifier>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -16174,7 +16362,7 @@
 						<type>static</type>
 						<coordinate1>../material</coordinate1>
 						<units>1</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16554,7 +16742,7 @@
 						<units>1</units>
 						<type>dynamic</type>
 						<coordinate1>../../length</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16568,7 +16756,7 @@
 						<units>1</units>
 						<type>dynamic</type>
 						<coordinate1>../../length</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -16846,7 +17034,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<url>../../IMAS-URI-scheme.html</url>
-						<introduced_after_version>3.41.0</introduced_after_version>
+						<introduced_with_version>3.42.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -16890,7 +17078,7 @@
 						<xs:documentation>User-defined name for this IDS occurrence</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -16913,7 +17101,7 @@
 						<xs:documentation>Type of data contained in this occurrence</xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/occurrence_type_identifier.xml</doc_identifier>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -16959,7 +17147,7 @@
 						<xs:appinfo>
 							<lifecycle_status>alpha</lifecycle_status>
 							<lifecycle_version>3.39.0</lifecycle_version>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

@@ -14,7 +14,7 @@
 						<type>dynamic</type>
 						<units>1</units>
 						<coordinate1>../time</coordinate1>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<change_nbc_version>4.1.0</change_nbc_version>
                         <change_nbc_description>leaf_renamed</change_nbc_description>
                         <change_nbc_previous_name>../o_mode_fraction</change_nbc_previous_name>
@@ -132,7 +132,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -145,7 +145,7 @@
 					<xs:appinfo>
 						<type>static</type>
 						<units>m</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -258,7 +258,7 @@
 					<xs:documentation>Description, e.g. “Core mirror steering”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -273,7 +273,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="direction" type="xyz0d_static">
+			<xs:element name="direction" type="xyz0d_static_dimensionless">
 				<xs:annotation>
 					<xs:documentation>Unit vector indicating the direction of the translation or the rotation axis at "home" position (i.e. ../../geometry/centre)</xs:documentation>
 					<xs:appinfo>
@@ -388,7 +388,7 @@
 					<xs:documentation>Description, e.g. “Mirror in upper port 12”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -434,7 +434,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -462,7 +462,7 @@
 					<xs:documentation>Index of the mirror (in the mirror array of structure) on which this beam has been reflected</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -483,7 +483,7 @@
 				<xs:annotation>
 					<xs:documentation>Wave polarization</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -556,7 +556,7 @@
 						<xs:documentation>Set of mirrors associated with the launcher</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -565,7 +565,7 @@
 						<xs:documentation>Set of Electron Cyclotron beam segments, including between mirrors</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.36.0</introduced_after_version>
+							<introduced_with_version>3.37.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -575,7 +575,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

@@ -45,7 +45,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -75,7 +75,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -186,7 +186,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -230,7 +230,7 @@
 					<xs:documentation>Coupling resistance</xs:documentation>
 					<xs:appinfo>
 						<units>ohm</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -374,7 +374,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -471,7 +471,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

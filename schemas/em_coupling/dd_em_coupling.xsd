@@ -86,7 +86,7 @@
 						<xs:documentation>Set of user-defined coupling matrices, complementary to the other system-based coupling matrices of this IDS</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -95,7 +95,7 @@
 						<xs:documentation>Set of grids for use in the coupling_matrix array of structure, described using the GGD</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

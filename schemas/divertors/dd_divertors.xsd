@@ -89,7 +89,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -155,7 +155,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -349,7 +349,7 @@
 					<xs:documentation>Total current incident on this target</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -358,7 +358,7 @@
 					<xs:documentation>Set of divertor tiles belonging to this target</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -385,7 +385,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -485,7 +485,7 @@
 					<xs:documentation>Nuclear power heating the divertor</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -502,7 +502,7 @@
 					<xs:documentation>Total current incident on this divertor</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
-						<introduced_after_version>3.32.1</introduced_after_version>
+						<introduced_with_version>3.33.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -525,7 +525,7 @@
 						<xs:documentation>Choice of midplane definition (use the lowest index number if more than one value is relevant) </xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/midplane_identifier.xml</doc_identifier>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

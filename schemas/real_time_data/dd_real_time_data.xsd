@@ -32,7 +32,7 @@
 					<xs:appinfo>
 						<type>constant</type>
 						<units>s</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -45,7 +45,7 @@
 					<xs:documentation>Index of sample (time stamp counter)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../time_stamp</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -76,7 +76,7 @@
 					<xs:documentation>Signal data type</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -100,7 +100,7 @@
 					<xs:documentation>Signal data (e.g. diagnostic signal or PCS command), serialized as a string</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../../time_stamp</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -113,7 +113,7 @@
 					<xs:documentation>Indicator of the quality of the signal. Following ITER PCS documentation (https://user.iter.org/?uid=354SJ3&amp;action=get_document), possible values are: 1 - GOOD (the nominal state); 2 - INVALID (data no usable); 3 - DATA INTEGRITY ERROR (e.g. out of bounds with respect to expectations, calibration error,...)</xs:documentation>
 					<xs:appinfo>
 						<type>constant</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 						<coordinate1>../../time_stamp</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>

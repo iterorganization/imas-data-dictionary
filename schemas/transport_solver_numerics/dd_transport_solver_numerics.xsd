@@ -483,7 +483,7 @@
 					<xs:documentation>Name of the control parameter</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -514,7 +514,7 @@
 					<xs:documentation>Name of the control parameter</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

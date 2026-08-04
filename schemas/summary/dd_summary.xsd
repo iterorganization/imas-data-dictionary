@@ -545,7 +545,7 @@
 				<xs:annotation>
 					<xs:documentation>Fictitious DT single species with mass 2.5, used in some simulations</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<cocos_label_transformation>tor_angle_like</cocos_label_transformation>
 						<cocos_transformation_expression>.sigma_rphiz_eff</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>IDSPATH.velocity_phi.deuterium_tritium.value</cocos_leaf_name_aos_indices>
@@ -719,7 +719,7 @@
 				<xs:annotation>
 					<xs:documentation>Fictitious DT single species with mass 2.5, used in some simulations</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -742,7 +742,7 @@
 				<xs:annotation>
 					<xs:documentation>Boron (B)</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1573,7 +1573,7 @@
 						<change_nbc_version>4.1.0</change_nbc_version>
 						<change_nbc_description>structure_renamed</change_nbc_description>
 						<change_nbc_previous_name>b_field_tor</change_nbc_previous_name>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2531,7 +2531,7 @@
 						<catalogue_name>suffix</catalogue_name>
 						<cocos_alias>IDSPATH</cocos_alias>
 						<cocos_replace>summary.local.separatrix_average</cocos_replace>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2566,7 +2566,7 @@
 					<xs:appinfo>
 						<catalogue_name>suffix</catalogue_name>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 						<change_nbc_version>3.35.0</change_nbc_version>
 						<change_nbc_description>aos_renamed</change_nbc_description>
 						<change_nbc_previous_name>divertor_plate</change_nbc_previous_name>
@@ -3363,7 +3363,7 @@
 					<xs:documentation>Average (over the plasma poloidal cross section) plasma poloidal magnetic flux produced by all toroidal loops (active coils and passive loops) but the plasma, given by the following formula : int(psi_loops.j_tor.dS) / Ip. For a positive plasma current (counter-clockwise when viewed from above), increases from the magnetic axis to the boundary</xs:documentation>
 					<xs:appinfo>
 						<units>Wb</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 						<cocos_label_transformation>psi_like</cocos_label_transformation>
 						<cocos_transformation_expression>.fact_psi</cocos_transformation_expression>
 						<cocos_leaf_name_aos_indices>summary.global_quantities.psi_external_average</cocos_leaf_name_aos_indices>
@@ -3476,7 +3476,7 @@
 					<xs:documentation>Total instantaneous fusion power (from all reactions and carried by all fusion products, i.e. fast ions and neutrons)</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>4.1.1</introduced_after_version>
+						<introduced_with_version>4.2.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3498,7 +3498,7 @@
 						<change_nbc_version>3.34.0</change_nbc_version>
 						<change_nbc_description>structure_renamed</change_nbc_description>
 						<change_nbc_previous_name>neutron_fluxes</change_nbc_previous_name>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -3553,7 +3553,7 @@
 					<xs:documentation>Maximum toroidal current carried by runaway electrons during the pulse</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -4146,7 +4146,7 @@
 					<xs:documentation>Pre-disruption time = disruption.time - t_pre, where t_pre[s] is approximately given by 0.0025 * R0[m]^2 and R0 is the major radius where the toroidal field is defined (../../global_quantities/r0)</xs:documentation>
 					<xs:appinfo>
 						<units>s</units>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -4183,7 +4183,7 @@
 				<xs:annotation>
 					<xs:documentation>Characteristic decay times describing the loss of different quantities during the disruption</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -4191,7 +4191,7 @@
 				<xs:annotation>
 					<xs:documentation>Characteristics of halo current</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -4199,7 +4199,7 @@
 				<xs:annotation>
 					<xs:documentation>Type of the disruption</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>4.0.0</introduced_after_version>
+						<introduced_with_version>4.1.0</introduced_with_version>
 						<doc_identifier>summary/disruption_type_identifier.xml</doc_identifier>
 					</xs:appinfo>
 				</xs:annotation>
@@ -4341,7 +4341,7 @@
 						<xs:documentation>Type of data contained in the dataset</xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/data_type_identifier.xml</doc_identifier>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4350,7 +4350,7 @@
 						<xs:documentation>Name of the experimental device to which this data is related (if relevant)</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -4362,7 +4362,7 @@
 						<xs:documentation>Pulse number to which this data is related (if relevant)</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -4374,7 +4374,7 @@
 						<xs:documentation>Date and time (UTC) at which the pulse started on the experiment (if relevant), expressed in a human readable form (ISO 8601) : the format of the string shall be : YYYY-MM-DDTHH:MM:SSZ. Example : 2020-07-24T14:19:00Z</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -4385,7 +4385,7 @@
 					<xs:annotation>
 						<xs:documentation>Time at which the pulse started on the experiment (if relevant), expressed in Unix Epoch time represented as two integers: seconds, plus additionally elapsed nanoseconds</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4393,7 +4393,7 @@
 					<xs:annotation>
 						<xs:documentation>Time at which the pulse ended on the experiment (if relevant), expressed in Unix Epoch time represented as two integers: seconds, plus additionally elapsed nanoseconds</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4402,7 +4402,7 @@
 						<xs:documentation>For experimental processed data, date and time (UTC) at which the pulse data processing started on the experiment (if relevant), expressed in a human readable form (ISO 8601) : the format of the string shall be : YYYY-MM-DDTHH:MM:SSZ. Example : 2020-07-24T14:19:00Z</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -4414,7 +4414,7 @@
 						<xs:documentation>Description of the simulation or the pulse</xs:documentation>
 						<xs:appinfo>
 							<type>constant</type>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -4425,7 +4425,7 @@
 					<xs:annotation>
 						<xs:documentation>Description of the general characteristics of the simulation, if this dataset has been produced by a simulation</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4454,7 +4454,7 @@
 						<xs:documentation>Choice of midplane definition (use the lowest index number if more than one value is relevant) </xs:documentation>
 						<xs:appinfo>
 							<doc_identifier>utilities/midplane_identifier.xml</doc_identifier>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4462,7 +4462,7 @@
 					<xs:annotation>
 						<xs:documentation>Ratios of the volume-averaged density (inside LCFS) of each ion species to the volume-averaged electron density, taken at the time of maximum electron density during the pulse</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>4.0.0</introduced_after_version>
+							<introduced_with_version>4.1.0</introduced_with_version>
 							<units>1</units>
 						</xs:appinfo>
 					</xs:annotation>
@@ -4528,7 +4528,7 @@
 						<xs:documentation>Accumulated injected gas since the plasma breakdown in equivalent electrons</xs:documentation>
 						<xs:appinfo>
 							<units>1</units>
-							<introduced_after_version>3.36.0</introduced_after_version>
+							<introduced_with_version>3.37.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4537,7 +4537,7 @@
 						<xs:documentation>Accumulated injected gas during the prefill in equivalent electrons</xs:documentation>
 						<xs:appinfo>
 							<units>1</units>
-							<introduced_after_version>3.37.2</introduced_after_version>
+							<introduced_with_version>3.38.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4586,7 +4586,7 @@
 						<xs:documentation>Time of the plasma breakdown</xs:documentation>
 						<xs:appinfo>
 							<units>s</units>
-							<introduced_after_version>3.36.0</introduced_after_version>
+							<introduced_with_version>3.37.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -4595,7 +4595,7 @@
 						<xs:documentation>Duration of existence of a confined plasma during the pulse </xs:documentation>
 						<xs:appinfo>
 							<units>s</units>
-							<introduced_after_version>3.36.0</introduced_after_version>
+							<introduced_with_version>3.37.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

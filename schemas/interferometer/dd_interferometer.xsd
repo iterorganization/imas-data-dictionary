@@ -125,7 +125,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -173,7 +173,7 @@
 				<xs:annotation>
 					<xs:documentation>Estimated electron density profile on a set of positions along the line of sight and used by forward models.</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.40.0</introduced_after_version>
+						<introduced_with_version>3.40.1</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -185,7 +185,7 @@
 			<xs:appinfo>
 				<lifecycle_status>alpha</lifecycle_status>
 				<lifecycle_version>3.15.0</lifecycle_version>
-				<lifecycle_last_change>3.41.0</lifecycle_last_change>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexType>
@@ -215,13 +215,23 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="interlock_signal" type="signal_flt_1d_interlock" maxOccurs="5">
+					<xs:annotation>
+						<xs:documentation>Set of signals produced by the interferometer for the interlock system</xs:documentation>
+						<xs:appinfo>
+							<coordinate1>1...N</coordinate1>
+							<introduced_with_version>4.2.0</introduced_with_version>
+							<units>mixed</units>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="latency">
 					<xs:annotation>
 						<xs:documentation>Upper bound of the delay between physical information received by the detector and data available on the real-time (RT) network.</xs:documentation>
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

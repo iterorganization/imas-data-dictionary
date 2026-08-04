@@ -104,7 +104,7 @@
 				<xs:annotation>
 					<xs:documentation>Geometry matrix with reflections</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -112,7 +112,7 @@
 				<xs:annotation>
 					<xs:documentation>Geometry matrix without reflections</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -120,7 +120,7 @@
 				<xs:annotation>
 					<xs:documentation>Interpolated geometry matrix for reflected light</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -143,7 +143,7 @@
 					<xs:documentation>Number of voxels defined in the voxel_map.</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3.37.2</introduced_after_version>
+						<introduced_with_version>3.38.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -699,7 +699,7 @@
 				<xs:annotation>
 					<xs:documentation>Filter description</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -708,7 +708,7 @@
 					<xs:documentation>Set of processed spectral lines (normally a single line is filtered out, but it may happen in some cases that several lines go through the filter). </xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -755,7 +755,7 @@
 						<type>static</type>
 						<units>m</units>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -769,7 +769,7 @@
 						<type>static</type>
 						<units>m^-3.sr^-1</units>
 						<coordinate1>../wavelengths</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<change_nbc_version>3.39.0</change_nbc_version>
 						<change_nbc_description>type_changed</change_nbc_description>
 						<change_nbc_previous_type>FLT_0D</change_nbc_previous_type>
@@ -797,7 +797,7 @@
 						<type>static</type>
 						<units>V.W^-1</units>
 						<coordinate1>../wavelengths</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -936,7 +936,7 @@
 						<units>m</units>
 						<coordinate1>1...2</coordinate1>
 						<coordinate2>1...N</coordinate2>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1098,7 +1098,7 @@
 					<xs:documentation>Set of optical elements</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1106,7 +1106,7 @@
 				<xs:annotation>
 					<xs:documentation>Description of the fibre bundle</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1149,7 +1149,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

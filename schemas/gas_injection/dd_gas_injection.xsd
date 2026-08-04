@@ -58,7 +58,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -130,7 +130,7 @@
 					<xs:documentation>Voltage applied to open the valve (raw data used to compute the gas flow rate)</xs:documentation>
 					<xs:appinfo>
 						<units>V</units>
-						<introduced_after_version>3.35.0</introduced_after_version>
+						<introduced_with_version>3.36.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -138,7 +138,7 @@
 				<xs:annotation>
 					<xs:documentation>Response curve of the valve, i.e. gas flow rate obtained as a function of the applied voltage.</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.35.0</introduced_after_version>
+						<introduced_with_version>3.36.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -165,7 +165,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -215,7 +215,7 @@
 					<xs:documentation>Indices (from the ../../valve array of structure) of the valve(s) that are feeding this pipe</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -250,7 +250,7 @@
 						<xs:documentation>Set of valves connecting a gas bottle to pipes</xs:documentation>
 						<xs:appinfo>
 							<coordinate1>1...N</coordinate1>
-							<introduced_after_version>3.33.0</introduced_after_version>
+							<introduced_with_version>3.34.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
@@ -260,7 +260,7 @@
 						<xs:appinfo>
 							<type>static</type>
 							<units>s</units>
-							<introduced_after_version>3.32.1</introduced_after_version>
+							<introduced_with_version>3.33.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>

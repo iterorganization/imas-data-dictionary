@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<constants name="ntms_deltaw_contribution" identifier="yes" create_mapping_function="yes">
+<header>
+Type of deltaw contribution
+</header>
+
+<ddInstance xpath="/ntms/time_slice/mode/deltaw/type"/>
+
+<int name="classical"        description="Classical tearing mode contribution to the stability index"       >1</int>
+<int name="bootstrap"           description="Bootstrap current contribution to the stability index "         >2</int>
+<int name="GGJ"                description="Glasser-Greene-Johnson contribution to the stability index" >3</int>
+<int name="current_drive"         description="Current drive contribution to the stability index" >4</int>
+<int name="heating"         description="Heating contribution to the stability index" >5</int>
+
+</constants>

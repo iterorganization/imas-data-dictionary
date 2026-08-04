@@ -174,7 +174,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m.s^-1.T^-1</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -202,7 +202,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>m^-1.s^-1</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -233,7 +233,7 @@
 					<xs:appinfo>
 						<coordinate1>1...N</coordinate1>
 						<units>A.m^-1</units>
-						<introduced_after_version>3.36.0</introduced_after_version>
+						<introduced_with_version>3.37.0</introduced_with_version>
 						<change_nbc_version>3.42.0</change_nbc_version>
 						<change_nbc_description>aos_renamed</change_nbc_description>
 						<change_nbc_previous_name>j_tor_r</change_nbc_previous_name>

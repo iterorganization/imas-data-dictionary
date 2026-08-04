@@ -308,7 +308,7 @@
 				<xs:annotation>
 					<xs:documentation>Spot ellipse characteristics</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -316,7 +316,7 @@
 				<xs:annotation>
 					<xs:documentation>Phase ellipse characteristics</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>

@@ -494,7 +494,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -671,7 +671,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -730,7 +730,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -846,7 +846,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -876,7 +876,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -927,7 +927,7 @@
 					<xs:documentation>Total NBI power (sum over the units)</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -976,7 +976,7 @@
 					<xs:documentation>Total IC power (sum over the antennas)</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1025,7 +1025,7 @@
 					<xs:documentation>Total LH power (sum over the antennas)</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1077,7 +1077,7 @@
 					<xs:documentation>Total EC power launched in the plasma (sum over the beams)</xs:documentation>
 					<xs:appinfo>
 						<units>W</units>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 						<change_nbc_version>3.40.0</change_nbc_version>
 						<change_nbc_description>structure_renamed</change_nbc_description>
 						<change_nbc_previous_name>power</change_nbc_previous_name>
@@ -1181,7 +1181,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1232,7 +1232,7 @@
 					<xs:documentation>Line integrated electron density over a line of sight within the LCFS</xs:documentation>
 					<xs:appinfo>
 						<units>m^-2</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1241,7 +1241,7 @@
 					<xs:documentation>Integral of a 1D core profile over rho_tor_norm up to the LCFS</xs:documentation>
 					<xs:appinfo>
 						<units>m^-3</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1249,7 +1249,7 @@
 				<xs:annotation>
 					<xs:documentation>Description of the line of sight for calculating n_e, defined by two points when the beam is not reflected, a third point is added to define the reflected beam path</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1258,7 +1258,7 @@
 					<xs:documentation>Volume averaged electron density (average over the plasma volume up to the LCFS)</xs:documentation>
 					<xs:appinfo>
 						<units>m^-3</units>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1274,7 +1274,7 @@
 				<xs:annotation>
 					<xs:documentation>Method for zeff calculation : Index = 1: average over a line of sight in the whole vacuum chamber, 2 : average over a line of sight within the LCFS, 3 : average of a 1D core profile over rho_tor_norm up to the LCFS</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1282,7 +1282,7 @@
 				<xs:annotation>
 					<xs:documentation>Description of the line of sight for calculating zeff, defined by two points when the beam is not reflected, a third point is added to define the reflected beam path</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1306,7 +1306,7 @@
 				<xs:annotation>
 					<xs:documentation>Quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.34.0</introduced_after_version>
+						<introduced_with_version>3.35.0</introduced_with_version>
 						<coordinate1>1...N</coordinate1>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1432,7 +1432,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1452,7 +1452,7 @@
 					<xs:documentation>Current fed into one turn of the coil. (Multiply by number of turns to obtain generated magnetic field). Positive when flowing from side 1 to side 2 of the coil, this numbering being made consistently with the convention that the current flows counter-clockwise when viewed from above.</xs:documentation>
 					<xs:appinfo>
 						<units>A</units>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1479,7 +1479,7 @@
 					<xs:documentation>Description, e.g. “channel viewing the upper divertor”</xs:documentation>
 					<xs:appinfo>
 						<type>static</type>
-						<introduced_after_version>3</introduced_after_version>
+						<introduced_with_version>4.0.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1638,7 +1638,7 @@
 					<xs:documentation>Inner triangularity of the plasma boundary</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<url>equilibrium/DefinitionEqBoundary.svg</url>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1648,7 +1648,7 @@
 					<xs:documentation>Outer triangularity of the plasma boundary</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<url>equilibrium/DefinitionEqBoundary.svg</url>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1658,7 +1658,7 @@
 					<xs:documentation>Minor triangularity of the plasma boundary</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<url>equilibrium/DefinitionEqBoundary.svg</url>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1668,7 +1668,7 @@
 					<xs:documentation>Upper outer squareness of the plasma boundary (definition from T. Luce, Plasma Phys. Control. Fusion 55 (2013) 095009)</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1677,7 +1677,7 @@
 					<xs:documentation>Upper inner squareness of the plasma boundary (definition from T. Luce, Plasma Phys. Control. Fusion 55 (2013) 095009)</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1686,7 +1686,7 @@
 					<xs:documentation>Lower outer squareness of the plasma boundary (definition from T. Luce, Plasma Phys. Control. Fusion 55 (2013) 095009)</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1695,7 +1695,7 @@
 					<xs:documentation>Lower inner squareness of the plasma boundary (definition from T. Luce, Plasma Phys. Control. Fusion 55 (2013) 095009)</xs:documentation>
 					<xs:appinfo>
 						<units>1</units>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1732,7 +1732,7 @@
 				<xs:annotation>
 					<xs:documentation>Height of the separatrix point of maximum major radius</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<units>m</units>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1741,7 +1741,7 @@
 				<xs:annotation>
 					<xs:documentation>Height of the separatrix point of minimum major radius</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.38.1</introduced_after_version>
+						<introduced_with_version>3.39.0</introduced_with_version>
 						<units>m</units>
 					</xs:appinfo>
 				</xs:annotation>
@@ -1758,7 +1758,7 @@
 				<xs:annotation>
 					<xs:documentation>RZ position of the current centroid</xs:documentation>
 					<xs:appinfo>
-						<introduced_after_version>3.39.0</introduced_after_version>
+						<introduced_with_version>3.40.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -1885,7 +1885,7 @@
 					<xs:annotation>
 						<xs:documentation>Poloidal field coil references</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.36.0</introduced_after_version>
+							<introduced_with_version>3.37.0</introduced_with_version>
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>

@@ -246,7 +246,7 @@
 						<coordinate1>../../time</coordinate1>
 						<units>eV</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -260,7 +260,7 @@
 						<coordinate1>../../time</coordinate1>
 						<units>m^-3</units>
 						<type>dynamic</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -272,7 +272,7 @@
 					<xs:documentation>Quantities related to the different ion species, in the sense of isonuclear or isomolecular sequences. The set of ion species of this array must be the same as the one defined in profiles_1d/ion, at the time slice indicated in ion_time_slice</xs:documentation>
 					<xs:appinfo>
 						<coordinate1>../../profiles_1d(itime)/ion</coordinate1>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -282,7 +282,7 @@
 					<xs:appinfo>
 						<units>s</units>
 						<type>constant</type>
-						<introduced_after_version>3.33.0</introduced_after_version>
+						<introduced_with_version>3.34.0</introduced_with_version>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>
@@ -1015,7 +1015,7 @@
 							<type>dynamic</type>
 							<cocos_alias>IDSPATH</cocos_alias>
 							<cocos_replace>core_profiles.profiles_2d{i}</cocos_replace>
-							<introduced_after_version>3.38.1</introduced_after_version>
+							<introduced_with_version>3.39.0</introduced_with_version>
 							<lifecycle_status>alpha</lifecycle_status>
 							<lifecycle_version>3.39.0</lifecycle_version>
 						</xs:appinfo>
@@ -1039,7 +1039,7 @@
 					<xs:annotation>
 						<xs:documentation>User defined covariance matrix. The covariance of various quantities can be stored here, these quantities are referred to by giving their IDS path in the rows_uri list</xs:documentation>
 						<xs:appinfo>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 							<lifecycle_status>alpha</lifecycle_status>
 							<lifecycle_version>3.40.0</lifecycle_version>
 						</xs:appinfo>
@@ -1051,7 +1051,7 @@
 						<xs:appinfo>
 							<coordinate1>time</coordinate1>
 							<type>dynamic</type>
-							<introduced_after_version>3.39.0</introduced_after_version>
+							<introduced_with_version>3.40.0</introduced_with_version>
 							<lifecycle_status>alpha</lifecycle_status>
 							<lifecycle_version>3.40.0</lifecycle_version>
 						</xs:appinfo>
