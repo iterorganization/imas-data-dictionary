@@ -6,8 +6,7 @@ on:
     types: [completed]
 
 permissions:
-  pull-requests: write  # Required to comment on PRs
-  issues: write         # Required for PR comments via issues API
+  pull-requests: read
   actions: read
 
 jobs:
