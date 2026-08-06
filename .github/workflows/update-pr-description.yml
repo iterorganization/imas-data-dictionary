@@ -16,7 +16,7 @@ jobs:
         with:
           project-slug: imas-data-dictionary
       - name: 'Update PR Description with Diff Link'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           PR_NUMBER: ${{ github.event.number }}
         with:

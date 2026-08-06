@@ -17,7 +17,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Download html-diff Artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: html-diff
         path: html-diff
@@ -34,7 +34,7 @@ jobs:
         fi
         echo "pr_number=$PR_NUM" >> $GITHUB_OUTPUT
     - name: Upload to Azure
-      uses: azure/cli@v2
+      uses: azure/cli@v3
       env:
         AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
         AZURE_STORAGE_KEY: ${{ secrets.ACCOUNT_KEY }}
