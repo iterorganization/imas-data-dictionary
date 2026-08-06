@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by USER USER (CEA - CENTRE DE CADARACHE) -->
+<?modxslt-stylesheet type="text/xsl" media="fuffa, screen and $GET[stylesheet]" href="./%24GET%5Bstylesheet%5D" alternate="no" title="Translation using provided stylesheet" charset="UTF-8" ?>
+<?modxslt-stylesheet type="text/xsl" media="screen" alternate="no" title="Show raw source of the XML file" charset="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../utilities/dd_support.xsd"/>
+	<xs:complexType name="ec_sniffer_probe">
+		<xs:annotation>
+			<xs:documentation>One sniffer probe</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name">
+				<xs:annotation>
+					<xs:documentation>Short string identifier (unique for a given device)</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="STR_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="description">
+				<xs:annotation>
+					<xs:documentation>Description, e.g. “Probe located in port Q4”</xs:documentation>
+					<xs:appinfo>
+						<type>static</type>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:group ref="STR_0D"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="antenna" type="detector_aperture">
+				<xs:annotation>
+					<xs:documentation>Antenna geometry</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ec_sniffer_probes">
+		<xs:annotation>
+			<xs:documentation>Sniffer probes to locally measure the power density of electromagnetic radiation from electron cyclotron heating sources.  They are typically used to protect sensitive components from stray EC radiation that has not been sufficiently absorbed by the plasma. For the moment, this IDS contains only the machine description.</xs:documentation>
+			<xs:appinfo>
+				<lifecycle_status>alpha</lifecycle_status>
+				<lifecycle_version>4.2.0</lifecycle_version>
+				<lifecycle_last_change>4.2.0</lifecycle_last_change>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ids_properties"/>
+				<xs:element name="probe" type="ec_sniffer_probe" maxOccurs="10">
+					<xs:annotation>
+						<xs:documentation>Set of probes</xs:documentation>
+						<xs:appinfo>
+							<coordinate1>1...N</coordinate1>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="latency">
+					<xs:annotation>
+						<xs:documentation>Upper bound of the delay between physical information received by the detector and data available on the real-time (RT) network.</xs:documentation>
+						<xs:appinfo>
+							<type>static</type>
+							<units>s</units>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:group ref="FLT_0D"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="code" type="code_constant">
+					<xs:annotation>
+						<xs:documentation>Description of code-specific parameters</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
