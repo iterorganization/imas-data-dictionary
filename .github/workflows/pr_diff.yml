@@ -52,7 +52,7 @@ jobs:
         echo '```' >> $GITHUB_STEP_SUMMARY
     - name: HTML diff Python setup
       id: html_diff_python_setup
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
         python-version: '3.x'
     - name: HTML diff dependencies
@@ -64,9 +64,14 @@ jobs:
       id: html_diff
       run: |
         python scripts/xmldiff_html.py build/base.xml build/merged.xml -o build/index.html
+    - name: Save PR context to file
+      run: |
+        echo "${{ github.event.number }}" > build/pr_number.txt
     - name: 'Upload Artifact'
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: html-diff
-        path: build/index.html
+        path: |
+          build/index.html
+          build/pr_number.txt
         retention-days: 5

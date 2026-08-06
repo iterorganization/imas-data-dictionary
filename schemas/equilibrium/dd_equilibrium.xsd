@@ -1217,7 +1217,7 @@
 					<xs:documentation>Value calculated from the reconstructed equilibrium</xs:documentation>
 					<xs:appinfo>
 						<type>dynamic</type>
-						<units>1</units>
+						<units>as_parent</units>
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexType>

@@ -6,7 +6,6 @@ on:
     types: [completed]
 
 permissions:
-  pull-requests: read
   actions: read
 
 jobs:
@@ -17,67 +16,25 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-    - name: 'Download html-diff and Fetch PR Number'
-      id: pr_info
-      uses: actions/github-script@v8
+    - name: Download html-diff Artifact
+      uses: actions/download-artifact@v8
       with:
+        name: html-diff
+        path: html-diff
+        run-id: ${{ github.event.workflow_run.id }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const head_sha = context.payload.workflow_run.head_sha;
-          const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            commit_sha: head_sha,
-          });
 
-          // Only accept PRs whose current head is the commit this diff was
-          // built from, so a commit that merely appears in another PR's
-          // history cannot redirect the upload to that PR's page.
-          const matching = prs.data.filter((pr) => pr.head.sha === head_sha);
-
-          if (matching.length === 0) {
-            throw new Error("No pull request found whose head matches this commit SHA.");
-          }
-
-          const issue_number = (matching.find((pr) => pr.state === 'open') ?? matching[0]).number;
-          console.log(`Successfully resolved PR number: ${issue_number}`);
-          
-          core.setOutput('pr_number', issue_number);
-
-          let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              run_id: context.payload.workflow_run.id,
-          });
-          
-          let matchArtifact = allArtifacts.data.artifacts.find(
-            (artifact) => artifact.name === "html-diff"
-          );
-          
-          if (!matchArtifact) {
-            throw new Error("No artifact found.");
-          }
-          
-          
-          let download = await github.rest.actions.downloadArtifact({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              artifact_id: matchArtifact.id,
-              archive_format: 'zip',
-          });
-          
-          const fs = require('fs');
-          const path = require('path');
-          const temp = '${{ runner.temp }}/artifacts';
-          if (!fs.existsSync(temp)){
-            fs.mkdirSync(temp);
-          }
-          fs.writeFileSync(path.join(temp, 'html-diff.zip'), Buffer.from(download.data));
-
-    - name: 'Unzip artifact'
-      run: unzip "${{ runner.temp }}/artifacts/html-diff.zip" -d "html-diff"
+    - name: Extract PR Number
+      id: parse_pr
+      run: |
+        PR_NUM=$(cat html-diff/pr_number.txt)
+        if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then
+          echo "pr_number.txt does not contain a PR number (got '$PR_NUM')."
+          exit 1
+        fi
+        echo "pr_number=$PR_NUM" >> $GITHUB_OUTPUT
     - name: Upload to Azure
-      uses: azure/cli@v2
+      uses: azure/cli@v3
       env:
         AZURE_STORAGE_ACCOUNT: ${{ secrets.ACCOUNT_NAME }}
         AZURE_STORAGE_KEY: ${{ secrets.ACCOUNT_KEY }}
@@ -86,7 +43,7 @@ jobs:
           az storage blob upload \
             --file "html-diff/index.html" \
             --container-name '$web' \
-            --name "pr-${{ steps.pr_info.outputs.pr_number }}/index.html" \
+            --name "pr-${{ steps.parse_pr.outputs.pr_number }}/index.html" \
             --content-type "text/html" \
             --overwrite \
             --auth-mode key
