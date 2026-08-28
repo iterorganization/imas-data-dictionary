@@ -876,14 +876,6 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="deposition_rho_tor_norm" type="pulse_schedule_reference_ec">
-				<xs:annotation>
-					<xs:documentation>Normalized toroidal flux coordinate at which the main deposition should occur</xs:documentation>
-					<xs:appinfo>
-						<units>1</units>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="steering_angle_pol" type="pulse_schedule_reference_ec">
 				<xs:annotation>
 					<xs:documentation>Steering angle of the EC beam in the R,Z plane (from the -R axis towards the -Z axis), angle_pol=atan2(-k_Z,-k_R), where k_Z and k_R are the Z and R components of the mean wave vector in the EC beam</xs:documentation>
