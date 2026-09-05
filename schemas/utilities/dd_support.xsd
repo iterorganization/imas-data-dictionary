@@ -15032,6 +15032,22 @@
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="focus_1" type="rphiz0d_static">
+				<xs:annotation>
+					<xs:documentation>Coordinates of the first focus point, in the case of an ellipse or paraboloid or hyperboloid (geometry_type = 6-8)</xs:documentation>
+					<xs:appinfo>
+					<introduced_with_version>4.2.0</introduced_with_version>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="focus_2" type="rphiz0d_static">
+				<xs:annotation>
+					<xs:documentation>Coordinates of the second focus point, in the case of an ellipse or hyperboloid (geometry_type = 6-7)</xs:documentation>
+					<xs:appinfo>
+					<introduced_with_version>4.2.0</introduced_with_version>
+					</xs:appinfo>
+					</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="curved_surface">
